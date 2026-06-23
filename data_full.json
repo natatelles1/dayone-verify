@@ -1,13 +1,5 @@
 [
   {
-    "nome": "911 TAX & ACCOUNTING, LLC",
-    "endereco": "3371 REEDY GLEN DRIVE, KISSIMMEE, FL 34758",
-    "ein": "93-4388953",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l23000502530-b9d7a6f3-dff3-4076-bffc-c37196801db0&transactionId=l23000502530-ad97781d-483b-432b-8ba0-8a4077dc80c4&formatType=PDF",
-    "email": "kr911taxandaccounting@yahoo.com",
-    "telefone": "+1 239-745-2168"
-  },
-  {
     "nome": "ABACUS ACCOUNTING & TAX SERVICE, INC.",
     "endereco": "704 SW 3RD AVE, OCALA, FL 34471",
     "ein": "59-3347478",
@@ -22,22 +14,6 @@
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p00000059610-b48237a9-853f-4ed9-8c78-80db8c34a257&transactionId=p00000059610-266c2d8a-c714-4048-95a8-672d86c996e6&formatType=PDF",
     "email": "RMurphy@afs-accounting.com",
     "telefone": "+1 407-757-0018"
-  },
-  {
-    "nome": "ACCOUNTING AA LLC",
-    "endereco": "807 LUCERNE AVE, LAKE WORTH BEACH, FL 33460",
-    "ein": "92-3569328",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l23000189360-3a4f8365-bfda-464a-9270-aeab0b192881&transactionId=l23000189360-3a728168-fc27-4a4b-959f-81c3f55a118b&formatType=PDF",
-    "email": "ashley@accountingaa.com",
-    "telefone": "+1 347-624-5744"
-  },
-  {
-    "nome": "ACCOUNTING CFO AND CPA SERVICES LLC",
-    "endereco": "3750 SW 142ND AVE, MIAMI, FL 33175",
-    "ein": "39-3789654",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l25000365260-e2a703d7-4064-420b-9af4-338220f0926b&transactionId=l25000365260-f3404ed5-a811-42c5-97f2-90a1941a47cd&formatType=PDF",
-    "email": "cfoandcpa@gmail.com",
-    "telefone": "+1 813-467-9992"
   },
   {
     "nome": "ACCOUNTING SERVICES OF CFL, INC.",
@@ -56,22 +32,6 @@
     "telefone": "+1 954-743-0147"
   },
   {
-    "nome": "ACCOUNTING SOLUTIONS OF GAINESVILLE, LLC",
-    "endereco": "802 NW 16th Avenue, Gainesville, FL 32601",
-    "ein": "20-8353891",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l07000009240-3069b0d9-8cbe-4a3b-898d-02bd238a9525&transactionId=l07000009240-7796723f-d665-404a-980a-1d49dd6a05c8&formatType=PDF",
-    "email": "mollmanasg@yahoo.com",
-    "telefone": "+1 352-290-5229"
-  },
-  {
-    "nome": "ADVANCED TAX AND ACCOUNTING LLC",
-    "endereco": "10225 Ulmerton Road, LARGO, FL 33771",
-    "ein": "81-1106864",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l15000155010-0d6c3690-15aa-4c09-8aa3-b3903603a9b0&transactionId=l15000155010-60df225b-c287-4889-8aaa-96421305aacf&formatType=PDF",
-    "email": "tracy.jackson@jacksoncpafla.com",
-    "telefone": "+1 954-764-6300"
-  },
-  {
     "nome": "ALL BOOKKEEPING SOLUTIONS INC",
     "endereco": "1913 S OCEAN DR, HALLANDALE BEACH, FL 33009",
     "ein": "83-1736769",
@@ -86,6 +46,374 @@
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p12000065230-b27de035-c37b-493a-a993-6b61741b0de3&transactionId=p12000065230-b0ee0b31-28a9-4030-9c7c-1eb413e21da4&formatType=PDF",
     "email": "anedmadan@gmail.com",
     "telefone": "+1 850-484-2900"
+  },
+  {
+    "nome": "AVOCET INTERNATIONAL CPAS, P.A.",
+    "endereco": "4821 Central Ave, Saint Petersburg, FL 33713",
+    "ein": "59-2453808",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-h27630-1c10c40b-17db-49e2-893b-07a519fcfe0b&transactionId=h27630-75b21532-db00-4bbf-b81a-1079fa95537f&formatType=PDF",
+    "email": "Samantha@janssen-cpa.com",
+    "telefone": "+1 727-525-9723"
+  },
+  {
+    "nome": "BEACH ACCOUNTING & TAX SERVICE, INC.",
+    "endereco": "17274 SAN CARLOS BLVD., FT. MYERS BEACH, FL 33931",
+    "ein": "27-1108338",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p09000084630-922928ab-98d3-4366-88cc-4e76a14bbc10&transactionId=p09000084630-750729e3-debc-4c3f-a194-60d9b154c083&formatType=PDF",
+    "email": "Barbara@Beachtax1.com",
+    "telefone": "+1 561-829-8238"
+  },
+  {
+    "nome": "BESTAX ACCOUNTING INC",
+    "endereco": "6726 N STATE ROAD 7, COCONUT CREEK, FL 33073",
+    "ein": "35-2367425",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p09000041500-1ef56142-7d32-4736-8081-c41a33cda552&transactionId=p09000041500-162b70d2-fcdc-492c-90ad-380216c5432f&formatType=PDF",
+    "email": "INFO@BESTAXACCOUNTING.COM",
+    "telefone": "+1 941-893-1791"
+  },
+  {
+    "nome": "BM TAXES & ACCOUNTING, P.A.",
+    "endereco": "1105 ROLLING BROOK LN, NAPLES, FL 34114",
+    "ein": "27-1380396",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p24000048670-32acbb2f-8d78-449a-8aa0-8f9ec9c8259f&transactionId=p24000048670-c80ec30a-df4d-41a1-8fe2-de10be31a49c&formatType=PDF",
+    "email": "bmtaxes@gmail.com",
+    "telefone": "+1 407-605-2696"
+  },
+  {
+    "nome": "CENTRAL ACCOUNTING OFFICE, INC.",
+    "endereco": "1 COMMERCIAL BLVD, LAUDERDALE BY THE SEA, FL 33308",
+    "ein": "65-0795607",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p97000098940-b24230f3-3ca0-4ef1-b138-7efbaea3df8c&transactionId=p97000098940-13a29675-9f6d-40ee-b415-c0aabb88b0ad&formatType=PDF",
+    "email": "peggym2804@gmail.com",
+    "telefone": "+1 850-692-2647"
+  },
+  {
+    "nome": "COASTAL ACCOUNTING & TAX SOLUTIONS, INC.",
+    "endereco": "12816 ORANGE BLVD, WEST PALM BEACH, FL 33412",
+    "ein": "47-2844889",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p15000003270-3996ee58-d496-4e7d-bf85-d46e4aa909a3&transactionId=p15000003270-62070902-8bd8-4cc5-8878-b3e4293ca194&formatType=PDF",
+    "email": "clgcoastal@aol.com",
+    "telefone": "+1 904-638-4780"
+  },
+  {
+    "nome": "COLLEGE PARK ACCOUNTING, INC.",
+    "endereco": "4812 NEW BROAD STREET, ORLANDO, FL 32814",
+    "ein": "59-3043960",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-s28250-77d1205f-90aa-43f9-acc8-8d6cb3d421c5&transactionId=s28250-4d8c3148-58ee-4822-92cd-92436337e8ef&formatType=PDF",
+    "email": "candi@cpaccounting.net",
+    "telefone": "+1 407-897-0878"
+  },
+  {
+    "nome": "DAVIS. DAVIS & COMPANY CPA'S PA",
+    "endereco": "6011 Forest Villas Cir, Fort Myers, FL 33908",
+    "ein": "59-3322052",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p95000051340-4bfaede0-cd29-40a0-963f-ad393beb8118&transactionId=p95000051340-bdabb097-374e-46fd-9b94-7082c100cafa&formatType=PDF",
+    "email": "sjdavis57@aol.com",
+    "telefone": "+1 239-775-8588"
+  },
+  {
+    "nome": "DG ACCOUNTING, INC.",
+    "endereco": "5701 N PINE ISLAND RD,, TAMARAC, FL 33321",
+    "ein": "47-3736392",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p15000034750-0b5e88c1-1cae-4b7b-9f46-5ab9b8c5d82d&transactionId=p15000034750-4dbb1c38-58ec-4df7-804b-98f306f4bfaf&formatType=PDF",
+    "email": "DAWNGASS@DGACCOUNTING.NET",
+    "telefone": "+1 407-594-2561"
+  },
+  {
+    "nome": "EC ACCOUNTING, INC.",
+    "endereco": "7020 BELFAST AVE, COCOA, FL 32927",
+    "ein": "93-1418397",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p23000038520-efbfc86b-8f7b-4166-bef2-089049c191d9&transactionId=p23000038520-f1235d08-697a-418d-8595-12a7daf0bbe0&formatType=PDF",
+    "email": "ecfinancials321@gmail.com",
+    "telefone": "+1 239-275-7766"
+  },
+  {
+    "nome": "EG TAX & ACCOUNTING  CO.",
+    "endereco": "9266 SW 211 LANE, CUTLER BAY, FL 33189",
+    "ein": "99-3831253",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p24000046130-6a89f6c1-7e8c-4ee8-80ae-19e9b6f490d8&transactionId=p24000046130-545a7652-1914-4302-871a-7ce9a04911ac&formatType=PDF",
+    "email": "ELI@EGTAXES.COM",
+    "telefone": "+1 561-232-2080"
+  },
+  {
+    "nome": "EVA ACCOUNTING CORP",
+    "endereco": "6213 BRIDGEVISTA DR, LITHIA, FL 33547",
+    "ein": "99-4597534",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p24000054010-7a0cd6be-48a7-4407-8fcb-026bd831bf8a&transactionId=p24000054010-8f2f3c5f-87cb-4b52-a44d-07be180851e6&formatType=PDF",
+    "email": "kritsun.nataliia@gmail.com",
+    "telefone": "+1 727-900-7215"
+  },
+  {
+    "nome": "EXECUTIVE TAX AND ACCOUNTING SERVICES, INC.",
+    "endereco": "8585 Sunset Dr., MIAMI, FL 33143",
+    "ein": "26-1178891",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p07000109140-4a096afd-0615-44b2-a9f0-5682ef176b73&transactionId=p07000109140-331e5e9a-b65c-4dde-b189-a7ba64a9b231&formatType=PDF",
+    "email": "alex@exectaxservices.com",
+    "telefone": "+1 561-683-7784"
+  },
+  {
+    "nome": "EZ TAX AND ACCOUNTING SERVICES",
+    "endereco": "7653 NW 19TH STREET, PEMBROKE PINES, FL 33024",
+    "ein": "86-1890576",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l21000027540-93704762-d1f4-4ca7-834c-43153de41b40&transactionId=l21000027540-c56991cd-61fc-4f7a-96f4-bd8b66b5e8d8&formatType=PDF",
+    "email": "soreljoseph@gmail.com",
+    "telefone": "+1 305-595-1783"
+  },
+  {
+    "nome": "FERRARO HAYES, CPA'S, P.A.",
+    "endereco": "217 LITHIA PINECREST ROAD, BRANDON, FL 33511",
+    "ein": "59-3248210",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p94000042010-03502ef8-c48a-4feb-b2e3-160093e76299&transactionId=p94000042010-7cb6f02b-7a30-4776-8aa1-49b59e63c725&formatType=PDF",
+    "email": "michael@ferrarohayes.com",
+    "telefone": "+1 239-596-6050"
+  },
+  {
+    "nome": "FREEDOM FINANCIAL & TAX SERVICES, INC.",
+    "endereco": "15000 NE 7 COURT, NORTH MIAMI, FL 33161",
+    "ein": "47-2018827",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p14000074750-a058827a-08d1-4126-8dbb-9ca2dc0380ea&transactionId=p14000074750-3ba0bd6f-2568-4430-a5b2-eced4c9e3391&formatType=PDF",
+    "email": "jcvilfranc@yahoo.com",
+    "telefone": "+1 239-480-5927"
+  },
+  {
+    "nome": "GM TAX SERVICES CORP",
+    "endereco": "6401 SW 40 ST, MIAMI, FL 33155",
+    "ein": "82-3303738",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p17000088970-3f9edacb-57d5-4fbc-9cd2-7493a01caf0e&transactionId=p17000088970-312452fd-2fa3-40bc-baf5-0e8c8d7523d5&formatType=PDF",
+    "email": "GMTAX@YAHOO.COM",
+    "telefone": "+1 850-786-8688"
+  },
+  {
+    "nome": "GULF BOOKKEEPING INC.",
+    "endereco": "504 3RD Street, PORT ST JOE, FL 32456",
+    "ein": "46-4044540",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p13000090150-75637dc6-c61a-4b1b-ba16-ce7249d1a274&transactionId=p13000090150-8081c8af-f0fb-4ba1-869e-a157b2b02c22&formatType=PDF",
+    "email": "joyceb@visitflorida.com",
+    "telefone": "+1 850-477-9102"
+  },
+  {
+    "nome": "ID BOOKKEEPING SERVICES, INC",
+    "endereco": "3785 NW 82ND AVE, DORAL, FL 33166",
+    "ein": "85-3357739",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p20000075790-25e6909b-4550-4ef4-8cc0-5d653784b41f&transactionId=p20000075790-d9f74ef4-7613-43a3-b603-2ea624ff81a6&formatType=PDF",
+    "email": "IDBKPS@GMAIL.COM",
+    "telefone": "+1 954-763-4272"
+  },
+  {
+    "nome": "IDEAL ACCOUNTING, INC.",
+    "endereco": "3618 WEBBER ST, SARASOTA, FL 34232",
+    "ein": "65-0727576",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p97000009660-c24f74d0-a5bc-48f9-a8eb-b04c8ccc9c6c&transactionId=p97000009660-2834922a-b033-4ff6-be9f-fb463f7eedc9&formatType=PDF",
+    "email": "taxbyideal@comcast.net",
+    "telefone": "+1 941-544-8404"
+  },
+  {
+    "nome": "JORGE F. ALONSO ACCOUNTANT, P.A.",
+    "endereco": "C/O MARIANNE ALONSO, SEMINOLE, FL 33778",
+    "ein": "59-2983234",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-l43940-0182b2ac-52bc-4133-906f-56b9eb60127d&transactionId=l43940-0c1e7510-df46-487a-a389-c058d965c4cb&formatType=PDF",
+    "email": "TAXMAN6732@AOL.COM",
+    "telefone": ""
+  },
+  {
+    "nome": "KIMBERLY PERRY, CPA, PA",
+    "endereco": "2680 West Lake Road, Palm Harbor, FL 34684",
+    "ein": "46-3496198",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p13000070730-27b831f9-f580-4c4e-840c-3fae2b002ca2&transactionId=p13000070730-2488f52f-8fc2-4b2e-a46c-ae4c820a85eb&formatType=PDF",
+    "email": "kperry@seandaviscpa.com",
+    "telefone": "+1 561-231-5966"
+  },
+  {
+    "nome": "KPG ACCOUNTING SERVICES, INC.",
+    "endereco": "3400 TAMIAMI TRL N #302, NAPLES, FL 34103",
+    "ein": "52-2366843",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p02000078720-6656ca17-fc9a-4617-809c-ba384964e34b&transactionId=p02000078720-ea2758c8-69c4-4b6c-86b6-57eb6acb45f9&formatType=PDF",
+    "email": "kgaffney@kpgaccounting.net",
+    "telefone": "+1 239-434-8866"
+  },
+  {
+    "nome": "LUC TAX SERVICES INC",
+    "endereco": "6409 WESTGATE DR, ORLANDO, FL 32835",
+    "ein": "46-2874989",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p13000079730-ee91e2e2-d0a6-49bf-a5ec-c19b9030dec9&transactionId=p13000079730-cd9a6b4d-8f50-4c02-946b-14ec1f1089fb&formatType=PDF",
+    "email": "Edoulanndou@hotmail.com",
+    "telefone": "+1 813-252-0829"
+  },
+  {
+    "nome": "MIAMI ACCOUNTING INC",
+    "endereco": "4114 NW 4TH TERRACE, MIAMI, FL 33126",
+    "ein": "20-4597334",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p11000087550-b7681a5f-31e4-480c-940c-0d8c597cafe0&transactionId=p11000087550-a1a659b7-039f-4d22-a06a-2d2f8b548719&formatType=PDF",
+    "email": "rm@rmederos.net",
+    "telefone": "+1 305-567-3152"
+  },
+  {
+    "nome": "MM BUSINESS AND ACCOUNTING SERVICES, INC.",
+    "endereco": "3020 Hartley Road, Jacksonville, FL 32057",
+    "ein": "47-3252378",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p15000021560-13406647-fad8-498c-8854-3171569c6046&transactionId=p15000021560-237672d2-a102-43d8-beda-7bf21193be87&formatType=PDF",
+    "email": "complianceteam@cogencyglobal.com",
+    "telefone": "+1 954-448-7721"
+  },
+  {
+    "nome": "OMEGA ACCOUNTING SERVICES, INC.",
+    "endereco": "27614 N 20th Ave, PHOENIX, AZ 85085",
+    "ein": "03-0435877",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p02000044020-a527d00e-257a-4cde-87eb-89c13f8cde66&transactionId=p02000044020-c74bbb6a-52e5-4b71-9072-11259518cbf3&formatType=PDF",
+    "email": "omegaperalta@gmail.com",
+    "telefone": "+1 561-704-9797"
+  },
+  {
+    "nome": "ORLANDO TAXES & ACCOUNTING INC",
+    "endereco": "167 CORAL REEF CIRCLE, KISSIMMEE, FL 34743",
+    "ein": "92-0799187",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p22000081380-f43e21e8-f1e0-44c8-a964-77f34e904f99&transactionId=p22000081380-ba6adcc1-879b-49ce-92ad-f9ef5573a7e4&formatType=PDF",
+    "email": "al@coopertaxes.com",
+    "telefone": "+1 321-872-7722"
+  },
+  {
+    "nome": "ORTIZ ACCOUNTING & TAX SERVICES INC",
+    "endereco": "3246 W 70TH STREET, HIALEAH, FL 33018",
+    "ein": "92-2289353",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p23000006890-939c04aa-27e8-4a7b-b8db-600304fa7ae4&transactionId=p23000006890-ba0214f2-1a9f-4b67-a4fc-ebc39ee5feda&formatType=PDF",
+    "email": "mabel@ortizaccounting.com",
+    "telefone": "+1 727-576-1245"
+  },
+  {
+    "nome": "PAUL'S TAX ACCOUNTING SERVICES INC",
+    "endereco": "2272 AIRPORT-PULLING RD S, NAPLES, FL 34112",
+    "ein": "27-2005902",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p19000041890-418c7615-baf1-460d-84b7-78d208c544c0&transactionId=p19000041890-532df4e6-b164-489e-89b8-f652b65cbe0d&formatType=PDF",
+    "email": "Parobins@eagle.fgcu.edu",
+    "telefone": "+1 727-300-1001"
+  },
+  {
+    "nome": "PEREZ ACCOUNTING AND CONSULTING SERVICES, INC.",
+    "endereco": "8000 Cecil Street, MIAMI BEACH, FL 33141",
+    "ein": "20-3792949",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p05000151690-defb0194-7c8d-431d-b300-6fdb76ed2ca5&transactionId=p05000151690-5c31ff34-ff44-4858-8258-e583b3d8452b&formatType=PDF",
+    "email": "mjperez51@hotmail.com",
+    "telefone": "+1 954-925-1630"
+  },
+  {
+    "nome": "QUICK TAX SERVICE, INC.",
+    "endereco": "1750 N.E. 39TH STREET, OAKLAND PARK, FL 33334",
+    "ein": "46-0507434",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p02000121430-1fa533f9-0273-46a4-80bd-e883d57124f4&transactionId=p02000121430-df26843c-9287-406c-9453-4a31260d975a&formatType=PDF",
+    "email": "brill1ant@aol.com",
+    "telefone": "+1 786-435-1067"
+  },
+  {
+    "nome": "RUBIO ACCOUNTING & TAX SERVICES,INC.",
+    "endereco": "7656 NW 183 LANE, MIAMI, FL 33015",
+    "ein": "45-5377520",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p12000049020-81a74efe-5085-4966-9537-10032c900fbc&transactionId=p12000049020-8a571a2a-b9a5-430f-8638-643eb52adc92&formatType=PDF",
+    "email": "rubioleal43@gmail.com",
+    "telefone": "+1 561-750-8299"
+  },
+  {
+    "nome": "SB BOOKKEEPING CORP",
+    "endereco": "9625 SW 138 AVE, MIAMI, FL 33186",
+    "ein": "93-3709499",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p23000070380-7b544174-f00c-4f0b-ad1a-e0dd5ca1521d&transactionId=p23000070380-bc4cfe97-3915-4320-9903-a5e9eac31751&formatType=PDF",
+    "email": "solgiborges@gmail.com",
+    "telefone": "+1 727-888-9200"
+  },
+  {
+    "nome": "SMALL BUSINESS ACCOUNTING OF PINELLAS, INC.",
+    "endereco": "9375 US HIGHWAY 19 NORTH, PINELLAS PARK, FL 33782",
+    "ein": "59-2276016",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-g28640-ac604926-8530-4d9a-9874-fad452fd6986&transactionId=g28640-64932d98-c07d-4c94-8872-db30a2b39f5b&formatType=PDF",
+    "email": "heatherisno1@msn.com",
+    "telefone": "+1 754-209-2281"
+  },
+  {
+    "nome": "SMARTAX & ACCOUNTING SERVICES INC",
+    "endereco": "2607 CARTAGENA AVE, FORT MYERS, FL 33905",
+    "ein": "92-3356527",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p23000028120-3349b0ca-6682-45ca-8eb8-fcc7c71044dd&transactionId=p23000028120-c7eb3248-7d27-4488-a4ed-4d7f358f0e87&formatType=PDF",
+    "email": "smartax2023@gmail.com",
+    "telefone": "+1 239-201-8871"
+  },
+  {
+    "nome": "STRATEGIC TAX SERVICE, P.A.",
+    "endereco": "1102 S. Florida Ave, Lakeland, FL 33803",
+    "ein": "20-4088253",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p06000002000-12b4a8b3-f887-4af0-873c-4356edbcc47e&transactionId=p06000002000-42ffbfde-cc5b-4b6c-98f0-a06fc2fdaa8f&formatType=PDF",
+    "email": "kevinl321@gmail.com",
+    "telefone": "+1 904-479-8838"
+  },
+  {
+    "nome": "TAMPA TAX SERVICES, INC.",
+    "endereco": "9072 ELLIOTT CIRCLE, TAMPA, FL 33615",
+    "ein": "81-2694413",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p16000040740-194c0b78-82ef-4104-beef-339a34958409&transactionId=p16000040740-15e0b753-dd38-4d55-96b4-3b43101204b2&formatType=PDF",
+    "email": "Tampataxservicesinc@gmail.com",
+    "telefone": "+1 831-261-7929"
+  },
+  {
+    "nome": "TBS ACCOUNTING & BUSINESS STRATEGIES, INC.",
+    "endereco": "3394 Small Woods Lane, Gainesville, GA 30506",
+    "ein": "59-3456100",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p97000065600-56205143-a86c-46d4-9552-1d83df7d7414&transactionId=p97000065600-168bddd0-bd0e-4c08-8634-192ab12cae6c&formatType=PDF",
+    "email": "tom@tbsymonettecpa.com",
+    "telefone": "+1 904-434-3494"
+  },
+  {
+    "nome": "TONDREAULT TAX & ACCOUNTING, P.A.",
+    "endereco": "2959 FIRST AVENUE N, ST. PETERSBURG, FL 33713",
+    "ein": "83-3401801",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p19000008810-001612ac-070b-40da-9501-0bedaa1cd0b3&transactionId=p19000008810-616f2869-00d0-4ee0-8635-bc9ee1967dc6&formatType=PDF",
+    "email": "mindy@tondreaultcpa.com",
+    "telefone": "+1 727-300-2043"
+  },
+  {
+    "nome": "WINDELL MOORE, CPA   PA",
+    "endereco": "3800 INVERRARY BOULEVARD, LAUDERHILL, FL 33319",
+    "ein": "20-2741680",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p05000062040-d77c5665-d2c7-4fb8-93c4-36a1989973ac&transactionId=p05000062040-fdb5b9d4-af80-4a88-905e-4b7d69063895&formatType=PDF",
+    "email": "wmoorecpa@bellsouth.net",
+    "telefone": "+1 561-372-2011"
+  },
+  {
+    "nome": "911 TAX & ACCOUNTING, LLC",
+    "endereco": "3371 REEDY GLEN DRIVE, KISSIMMEE, FL 34758",
+    "ein": "93-4388953",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l23000502530-b9d7a6f3-dff3-4076-bffc-c37196801db0&transactionId=l23000502530-ad97781d-483b-432b-8ba0-8a4077dc80c4&formatType=PDF",
+    "email": "kr911taxandaccounting@yahoo.com",
+    "telefone": "+1 239-745-2168"
+  },
+  {
+    "nome": "ACCOUNTING AA LLC",
+    "endereco": "807 LUCERNE AVE, LAKE WORTH BEACH, FL 33460",
+    "ein": "92-3569328",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l23000189360-3a4f8365-bfda-464a-9270-aeab0b192881&transactionId=l23000189360-3a728168-fc27-4a4b-959f-81c3f55a118b&formatType=PDF",
+    "email": "ashley@accountingaa.com",
+    "telefone": "+1 347-624-5744"
+  },
+  {
+    "nome": "ACCOUNTING CFO AND CPA SERVICES LLC",
+    "endereco": "3750 SW 142ND AVE, MIAMI, FL 33175",
+    "ein": "39-3789654",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l25000365260-e2a703d7-4064-420b-9af4-338220f0926b&transactionId=l25000365260-f3404ed5-a811-42c5-97f2-90a1941a47cd&formatType=PDF",
+    "email": "cfoandcpa@gmail.com",
+    "telefone": "+1 813-467-9992"
+  },
+  {
+    "nome": "ACCOUNTING SOLUTIONS OF GAINESVILLE, LLC",
+    "endereco": "802 NW 16th Avenue, Gainesville, FL 32601",
+    "ein": "20-8353891",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l07000009240-3069b0d9-8cbe-4a3b-898d-02bd238a9525&transactionId=l07000009240-7796723f-d665-404a-980a-1d49dd6a05c8&formatType=PDF",
+    "email": "mollmanasg@yahoo.com",
+    "telefone": "+1 352-290-5229"
+  },
+  {
+    "nome": "ADVANCED TAX AND ACCOUNTING LLC",
+    "endereco": "10225 Ulmerton Road, LARGO, FL 33771",
+    "ein": "81-1106864",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l15000155010-0d6c3690-15aa-4c09-8aa3-b3903603a9b0&transactionId=l15000155010-60df225b-c287-4889-8aaa-96421305aacf&formatType=PDF",
+    "email": "tracy.jackson@jacksoncpafla.com",
+    "telefone": "+1 954-764-6300"
   },
   {
     "nome": "ARS ACCOUNTING SERVICES, LLC",
@@ -104,14 +432,6 @@
     "telefone": "+1 239-352-4099"
   },
   {
-    "nome": "AVOCET INTERNATIONAL CPAS, P.A.",
-    "endereco": "4821 Central Ave, Saint Petersburg, FL 33713",
-    "ein": "59-2453808",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-h27630-1c10c40b-17db-49e2-893b-07a519fcfe0b&transactionId=h27630-75b21532-db00-4bbf-b81a-1079fa95537f&formatType=PDF",
-    "email": "Samantha@janssen-cpa.com",
-    "telefone": "+1 727-525-9723"
-  },
-  {
     "nome": "BAY FINANCIAL PLANNING & TAX SERVICES, LLC",
     "endereco": "6751 NORTH FEDERAL HIGHWAY STE 400, BOCA RATON, FL 33487",
     "ein": "81-2047995",
@@ -126,14 +446,6 @@
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l25000051540-d0873df5-e38e-42af-9c03-2768fae9f7e0&transactionId=l25000051540-72c71e9e-fa45-419a-967a-e1d512e75083&formatType=PDF",
     "email": "bncross@icloud.com",
     "telefone": "+1 813-462-2758"
-  },
-  {
-    "nome": "BEACH ACCOUNTING & TAX SERVICE, INC.",
-    "endereco": "17274 SAN CARLOS BLVD., FT. MYERS BEACH, FL 33931",
-    "ein": "27-1108338",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p09000084630-922928ab-98d3-4366-88cc-4e76a14bbc10&transactionId=p09000084630-750729e3-debc-4c3f-a194-60d9b154c083&formatType=PDF",
-    "email": "Barbara@Beachtax1.com",
-    "telefone": "+1 561-829-8238"
   },
   {
     "nome": "BELLA'S BOOKKEEPING & PROFESSIONAL SERVICES, LLC",
@@ -152,14 +464,6 @@
     "telefone": "+1 239-204-9985"
   },
   {
-    "nome": "BESTAX ACCOUNTING INC",
-    "endereco": "6726 N STATE ROAD 7, COCONUT CREEK, FL 33073",
-    "ein": "35-2367425",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p09000041500-1ef56142-7d32-4736-8081-c41a33cda552&transactionId=p09000041500-162b70d2-fcdc-492c-90ad-380216c5432f&formatType=PDF",
-    "email": "INFO@BESTAXACCOUNTING.COM",
-    "telefone": "+1 941-893-1791"
-  },
-  {
     "nome": "BILL SITTIG CPA, LLC",
     "endereco": "1695-7 METROPOLITAN CIR, TALLAHASSEE, FL 32308",
     "ein": "27-4266891",
@@ -174,14 +478,6 @@
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l24000120790-9a9b0d36-7715-4e04-95de-0c9cb411ffde&transactionId=l24000120790-34d9a33e-ed7f-4b7c-a316-563fc2519b02&formatType=PDF",
     "email": "JKH1080@PROTONMAIL.COM",
     "telefone": "+1 239-263-2111"
-  },
-  {
-    "nome": "BM TAXES & ACCOUNTING, P.A.",
-    "endereco": "1105 ROLLING BROOK LN, NAPLES, FL 34114",
-    "ein": "27-1380396",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p24000048670-32acbb2f-8d78-449a-8aa0-8f9ec9c8259f&transactionId=p24000048670-c80ec30a-df4d-41a1-8fe2-de10be31a49c&formatType=PDF",
-    "email": "bmtaxes@gmail.com",
-    "telefone": "+1 407-605-2696"
   },
   {
     "nome": "BOOKKEEPING BY THE RIVER, LLC",
@@ -240,36 +536,12 @@
     "telefone": "+1 239-385-0424"
   },
   {
-    "nome": "CENTRAL ACCOUNTING OFFICE, INC.",
-    "endereco": "1 COMMERCIAL BLVD, LAUDERDALE BY THE SEA, FL 33308",
-    "ein": "65-0795607",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p97000098940-b24230f3-3ca0-4ef1-b138-7efbaea3df8c&transactionId=p97000098940-13a29675-9f6d-40ee-b415-c0aabb88b0ad&formatType=PDF",
-    "email": "peggym2804@gmail.com",
-    "telefone": "+1 850-692-2647"
-  },
-  {
     "nome": "CLARITY BOOKKEEPING SERVICES, LLC",
     "endereco": "1703 N McMullen Booth Rd, SAFETY HARBOR, FL 34695",
     "ein": "92-2097054",
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l23000047460-d612df4e-24f9-4f38-9b32-804a03227149&transactionId=l23000047460-ac5cddb1-2db7-4f79-83a1-fa577b6be6ad&formatType=PDF",
     "email": "eirish.jenna@gmail.com",
     "telefone": "+1 239-900-9743"
-  },
-  {
-    "nome": "COASTAL ACCOUNTING & TAX SOLUTIONS, INC.",
-    "endereco": "12816 ORANGE BLVD, WEST PALM BEACH, FL 33412",
-    "ein": "47-2844889",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p15000003270-3996ee58-d496-4e7d-bf85-d46e4aa909a3&transactionId=p15000003270-62070902-8bd8-4cc5-8878-b3e4293ca194&formatType=PDF",
-    "email": "clgcoastal@aol.com",
-    "telefone": "+1 904-638-4780"
-  },
-  {
-    "nome": "COLLEGE PARK ACCOUNTING, INC.",
-    "endereco": "4812 NEW BROAD STREET, ORLANDO, FL 32814",
-    "ein": "59-3043960",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-s28250-77d1205f-90aa-43f9-acc8-8d6cb3d421c5&transactionId=s28250-4d8c3148-58ee-4822-92cd-92436337e8ef&formatType=PDF",
-    "email": "candi@cpaccounting.net",
-    "telefone": "+1 407-897-0878"
   },
   {
     "nome": "D.A.MILLER CPA, LLC",
@@ -280,44 +552,12 @@
     "telefone": "+1 850-741-3100"
   },
   {
-    "nome": "DAVIS. DAVIS & COMPANY CPA'S PA",
-    "endereco": "6011 Forest Villas Cir, Fort Myers, FL 33908",
-    "ein": "59-3322052",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p95000051340-4bfaede0-cd29-40a0-963f-ad393beb8118&transactionId=p95000051340-bdabb097-374e-46fd-9b94-7082c100cafa&formatType=PDF",
-    "email": "sjdavis57@aol.com",
-    "telefone": "+1 239-775-8588"
-  },
-  {
-    "nome": "DG ACCOUNTING, INC.",
-    "endereco": "5701 N PINE ISLAND RD,, TAMARAC, FL 33321",
-    "ein": "47-3736392",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p15000034750-0b5e88c1-1cae-4b7b-9f46-5ab9b8c5d82d&transactionId=p15000034750-4dbb1c38-58ec-4df7-804b-98f306f4bfaf&formatType=PDF",
-    "email": "DAWNGASS@DGACCOUNTING.NET",
-    "telefone": "+1 407-594-2561"
-  },
-  {
     "nome": "DIR BOOKKEEPING, LLC",
     "endereco": "1145 Ashlyn Dr, West Melbourne, FL 32904",
     "ein": "45-3436906",
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l11000106870-0d4df2fd-3908-468a-b3cd-87494a3db45d&transactionId=l11000106870-beabf97e-f7a1-44ba-93a1-d00477fc310d&formatType=PDF",
     "email": "susan@dirbookkeeping.com",
     "telefone": "+1 239-877-4074"
-  },
-  {
-    "nome": "EC ACCOUNTING, INC.",
-    "endereco": "7020 BELFAST AVE, COCOA, FL 32927",
-    "ein": "93-1418397",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p23000038520-efbfc86b-8f7b-4166-bef2-089049c191d9&transactionId=p23000038520-f1235d08-697a-418d-8595-12a7daf0bbe0&formatType=PDF",
-    "email": "ecfinancials321@gmail.com",
-    "telefone": "+1 239-275-7766"
-  },
-  {
-    "nome": "EG TAX & ACCOUNTING  CO.",
-    "endereco": "9266 SW 211 LANE, CUTLER BAY, FL 33189",
-    "ein": "99-3831253",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p24000046130-6a89f6c1-7e8c-4ee8-80ae-19e9b6f490d8&transactionId=p24000046130-545a7652-1914-4302-871a-7ce9a04911ac&formatType=PDF",
-    "email": "ELI@EGTAXES.COM",
-    "telefone": "+1 561-232-2080"
   },
   {
     "nome": "ELITE BOOKKEEPING SERVICES, LLC",
@@ -344,38 +584,6 @@
     "telefone": "+1 850-434-3146"
   },
   {
-    "nome": "EVA ACCOUNTING CORP",
-    "endereco": "6213 BRIDGEVISTA DR, LITHIA, FL 33547",
-    "ein": "99-4597534",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p24000054010-7a0cd6be-48a7-4407-8fcb-026bd831bf8a&transactionId=p24000054010-8f2f3c5f-87cb-4b52-a44d-07be180851e6&formatType=PDF",
-    "email": "kritsun.nataliia@gmail.com",
-    "telefone": "+1 727-900-7215"
-  },
-  {
-    "nome": "EXECUTIVE TAX AND ACCOUNTING SERVICES, INC.",
-    "endereco": "8585 Sunset Dr., MIAMI, FL 33143",
-    "ein": "26-1178891",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p07000109140-4a096afd-0615-44b2-a9f0-5682ef176b73&transactionId=p07000109140-331e5e9a-b65c-4dde-b189-a7ba64a9b231&formatType=PDF",
-    "email": "alex@exectaxservices.com",
-    "telefone": "+1 561-683-7784"
-  },
-  {
-    "nome": "EZ TAX AND ACCOUNTING SERVICES",
-    "endereco": "7653 NW 19TH STREET, PEMBROKE PINES, FL 33024",
-    "ein": "86-1890576",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l21000027540-93704762-d1f4-4ca7-834c-43153de41b40&transactionId=l21000027540-c56991cd-61fc-4f7a-96f4-bd8b66b5e8d8&formatType=PDF",
-    "email": "soreljoseph@gmail.com",
-    "telefone": "+1 305-595-1783"
-  },
-  {
-    "nome": "FERRARO HAYES, CPA'S, P.A.",
-    "endereco": "217 LITHIA PINECREST ROAD, BRANDON, FL 33511",
-    "ein": "59-3248210",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p94000042010-03502ef8-c48a-4feb-b2e3-160093e76299&transactionId=p94000042010-7cb6f02b-7a30-4776-8aa1-49b59e63c725&formatType=PDF",
-    "email": "michael@ferrarohayes.com",
-    "telefone": "+1 239-596-6050"
-  },
-  {
     "nome": "FIRST CHOICE ACCOUNTING SOLUTIONS LLC",
     "endereco": "746 SANTA MARIA DR, WINTER HAVEN, FL 33884",
     "ein": "87-2908209",
@@ -400,52 +608,12 @@
     "telefone": "+1 239-201-3474"
   },
   {
-    "nome": "FREEDOM FINANCIAL & TAX SERVICES, INC.",
-    "endereco": "15000 NE 7 COURT, NORTH MIAMI, FL 33161",
-    "ein": "47-2018827",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p14000074750-a058827a-08d1-4126-8dbb-9ca2dc0380ea&transactionId=p14000074750-3ba0bd6f-2568-4430-a5b2-eced4c9e3391&formatType=PDF",
-    "email": "jcvilfranc@yahoo.com",
-    "telefone": "+1 239-480-5927"
-  },
-  {
     "nome": "GARDNER BOOKKEEPING SERVICES, LLC",
     "endereco": "4405 1ST STREET, VERO BEACH, FL 32968",
     "ein": "39-3808742",
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l25000378970-221179b8-6328-4989-979f-37a15ba884f2&transactionId=l25000378970-19710fce-f2fb-49cc-a049-648d442d2a9a&formatType=PDF",
     "email": "cindy@gardnerbookkeepingservices.com",
     "telefone": "+1 941-229-3431"
-  },
-  {
-    "nome": "GM TAX SERVICES CORP",
-    "endereco": "6401 SW 40 ST, MIAMI, FL 33155",
-    "ein": "82-3303738",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p17000088970-3f9edacb-57d5-4fbc-9cd2-7493a01caf0e&transactionId=p17000088970-312452fd-2fa3-40bc-baf5-0e8c8d7523d5&formatType=PDF",
-    "email": "GMTAX@YAHOO.COM",
-    "telefone": "+1 850-786-8688"
-  },
-  {
-    "nome": "GULF BOOKKEEPING INC.",
-    "endereco": "504 3RD Street, PORT ST JOE, FL 32456",
-    "ein": "46-4044540",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p13000090150-75637dc6-c61a-4b1b-ba16-ce7249d1a274&transactionId=p13000090150-8081c8af-f0fb-4ba1-869e-a157b2b02c22&formatType=PDF",
-    "email": "joyceb@visitflorida.com",
-    "telefone": "+1 850-477-9102"
-  },
-  {
-    "nome": "ID BOOKKEEPING SERVICES, INC",
-    "endereco": "3785 NW 82ND AVE, DORAL, FL 33166",
-    "ein": "85-3357739",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p20000075790-25e6909b-4550-4ef4-8cc0-5d653784b41f&transactionId=p20000075790-d9f74ef4-7613-43a3-b603-2ea624ff81a6&formatType=PDF",
-    "email": "IDBKPS@GMAIL.COM",
-    "telefone": "+1 954-763-4272"
-  },
-  {
-    "nome": "IDEAL ACCOUNTING, INC.",
-    "endereco": "3618 WEBBER ST, SARASOTA, FL 34232",
-    "ein": "65-0727576",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p97000009660-c24f74d0-a5bc-48f9-a8eb-b04c8ccc9c6c&transactionId=p97000009660-2834922a-b033-4ff6-be9f-fb463f7eedc9&formatType=PDF",
-    "email": "taxbyideal@comcast.net",
-    "telefone": "+1 941-544-8404"
   },
   {
     "nome": "INNOVATIVE CONSULTING & ACCOUNTING GROUP LLC",
@@ -528,44 +696,12 @@
     "telefone": "+1 850-435-8844"
   },
   {
-    "nome": "JORGE F. ALONSO ACCOUNTANT, P.A.",
-    "endereco": "C/O MARIANNE ALONSO, SEMINOLE, FL 33778",
-    "ein": "59-2983234",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-l43940-0182b2ac-52bc-4133-906f-56b9eb60127d&transactionId=l43940-0c1e7510-df46-487a-a389-c058d965c4cb&formatType=PDF",
-    "email": "TAXMAN6732@AOL.COM",
-    "telefone": ""
-  },
-  {
-    "nome": "KIMBERLY PERRY, CPA, PA",
-    "endereco": "2680 West Lake Road, Palm Harbor, FL 34684",
-    "ein": "46-3496198",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p13000070730-27b831f9-f580-4c4e-840c-3fae2b002ca2&transactionId=p13000070730-2488f52f-8fc2-4b2e-a46c-ae4c820a85eb&formatType=PDF",
-    "email": "kperry@seandaviscpa.com",
-    "telefone": "+1 561-231-5966"
-  },
-  {
-    "nome": "KPG ACCOUNTING SERVICES, INC.",
-    "endereco": "3400 TAMIAMI TRL N #302, NAPLES, FL 34103",
-    "ein": "52-2366843",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p02000078720-6656ca17-fc9a-4617-809c-ba384964e34b&transactionId=p02000078720-ea2758c8-69c4-4b6c-86b6-57eb6acb45f9&formatType=PDF",
-    "email": "kgaffney@kpgaccounting.net",
-    "telefone": "+1 239-434-8866"
-  },
-  {
     "nome": "LTM ACCOUNTING LLC",
     "endereco": "15348 AVALON AVE, CLEARWATER, FL 33760",
     "ein": "88-1943868",
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l22000165090-3d825562-fdd4-4336-9fba-d6d6c0503397&transactionId=l22000165090-81e92185-c6e3-4423-a72e-7f3f3e5c8360&formatType=PDF",
     "email": "lukeh2022@gmail.com",
     "telefone": "+1 904-253-3312"
-  },
-  {
-    "nome": "LUC TAX SERVICES INC",
-    "endereco": "6409 WESTGATE DR, ORLANDO, FL 32835",
-    "ein": "46-2874989",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p13000079730-ee91e2e2-d0a6-49bf-a5ec-c19b9030dec9&transactionId=p13000079730-cd9a6b4d-8f50-4c02-946b-14ec1f1089fb&formatType=PDF",
-    "email": "Edoulanndou@hotmail.com",
-    "telefone": "+1 813-252-0829"
   },
   {
     "nome": "M&D MULTI-SERVICES TAX ACCOUNTING LLC",
@@ -592,14 +728,6 @@
     "telefone": "+1 305-707-3312"
   },
   {
-    "nome": "MIAMI ACCOUNTING INC",
-    "endereco": "4114 NW 4TH TERRACE, MIAMI, FL 33126",
-    "ein": "20-4597334",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p11000087550-b7681a5f-31e4-480c-940c-0d8c597cafe0&transactionId=p11000087550-a1a659b7-039f-4d22-a06a-2d2f8b548719&formatType=PDF",
-    "email": "rm@rmederos.net",
-    "telefone": "+1 305-567-3152"
-  },
-  {
     "nome": "MICHELLE TAX SERVICES LLC",
     "endereco": "3500 N STATE RD 7, LAUDERDALE LAKES, FL 33319",
     "ein": "45-4298097",
@@ -614,14 +742,6 @@
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l26000007750-7b4c0107-1416-4d41-a198-0191fb219a5d&transactionId=l26000007750-1c693889-0bf1-48f1-827b-34f309de2f75&formatType=PDF",
     "email": "FLfilings@registeredagentsinc.com",
     "telefone": "+1 561-476-0229"
-  },
-  {
-    "nome": "MM BUSINESS AND ACCOUNTING SERVICES, INC.",
-    "endereco": "3020 Hartley Road, Jacksonville, FL 32057",
-    "ein": "47-3252378",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p15000021560-13406647-fad8-498c-8854-3171569c6046&transactionId=p15000021560-237672d2-a102-43d8-beda-7bf21193be87&formatType=PDF",
-    "email": "complianceteam@cogencyglobal.com",
-    "telefone": "+1 954-448-7721"
   },
   {
     "nome": "MOBILE BOOKKEEPING & TAX SERVICES LLC",
@@ -680,30 +800,6 @@
     "telefone": "+1 904-977-8855"
   },
   {
-    "nome": "OMEGA ACCOUNTING SERVICES, INC.",
-    "endereco": "27614 N 20th Ave, PHOENIX, AZ 85085",
-    "ein": "03-0435877",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p02000044020-a527d00e-257a-4cde-87eb-89c13f8cde66&transactionId=p02000044020-c74bbb6a-52e5-4b71-9072-11259518cbf3&formatType=PDF",
-    "email": "omegaperalta@gmail.com",
-    "telefone": "+1 561-704-9797"
-  },
-  {
-    "nome": "ORLANDO TAXES & ACCOUNTING INC",
-    "endereco": "167 CORAL REEF CIRCLE, KISSIMMEE, FL 34743",
-    "ein": "92-0799187",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p22000081380-f43e21e8-f1e0-44c8-a964-77f34e904f99&transactionId=p22000081380-ba6adcc1-879b-49ce-92ad-f9ef5573a7e4&formatType=PDF",
-    "email": "al@coopertaxes.com",
-    "telefone": "+1 321-872-7722"
-  },
-  {
-    "nome": "ORTIZ ACCOUNTING & TAX SERVICES INC",
-    "endereco": "3246 W 70TH STREET, HIALEAH, FL 33018",
-    "ein": "92-2289353",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p23000006890-939c04aa-27e8-4a7b-b8db-600304fa7ae4&transactionId=p23000006890-ba0214f2-1a9f-4b67-a4fc-ebc39ee5feda&formatType=PDF",
-    "email": "mabel@ortizaccounting.com",
-    "telefone": "+1 727-576-1245"
-  },
-  {
     "nome": "OUR TROUBLE FREE TAX SERVICE, LLC",
     "endereco": "5710 5TH AVENUE N, ST PETERSBURG, FL 33710",
     "ein": "27-2476008",
@@ -720,28 +816,12 @@
     "telefone": "+1 561-683-8126"
   },
   {
-    "nome": "PAUL'S TAX ACCOUNTING SERVICES INC",
-    "endereco": "2272 AIRPORT-PULLING RD S, NAPLES, FL 34112",
-    "ein": "27-2005902",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p19000041890-418c7615-baf1-460d-84b7-78d208c544c0&transactionId=p19000041890-532df4e6-b164-489e-89b8-f652b65cbe0d&formatType=PDF",
-    "email": "Parobins@eagle.fgcu.edu",
-    "telefone": "+1 727-300-1001"
-  },
-  {
     "nome": "PELICAN TAX SERVICE & MORE, LLC",
     "endereco": "2138 SOUTHWEST WAYNE STREET, PORT SAINT LUCIE, FL 34984",
     "ein": "41-3668014",
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l26000010780-6cacf4ab-9657-4ae4-9ed8-fb748da67b31&transactionId=l26000010780-a126105e-1df9-47a6-870b-5a7bde7da64b&formatType=PDF",
     "email": "cynndytony@yahoo.com",
     "telefone": "+1 727-300-0371"
-  },
-  {
-    "nome": "PEREZ ACCOUNTING AND CONSULTING SERVICES, INC.",
-    "endereco": "8000 Cecil Street, MIAMI BEACH, FL 33141",
-    "ein": "20-3792949",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p05000151690-defb0194-7c8d-431d-b300-6fdb76ed2ca5&transactionId=p05000151690-5c31ff34-ff44-4858-8258-e583b3d8452b&formatType=PDF",
-    "email": "mjperez51@hotmail.com",
-    "telefone": "+1 954-925-1630"
   },
   {
     "nome": "PIERRE'S BOOKKEEPING SERVICES, LLC",
@@ -758,14 +838,6 @@
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l09000094230-6b2d6c34-fbbe-4a44-869b-42440ea5873a&transactionId=l09000094230-d16c1b6b-05ad-4a37-a45b-5596dad52515&formatType=PDF",
     "email": "michelle@premieracctmgt.com",
     "telefone": "+1 850-527-1209"
-  },
-  {
-    "nome": "QUICK TAX SERVICE, INC.",
-    "endereco": "1750 N.E. 39TH STREET, OAKLAND PARK, FL 33334",
-    "ein": "46-0507434",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p02000121430-1fa533f9-0273-46a4-80bd-e883d57124f4&transactionId=p02000121430-df26843c-9287-406c-9453-4a31260d975a&formatType=PDF",
-    "email": "brill1ant@aol.com",
-    "telefone": "+1 786-435-1067"
   },
   {
     "nome": "RAVI RAMNARAIN, CPA, LLC",
@@ -808,22 +880,6 @@
     "telefone": "+1 850-795-4828"
   },
   {
-    "nome": "RUBIO ACCOUNTING & TAX SERVICES,INC.",
-    "endereco": "7656 NW 183 LANE, MIAMI, FL 33015",
-    "ein": "45-5377520",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p12000049020-81a74efe-5085-4966-9537-10032c900fbc&transactionId=p12000049020-8a571a2a-b9a5-430f-8638-643eb52adc92&formatType=PDF",
-    "email": "rubioleal43@gmail.com",
-    "telefone": "+1 561-750-8299"
-  },
-  {
-    "nome": "SB BOOKKEEPING CORP",
-    "endereco": "9625 SW 138 AVE, MIAMI, FL 33186",
-    "ein": "93-3709499",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p23000070380-7b544174-f00c-4f0b-ad1a-e0dd5ca1521d&transactionId=p23000070380-bc4cfe97-3915-4320-9903-a5e9eac31751&formatType=PDF",
-    "email": "solgiborges@gmail.com",
-    "telefone": "+1 727-888-9200"
-  },
-  {
     "nome": "SC ACCOUNTING LLC",
     "endereco": "7341 NW 174TH TERRACE, HIALEAH, FL 33015",
     "ein": "93-1995142",
@@ -848,22 +904,6 @@
     "telefone": "+1 561-729-9921"
   },
   {
-    "nome": "SMALL BUSINESS ACCOUNTING OF PINELLAS, INC.",
-    "endereco": "9375 US HIGHWAY 19 NORTH, PINELLAS PARK, FL 33782",
-    "ein": "59-2276016",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-g28640-ac604926-8530-4d9a-9874-fad452fd6986&transactionId=g28640-64932d98-c07d-4c94-8872-db30a2b39f5b&formatType=PDF",
-    "email": "heatherisno1@msn.com",
-    "telefone": "+1 754-209-2281"
-  },
-  {
-    "nome": "SMARTAX & ACCOUNTING SERVICES INC",
-    "endereco": "2607 CARTAGENA AVE, FORT MYERS, FL 33905",
-    "ein": "92-3356527",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p23000028120-3349b0ca-6682-45ca-8eb8-fcc7c71044dd&transactionId=p23000028120-c7eb3248-7d27-4488-a4ed-4d7f358f0e87&formatType=PDF",
-    "email": "smartax2023@gmail.com",
-    "telefone": "+1 239-201-8871"
-  },
-  {
     "nome": "SOUTH FL CPA SERVICES, LLC",
     "endereco": "5770 Beechnut Drive, Westlake, FL 33470",
     "ein": "46-1016875",
@@ -878,14 +918,6 @@
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l12000141330-1686f1aa-f9ee-482c-ab4c-65c21cfa359c&transactionId=l12000141330-2b498bd2-e175-4240-b75d-73c24a078a7d&formatType=PDF",
     "email": "GORAN@STPETETAX.COM",
     "telefone": "+1 727-388-4700"
-  },
-  {
-    "nome": "STRATEGIC TAX SERVICE, P.A.",
-    "endereco": "1102 S. Florida Ave, Lakeland, FL 33803",
-    "ein": "20-4088253",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p06000002000-12b4a8b3-f887-4af0-873c-4356edbcc47e&transactionId=p06000002000-42ffbfde-cc5b-4b6c-98f0-a06fc2fdaa8f&formatType=PDF",
-    "email": "kevinl321@gmail.com",
-    "telefone": "+1 904-479-8838"
   },
   {
     "nome": "SUN TAX ACCOUNTING CONSULTING, LLC",
@@ -912,14 +944,6 @@
     "telefone": "+1 407-218-5921"
   },
   {
-    "nome": "TAMPA TAX SERVICES, INC.",
-    "endereco": "9072 ELLIOTT CIRCLE, TAMPA, FL 33615",
-    "ein": "81-2694413",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p16000040740-194c0b78-82ef-4104-beef-339a34958409&transactionId=p16000040740-15e0b753-dd38-4d55-96b4-3b43101204b2&formatType=PDF",
-    "email": "Tampataxservicesinc@gmail.com",
-    "telefone": "+1 831-261-7929"
-  },
-  {
     "nome": "TAXAPRO ACCOUNTING FIRM LLC",
     "endereco": "1001 BRICKELL BAY DRIVE, MIAMI, FL 33131",
     "ein": "46-0650048",
@@ -928,28 +952,12 @@
     "telefone": "+1 407-295-2928"
   },
   {
-    "nome": "TBS ACCOUNTING & BUSINESS STRATEGIES, INC.",
-    "endereco": "3394 Small Woods Lane, Gainesville, GA 30506",
-    "ein": "59-3456100",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p97000065600-56205143-a86c-46d4-9552-1d83df7d7414&transactionId=p97000065600-168bddd0-bd0e-4c08-8634-192ab12cae6c&formatType=PDF",
-    "email": "tom@tbsymonettecpa.com",
-    "telefone": "+1 904-434-3494"
-  },
-  {
     "nome": "TCG ACCOUNTING LLC",
     "endereco": "4140 RICHARD AVE, HERMANTOWN, MN 55811",
     "ein": "46-2879711",
     "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=forl-m21000001100-29092ab0-fea7-4b14-b910-7079540ee88f&transactionId=m21000001100-086682e5-32da-48f9-8da3-b065e38a7d8a&formatType=PDF",
     "email": "anne.nguyen@tcg-accounting.com",
     "telefone": "+1 954-964-9220"
-  },
-  {
-    "nome": "TONDREAULT TAX & ACCOUNTING, P.A.",
-    "endereco": "2959 FIRST AVENUE N, ST. PETERSBURG, FL 33713",
-    "ein": "83-3401801",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p19000008810-001612ac-070b-40da-9501-0bedaa1cd0b3&transactionId=p19000008810-616f2869-00d0-4ee0-8635-bc9ee1967dc6&formatType=PDF",
-    "email": "mindy@tondreaultcpa.com",
-    "telefone": "+1 727-300-2043"
   },
   {
     "nome": "TRADITION ACCOUNTING AND BOOKKEEPING LLC",
@@ -976,11 +984,243 @@
     "telefone": "+1 941-351-4172"
   },
   {
-    "nome": "WINDELL MOORE, CPA   PA",
-    "endereco": "3800 INVERRARY BOULEVARD, LAUDERHILL, FL 33319",
-    "ein": "20-2741680",
-    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=domp-p05000062040-d77c5665-d2c7-4fb8-93c4-36a1989973ac&transactionId=p05000062040-fdb5b9d4-af80-4a88-905e-4b7d69063895&formatType=PDF",
-    "email": "wmoorecpa@bellsouth.net",
-    "telefone": "+1 561-372-2011"
+    "nome": "NUPHAZE TAX & ACCOUNTING LLC",
+    "endereco": "6239 EDGEWATER DR, ORLANDO, FL 32810, FL",
+    "ein": "83-2023843",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l18000225060-fcbd31c8-8859-4eb8-9cf4-05a34096ad75&transactionId=l18000225060-745fc3ab-ebc7-4898-87d5-ffc7eaf69958&formatType=PDF",
+    "email": "nuphazetax@gmail.com",
+    "telefone": ""
+  },
+  {
+    "nome": "VANLOFFELT CPA, LLC",
+    "endereco": "838 SE COURANCES DR, PORT ST LUCIE, FL 34984, FL",
+    "ein": "33-2288688",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l24000504650-7f4ee584-e0db-43b1-bab6-70c96e0e7388&transactionId=l24000504650-c65d01bd-8ff9-4e6f-8239-fc7ee3541e40&formatType=PDF",
+    "email": "james@vanloffeltcpa.com",
+    "telefone": ""
+  },
+  {
+    "nome": "PUNTA CANA TAX SERVICES, LLC",
+    "endereco": "8615 MALLARD RESERVE DR, TAMPA, FL 33614, FL",
+    "ein": "45-0637881",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l23000513480-748fb7c7-c925-4591-9b44-9588173ec8cc&transactionId=l23000513480-3e980ade-16a3-4260-b505-e09d354b77b5&formatType=PDF",
+    "email": "muyfamiliar8@gmail.com",
+    "telefone": ""
+  },
+  {
+    "nome": "DIMARCO & ASSOCIATES, CERTIFIED PUBLIC ACCOUNTANTS, LLC",
+    "endereco": "220 PINE AVE N, OLDSMAR, FL 34677, FL",
+    "ein": "33-1969561",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l24000480200-c619f741-b31a-4da2-ba47-0363a4c1b5d0&transactionId=l24000480200-d5c3b3d8-327e-42c7-b909-5d19631930f1&formatType=PDF",
+    "email": "eric@taxartist.com",
+    "telefone": ""
+  },
+  {
+    "nome": "WOLFE & ROCHELLE CPAS LLC",
+    "endereco": "310 S BREVARD AVE, TAMPA, FL 33606, FL",
+    "ein": "84-3971475",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l19000292820-8343d5af-7546-4ab2-af10-1538e9181a1e&transactionId=l19000292820-d1644aca-2d7c-40d4-aec5-d71bec01d28d&formatType=PDF",
+    "email": "pwolfecpa@gmail.com",
+    "telefone": ""
+  },
+  {
+    "nome": "A TO Z ACCOUNTING AND TAX SERVICES, LLC",
+    "endereco": "8246 OSBERT AVE, NORTH PORT, FL 34287, FL",
+    "ein": "92-3124164",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l23000104490-f7a2e602-276a-4d6a-8e46-312039e39239&transactionId=l23000104490-7837bbe7-e5fa-4b7d-82fb-249161edd032&formatType=PDF",
+    "email": "omlanam@msn.com",
+    "telefone": ""
+  },
+  {
+    "nome": "2DATASOLUTIONS ACCOUNTING LLC",
+    "endereco": "5810 MOHR LOOP, TAMPA, FL 33615, FL",
+    "ein": "41-2348683",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l25000493780-f95620cb-bd17-4b6f-938f-bf3154b54cfa&transactionId=l25000493780-1155fa0f-39af-409f-8b87-5f505f09d91a&formatType=PDF",
+    "email": "OMARLGARCIA@GMAIL.COM",
+    "telefone": ""
+  },
+  {
+    "nome": "S&P ACCOUNTING AND NOTARY SERVICES, LLC",
+    "endereco": "5259 BRYDON WOODS CIR, SAINT CLOUD, FL 34771, FL",
+    "ein": "88-2167473",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l22000181510-781056cb-9993-410d-9295-704d74bd606f&transactionId=l22000181510-89e2ef0f-abcd-4883-aec1-b98209298deb&formatType=PDF",
+    "email": "sarahadorno@gmail.com",
+    "telefone": ""
+  },
+  {
+    "nome": "ERL BOOKKEEPING LLC",
+    "endereco": "8130 HELMSLEY BLVD, JACKSONVILLE, FL 32219, FL",
+    "ein": "39-4950558",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l25000473990-63ac0b4a-cc04-4c80-93d1-ceee43f66f82&transactionId=l25000473990-892959c1-b940-41bb-beef-92f5ff699442&formatType=PDF",
+    "email": "florderhub@gmail.com",
+    "telefone": ""
+  },
+  {
+    "nome": "CUTTONE TAX SERVICES LLC",
+    "endereco": "5435 S. MARATHON TERRACE, INVERNESS, FL 34452, FL",
+    "ein": "82-1605540",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l17000112810-40f17e7d-536e-4387-8f0a-415931b8765c&transactionId=l17000112810-2918da47-65f1-460b-b1a7-2b6dbbd34dd7&formatType=PDF",
+    "email": "karen@cuttonetaxservices.com",
+    "telefone": ""
+  },
+  {
+    "nome": "FIGURATE ACCOUNTING SERVICES, LLC",
+    "endereco": "2350 CR 543, SUMTERVILLE, FL 33585, FL",
+    "ein": "41-2460572",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l25000504080-41fdd52a-d87f-499a-a007-575a64ce9ea1&transactionId=l25000504080-a0d58d8d-d5cb-4506-aab8-932aa617ae6c&formatType=PDF",
+    "email": "tfigueroa.fl@gmail.com",
+    "telefone": ""
+  },
+  {
+    "nome": "PINNACLE ACCOUNTING LLC",
+    "endereco": "1013 OHIO AVE, PALM HARBOR, FL 34683, FL",
+    "ein": "27-0953280",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l09000085770-b4a579a6-b99f-4afb-898f-6c66bac4127e&transactionId=l09000085770-9735ad67-d518-4475-aba8-61d1beb00d1e&formatType=PDF",
+    "email": "PATAX95@PALMHARBORACCOUNTING.COM",
+    "telefone": ""
+  },
+  {
+    "nome": "PROFFACC - PROFESSIONAL FINANCIAL AND ACCOUNTING SERVICES LLC.",
+    "endereco": "32282 SW 199TH COURT, HOMESTEAD, FL 33030, FL",
+    "ein": "99-1931234",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l23000285100-52991be0-a5fe-4515-965b-51699228c800&transactionId=l23000285100-4188d143-d17f-4dbf-a081-2a20daf719da&formatType=PDF",
+    "email": "Ltoledocp@gmail.com",
+    "telefone": ""
+  },
+  {
+    "nome": "NOVO CPA, LLC",
+    "endereco": "1000 BRICKELL AVE, MIAMI, FL 33131, FL",
+    "ein": "33-4695070",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l25000153590-81499561-04c3-4cf6-a2b9-80dcdf9e2825&transactionId=l25000153590-f532b92b-af4b-4efb-83be-b7c962306d64&formatType=PDF",
+    "email": "natalia@novocpa.com",
+    "telefone": ""
+  },
+  {
+    "nome": "OCEANSIDE TAX SERVICES LLC",
+    "endereco": "3501 DEL PRADO BLVD S, CAPE CORAL, FL 33904, FL",
+    "ein": "88-0567963",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l22000039780-b3b8a6ec-a818-4d37-ba1e-3bc4c2d0c7e9&transactionId=l22000039780-b513620a-57f8-45d1-b7a6-8c45bdc60deb&formatType=PDF",
+    "email": "dawnt@grcpa.pro",
+    "telefone": ""
+  },
+  {
+    "nome": "L.S.T. TAX & ACCOUNTING SERVICES LLC",
+    "endereco": "210 NORTH FLAGLER AVE, POMPANO BCH, FL 33060, FL",
+    "ein": "88-3823575",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l22000392540-786b2e29-bfdd-4eab-8da6-330332703d91&transactionId=l22000392540-9f572ae3-8c84-4ee8-bb77-1e2c80d8869a&formatType=PDF",
+    "email": "lsuckny@yahoo.com",
+    "telefone": ""
+  },
+  {
+    "nome": "BLUEROCK ACCOUNTING & CFO SOLUTIONS, LLC",
+    "endereco": "641 SW 145TH DR, NEWBERRY, FL 32669, FL",
+    "ein": "99-3851428",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l24000286220-a09d39da-d039-4c6b-8b9f-3733ff4c0b39&transactionId=l24000286220-6a224aef-b21d-4a91-9416-db63427c6b94&formatType=PDF",
+    "email": "contact@bluerockcfo.com",
+    "telefone": ""
+  },
+  {
+    "nome": "PINNACLE TAX SERVICES LLC",
+    "endereco": "278 WEATHERVANE WAY, OCOEE, FL 34761, FL",
+    "ein": "99-1118617",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l24000054530-7dff1cbc-f159-49a0-bd7b-8f9d8cb5422d&transactionId=l24000054530-5ce5dbd8-fab9-4a6e-8868-97825468cec4&formatType=PDF",
+    "email": "johnivey3@gmail.com",
+    "telefone": ""
+  },
+  {
+    "nome": "GLARJ ACCOUNTING, LLC",
+    "endereco": "8110 Cleary Blvd Apt 1116, Plantation, FL 33324, FL",
+    "ein": "83-2601566",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l18000269460-aa711f45-7459-4650-b12d-72dcc37bb45e&transactionId=l18000269460-dc30e10a-b42b-4479-abf4-695f1672dc72&formatType=PDF",
+    "email": "gareid@glarjaccounting.com",
+    "telefone": ""
+  },
+  {
+    "nome": "JEN ROSE CPA, LLC",
+    "endereco": "470 NW 44TH TER, DEERFIELD BEACH, FL 33442, FL",
+    "ein": "99-1682011",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l24000101690-97813436-bc5f-4344-809d-4715ccab8bca&transactionId=l24000101690-12465e46-2a91-4426-bbdb-2353e7affb9d&formatType=PDF",
+    "email": "jenbean83@yahoo.com",
+    "telefone": ""
+  },
+  {
+    "nome": "A&G ACCOUNTING AND FINANCIAL SERVICES, LLC",
+    "endereco": "1200 ANASTASIA AVE, CORAL GABLES, FL 33134, FL",
+    "ein": "38-3891553",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l12000101040-94ac87fa-85b4-4b6a-9ad2-d2b6ccc17475&transactionId=l12000101040-9240ea2a-b784-4aeb-a7dd-a443142a8ae0&formatType=PDF",
+    "email": "m.gomez@agcpafirm.com",
+    "telefone": ""
+  },
+  {
+    "nome": "TJV CPA LLC",
+    "endereco": "5220 S UNIVERSITY DR, DAVIE, FL 33328, FL",
+    "ein": "26-3379647",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l08000088500-6c0c7113-f284-44e4-92bc-c16e736329d0&transactionId=l08000088500-f09d5b94-414d-4060-9394-5563148665b8&formatType=PDF",
+    "email": "jvitarelli@tjvcpa.com",
+    "telefone": ""
+  },
+  {
+    "nome": "YAP ACCOUNTING SOLUTIONS, LLC",
+    "endereco": "6860 REMINGTON VIEW CT, ORLANDO, FL 32826, FL",
+    "ein": "47-2016099",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l14000143660-6f2aace0-bbdb-48f6-a9bc-4874e3c8555d&transactionId=l14000143660-4ff7af53-3ae4-4a9c-92fa-d1d9526b157b&formatType=PDF",
+    "email": "alyap35@gmail.com",
+    "telefone": ""
+  },
+  {
+    "nome": "JAMES STEARNS, ACCOUNTANT LLC",
+    "endereco": "1113 HEATHER GLEN DRIVE, MINNEOLA, FL 34715, FL",
+    "ein": "47-2960359",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l15000018350-84a61f2f-df3b-4822-9821-d7d25733809b&transactionId=l15000018350-29643de9-3a94-4251-b04c-7c9a6e6f510c&formatType=PDF",
+    "email": "jimmystearns@yahoo.com",
+    "telefone": ""
+  },
+  {
+    "nome": "FLORIDA LEGACY ACCOUNTING AND CONSULTING LLC",
+    "endereco": "1004 PLAZA DRIVE, KISSIMMEE, FL 34743, FL",
+    "ein": "85-2296253",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l20000181700-1090a431-af1b-4cd0-8201-110f29bae252&transactionId=l20000181700-503dc060-3d38-4cd2-b5a7-ccef2204baf1&formatType=PDF",
+    "email": "ANA@FLEGACYACCOUNTING.COM",
+    "telefone": ""
+  },
+  {
+    "nome": "JACK MEEKS & ASSOCIATES, CPAS, LLC",
+    "endereco": "1354 N LAURA ST, JACKSONVILLE, FL 32206, FL",
+    "ein": "59-3533195",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l98000001950-5cef09a0-2192-4b3b-8aa8-6d4aaefa3b12&transactionId=l98000001950-11387da4-268d-4609-b821-0f06da361465&formatType=PDF",
+    "email": "jmeeks@jackmeekscpa.com",
+    "telefone": ""
+  },
+  {
+    "nome": "FIRST RESPONSE TAX SERVICE LLC",
+    "endereco": "477 MARINER BLVD, SPRING HILL, FL 34609, FL",
+    "ein": "47-3656714",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l15000048450-7c7f2c8f-2d3c-4298-9c38-fe516a79dfc5&transactionId=l15000048450-6671a34b-4d08-4656-ae29-ac8d360e1255&formatType=PDF",
+    "email": "Gisele@sunshinetaxrelief.com",
+    "telefone": ""
+  },
+  {
+    "nome": "CMA BOOKKEEPING LLC",
+    "endereco": "19701 SW 117TH CT, MIAMI, FL 33177, FL",
+    "ein": "86-3522938",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l21000181190-2f293d46-1b27-4d75-a39d-7fa92ded4d99&transactionId=l21000181190-394e5493-6b05-4187-ba79-e0f78bd8fafb&formatType=PDF",
+    "email": "juliam.ortiz@yahoo.com",
+    "telefone": ""
+  },
+  {
+    "nome": "DM TAX SERVICES & IMMIGRATION LLC",
+    "endereco": "21475 SW 112TH AVE, CUTLER BAY, FL 33189, FL",
+    "ein": "99-4768354",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l24000379230-5e3b541f-09a4-4abf-b114-52b87d43ec9e&transactionId=l24000379230-606a653f-953d-4d14-8104-f695b552a471&formatType=PDF",
+    "email": "danielmacias86@hotmail.com",
+    "telefone": ""
+  },
+  {
+    "nome": "PRIME ESSENTIALS BOOKKEEPING LLC",
+    "endereco": "445 MOHAVE TERR, LAKE MARY, FL 32746, FL",
+    "ein": "33-4374191",
+    "documento": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l25000160970-950865fb-e71d-4ca9-bfd5-f01b453a8a2f&transactionId=l25000160970-ba1caf07-19c9-45cd-87ba-815a1e988449&formatType=PDF",
+    "email": "florderhub@gmail.com",
+    "telefone": ""
   }
 ]
