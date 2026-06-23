@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DayOne Verify — empresas prontas para verificação no Google</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16233D; --navy-2:#1d2e4d;
+    --paper:#F7F4EE; --paper-2:#EFEBE2;
+    --ink:#16233D;
+    --amber:#F2A93B; --amber-d:#dd9520;
+    --cream:#F7F4EE;
+    --m-navy:#8a99b5;          /* texto suave sobre navy */
+    --m-cream:#857d6e;         /* texto suave sobre creme */
+    --line:#E4DDD0;
+    --green:#2f8f5f; --green-bg:#e7f0ea;
+    --warn:#b87a2e; --warn-bg:#f5ead6;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+  .mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+  .disp{font-family:"Space Grotesk",sans-serif}
+  button{font-family:inherit;cursor:pointer}
+  .eyebrow{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+
+  /* ===== LOGO ===== */
+  .mark{display:block}
+  .mark line{stroke:var(--cream)}
+  .mark path{stroke:var(--amber)}
+
+  /* ===== LOGIN ===== */
+  #login{position:fixed;inset:0;display:grid;grid-template-columns:1.05fr 1fr;z-index:50}
+  .login-left{
+    background:var(--navy);color:var(--cream);padding:40px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;
+  }
+  .login-left .arc{position:absolute;right:-80px;bottom:60px;width:420px;height:420px;opacity:.5;pointer-events:none}
+  .brand-row{display:flex;align-items:center;gap:12px;position:relative;z-index:2}
+  .brand-row .wordmark{font-family:"Space Grotesk";font-weight:700;font-size:19px;letter-spacing:-.01em}
+  .login-hero{position:relative;z-index:2;max-width:430px}
+  .login-hero .eyebrow{color:var(--amber);margin-bottom:18px}
+  .login-hero h1{font-family:"Space Grotesk";font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-.02em;margin-bottom:18px}
+  .login-hero p{color:#c4cee0;font-size:15px;line-height:1.6;max-width:400px}
+  .login-right{background:var(--paper);display:flex;align-items:center;justify-content:center;padding:40px}
+  .login-form{width:100%;max-width:340px}
+  .login-form .eyebrow{color:var(--m-cream);margin-bottom:8px}
+  .login-form h2{font-family:"Space Grotesk";font-weight:700;font-size:27px;margin-bottom:26px;letter-spacing:-.01em}
+  .field{margin-bottom:15px}
+  .field label{display:block;font-size:12px;font-weight:600;color:var(--ink);margin-bottom:7px}
+  .field input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;font-family:"IBM Plex Mono";font-size:14px;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:transparent}
+  .btn-enter{
+    width:100%;margin-top:8px;padding:13px;border:none;border-radius:10px;background:var(--amber);color:#3a2a08;
+    font-family:"Space Grotesk";font-weight:600;font-size:15px;transition:background .18s,transform .05s;
+  }
+  .btn-enter:hover{background:var(--amber-d)}
+  .btn-enter:active{transform:translateY(1px)}
+  .login-err{color:#b5462f;font-size:12.5px;margin-top:12px;min-height:16px;font-weight:500}
+  .login-sub{margin-top:18px;font-size:12.5px;color:var(--m-cream);text-align:center}
+  .login-sub b{color:var(--amber-d);font-weight:600}
+
+  /* ===== APP ===== */
+  #app{display:none}
+  .topbar{background:var(--paper);border-bottom:1px solid var(--line);height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 26px}
+  .topbar .left{display:flex;align-items:center;gap:14px}
+  .topbar .wordmark{font-family:"Space Grotesk";font-weight:700;font-size:16px;letter-spacing:-.01em}
+  .topbar .divider{width:1px;height:22px;background:var(--line)}
+  .topbar .client{font-family:"IBM Plex Mono";font-size:13px;color:var(--m-cream)}
+  .topbar .right{display:flex;align-items:center;gap:14px}
+  .avatar{width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--cream);display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk";font-weight:600;font-size:12px}
+  .who{font-size:13px;font-weight:500}
+  .logout{background:#fff;border:1px solid var(--line);color:var(--ink);padding:6px 13px;border-radius:8px;font-size:12.5px}
+  .logout:hover{border-color:var(--navy)}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 26px 64px}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px;margin-bottom:22px}
+  .head .eyebrow{color:var(--m-cream);margin-bottom:6px}
+  .head h1{font-family:"Space Grotesk";font-weight:700;font-size:26px;letter-spacing:-.01em}
+  .nicho{display:flex;flex-direction:column;gap:6px}
+  .nicho label{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--m-cream)}
+  .nicho select{padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:14px;color:var(--ink);min-width:210px}
+  .nicho select:focus{outline:2px solid var(--amber);outline-offset:1px}
+
+  .metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:13px;margin-bottom:24px}
+  .metric{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 14px}
+  .metric .k{font-size:12px;font-weight:500;color:var(--m-cream);margin-bottom:11px}
+  .metric .v{font-family:"Space Grotesk";font-weight:700;font-size:30px;letter-spacing:-.02em;line-height:1}
+  .metric .v small{font-size:15px;font-weight:600;margin-left:2px}
+  .metric .sub{font-family:"IBM Plex Mono";font-size:11px;color:var(--m-cream);margin-top:4px}
+  .bar{height:5px;background:var(--paper-2);border-radius:3px;margin-top:12px;overflow:hidden}
+  .bar > i{display:block;height:100%;border-radius:3px}
+
+  .toolbar{display:flex;gap:12px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
+  .search{flex:1;min-width:220px;position:relative}
+  .search input{width:100%;padding:11px 14px 11px 38px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:14px;color:var(--ink)}
+  .search input:focus{outline:2px solid var(--amber);outline-offset:1px}
+  .search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);opacity:.45}
+  .btn{padding:11px 16px;border-radius:10px;font-weight:600;font-size:13.5px;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+  .btn:hover{border-color:var(--navy)}
+  .btn.primary{background:var(--amber);border-color:var(--amber);color:#3a2a08}
+  .btn.primary:hover{background:var(--amber-d);border-color:var(--amber-d)}
+
+  .tablecard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .scroll{overflow:auto;max-height:60vh}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{position:sticky;top:0;background:var(--paper);text-align:left;padding:12px 15px;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--m-cream);font-weight:600;border-bottom:1px solid var(--line);white-space:nowrap;z-index:2}
+  td{padding:12px 15px;border-bottom:1px solid #f0ece3;vertical-align:top}
+  tr:hover td{background:#fcfbf7}
+  td.m{font-family:"IBM Plex Mono";white-space:nowrap}
+  .empty{color:#c2bcae;font-family:"IBM Plex Mono"}
+  .doc{color:var(--amber-d);font-weight:600;text-decoration:none;font-family:"IBM Plex Mono";font-size:12px}
+  .doc:hover{text-decoration:underline}
+  .status{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;font-family:"IBM Plex Mono"}
+  .status.ok{background:var(--green-bg);color:var(--green)}
+  .status.partial{background:var(--warn-bg);color:var(--warn)}
+  .tablefoot{padding:13px 16px;font-family:"IBM Plex Mono";font-size:12px;color:var(--m-cream);border-top:1px solid var(--line)}
+
+  @media (max-width:900px){
+    #login{grid-template-columns:1fr}
+    .login-left{display:none}
+    .metrics{grid-template-columns:repeat(2,1fr)}
+    .nicho{flex:1 1 100%}.nicho select{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ===================== LOGIN ===================== -->
+<div id="login">
+  <div class="login-left">
+    <svg class="arc" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <line x1="8" y1="64" x2="92" y2="64" stroke="#F2A93B" stroke-width="1.4" opacity=".55"/>
+      <path d="M22 64 A28 28 0 0 1 78 64" stroke="#F2A93B" stroke-width="1.4" fill="none"/>
+    </svg>
+    <div class="brand-row">
+      <svg class="mark" width="34" height="22" viewBox="0 0 48 30" fill="none" aria-hidden="true">
+        <line x1="6" y1="21" x2="42" y2="21" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M13 21 A11 11 0 0 1 35 21" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="wordmark">DayOne <b style="color:var(--amber);font-weight:700">Verify</b></span>
+    </div>
+    <div class="login-hero">
+      <div class="eyebrow">O primeiro dia</div>
+      <h1>Empresas prontas para a verificação do Google.</h1>
+      <p>Nome legal, endereço, EIN e documento de registro — reunidos e conferidos, prontos para o gestor enviar à verificação. Sem garimpo, sem retrabalho.</p>
+    </div>
+  </div>
+  <div class="login-right">
+    <form class="login-form" onsubmit="return doLogin(event)">
+      <div class="eyebrow">Acesso ao painel</div>
+      <h2>Entrar</h2>
+      <div class="field">
+        <label for="u">Usuário</label>
+        <input id="u" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="seu.usuario" />
+      </div>
+      <div class="field">
+        <label for="p">Senha</label>
+        <input id="p" type="password" autocomplete="current-password" placeholder="••••••••" />
+      </div>
+      <button class="btn-enter" type="submit">Entrar →</button>
+      <div class="login-err" id="loginErr" role="alert"></div>
+      <div class="login-sub">Acesso de demonstração · base de registro público da Flórida</div>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== APP ===================== -->
+<div id="app">
+  <div class="topbar">
+    <div class="left">
+      <svg class="mark" width="32" height="20" viewBox="0 0 48 30" fill="none" aria-hidden="true">
+        <line x1="6" y1="21" x2="42" y2="21" stroke="#16233D" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M13 21 A11 11 0 0 1 35 21" stroke="#F2A93B" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="wordmark">DayOne Verify</span>
+      <div class="divider"></div>
+      <span class="client" id="clientTop">—</span>
+    </div>
+    <div class="right">
+      <div class="avatar" id="avatar">—</div>
+      <span class="who" id="clientName">—</span>
+      <button class="logout" onclick="logout()">Sair</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Base de dados</div>
+        <h1 id="title">Contabilidade — Flórida</h1>
+      </div>
+      <div class="nicho">
+        <label for="niche">Nicho</label>
+        <select id="niche" onchange="render()">
+          <option value="fl">Contabilidade — Flórida</option>
+          <option value="ca">Contabilidade — Califórnia (em breve)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="metrics" id="metrics"></div>
+
+    <div class="toolbar">
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#16233D" stroke-width="2"/><path d="M21 21l-4-4" stroke="#16233D" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="text" placeholder="Buscar empresa, EIN ou endereço…" oninput="render()" />
+      </div>
+      <select class="btn" id="view" onchange="render()" style="font-weight:500">
+        <option value="all">Todas as empresas</option>
+        <option value="ready">Apenas prontas para verificar</option>
+      </select>
+      <button class="btn" onclick="exportCSV('full')">Exportar planilha</button>
+      <button class="btn primary" onclick="exportCSV('verify')">Exportar dados de verificação</button>
+    </div>
+
+    <div class="tablecard">
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Empresa (nome legal)</th><th>Endereço</th><th>EIN</th>
+              <th>Documento</th><th>Telefone</th><th>E-mail</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <div class="tablefoot" id="foot">—</div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ================= CONFIG (troque à vontade) ================= */
+const AUTH_USER   = "cliente";
+const AUTH_PASS   = "dayone2026";
+const CLIENT_NAME = "Cliente Demo";   /* nome do prospect que verá a demo */
+/* ============================================================= */
+
+let DATA = [];
+
+/* Amostra de fallback (registros públicos reais da FL) — aparece só sem data.json */
+const SAMPLE = [
+  {nome:"PIPER TAX & ACCOUNTING, LLC", endereco:"3371 Reedy Glen Dr, Kissimmee, FL 34758", ein:"93-4388953", documento:"https://search.sunbiz.org", email:"kr911taxandaccounting@yahoo.com", telefone:"+1 239-741-2168"},
+  {nome:"ABACUS ACCOUNTING & TAX SERVICE, INC", endereco:"704 SW 3rd Ave, Ocala, FL 34471", ein:"59-3347478", documento:"https://search.sunbiz.org", email:"abacusfin4@gmail.com", telefone:"+1 850-434-2400"},
+  {nome:"ACCOUNTING ONE GROUP CORP", endereco:"12001 SW 128th Ct, Miami, FL 33186", ein:"47-2204889", documento:"https://search.sunbiz.org", email:"dariobovea@aol.com", telefone:"+1 561-489-3555"},
+  {nome:"SC ACCOUNTING LLC", endereco:"Orlando, FL 32801", ein:"82-3920011", documento:"https://search.sunbiz.org", email:"", telefone:"+1 407-555-0148"},
+  {nome:"GULF BOOKKEEPING INC", endereco:"Tampa, FL 33602", ein:"45-7781200", documento:"https://search.sunbiz.org", email:"contact@gulfbk.com", telefone:""},
+  {nome:"ASAP ACCOUNTING LLC", endereco:"3750 NW 87 Ave, Doral, FL 33178", ein:"", documento:"", email:"", telefone:"+1 239-352-4099"},
+];
+
+/* campos que o Google exige na verificação de anunciante */
+const VERIFY = ["nome","endereco","ein","documento"];
+const has = v => v!==undefined && v!==null && String(v).trim()!=="";
+const isReady = r => VERIFY.every(c => has(r[c]));
+
+/* ---------- LOGIN ---------- */
+function doLogin(e){
+  e.preventDefault();
+  const u=document.getElementById("u").value.trim(), p=document.getElementById("p").value;
+  if(u===AUTH_USER && p===AUTH_PASS){ sessionStorage.setItem("dov_auth","1"); showApp(); }
+  else document.getElementById("loginErr").textContent="Usuário ou senha incorretos.";
+  return false;
+}
+function logout(){
+  sessionStorage.removeItem("dov_auth");
+  document.getElementById("app").style.display="none";
+  document.getElementById("login").style.display="grid";
+  document.getElementById("p").value="";
+}
+function initials(name){return name.split(/\s+/).map(w=>w[0]).join("").slice(0,2).toUpperCase();}
+function showApp(){
+  document.getElementById("login").style.display="none";
+  document.getElementById("app").style.display="block";
+  document.getElementById("clientTop").textContent = CLIENT_NAME;
+  document.getElementById("clientName").textContent = CLIENT_NAME;
+  document.getElementById("avatar").textContent = initials(CLIENT_NAME);
+  loadData();
+}
+
+/* ---------- DATA ---------- */
+async function loadData(){
+  try{
+    const r = await fetch("./data.json",{cache:"no-store"});
+    if(!r.ok) throw 0;
+    const j = await r.json();
+    DATA = Array.isArray(j)?j:(j.rows||[]);
+    if(!DATA.length) throw 0;
+  }catch(_){ DATA = SAMPLE; }
+  render();
+}
+
+/* ---------- METRICS ---------- */
+const pct=(n,d)=>d?Math.round(n/d*100):0;
+const colr=p=>p>=80?"var(--green)":p>=40?"var(--amber)":"#b5462f";
+
+function buildMetrics(rows){
+  const total=rows.length;
+  const end=rows.filter(r=>has(r.endereco)).length;
+  const ein=rows.filter(r=>has(r.ein)).length;
+  const doc=rows.filter(r=>has(r.documento)).length;
+  const ready=rows.filter(isReady).length;
+  const cards=[
+    {k:"Empresas", v:total.toLocaleString('pt-BR'), total:true},
+    {k:"Endereço principal", n:end},
+    {k:"EIN", n:ein},
+    {k:"Documento de registro", n:doc},
+    {k:"Prontas para verificar", n:ready, hero:true},
+  ];
+  document.getElementById("metrics").innerHTML = cards.map(c=>{
+    if(c.total) return `<div class="metric"><div class="k">${c.k}</div><div class="v">${c.v}</div><div class="sub">registros</div></div>`;
+    const p=pct(c.n,total), col=c.hero?"var(--amber)":colr(p);
+    return `<div class="metric"><div class="k">${c.k}</div>
+      <div class="v" style="color:${col}">${p}<small>%</small></div>
+      <div class="sub">${c.n.toLocaleString('pt-BR')} de ${total.toLocaleString('pt-BR')}</div>
+      <div class="bar"><i style="width:${p}%;background:${col}"></i></div></div>`;
+  }).join("");
+}
+
+/* ---------- RENDER ---------- */
+function currentRows(){
+  const state=document.getElementById("niche").value;
+  if(state==="ca") return [];               /* coleta CA em preparação */
+  const view=document.getElementById("view").value;
+  const q=document.getElementById("q").value.trim().toLowerCase();
+  let rows=DATA.slice();
+  if(view==="ready") rows=rows.filter(isReady);
+  if(q) rows=rows.filter(r=>["nome","endereco","ein","email","telefone"].some(c=>String(r[c]||"").toLowerCase().includes(q)));
+  return rows;
+}
+function render(){
+  const state=document.getElementById("niche").value;
+  document.getElementById("title").textContent =
+    state==="ca" ? "Contabilidade — Califórnia" : "Contabilidade — Flórida";
+
+  if(state==="ca"){
+    buildMetrics([]);
+    document.getElementById("rows").innerHTML =
+      `<tr><td colspan="7" style="padding:40px;text-align:center;color:var(--m-cream)">
+        Coleta da <b>Califórnia</b> em preparação — mesma estrutura, fonte: California Secretary of State (Statement of Information).
+       </td></tr>`;
+    document.getElementById("foot").innerHTML = "Califórnia — coleta em preparação · base verificada DayOne";
+    return;
+  }
+
+  const rows=currentRows();
+  buildMetrics(rows);
+  const cell=(v,mono)=>has(v)?`<td class="${mono?'m':''}">${esc(v)}</td>`:`<td class="${mono?'m':''}"><span class="empty">ausente</span></td>`;
+  document.getElementById("rows").innerHTML = rows.map(r=>{
+    const doc=has(r.documento)?`<td><a class="doc" href="${escA(r.documento)}" target="_blank" rel="noopener">documento ↗</a></td>`:`<td><span class="empty">ausente</span></td>`;
+    const st=isReady(r)?`<td><span class="status ok">pronta</span></td>`:`<td><span class="status partial">parcial</span></td>`;
+    return `<tr>${cell(r.nome)}${cell(r.endereco)}${cell(r.ein,true)}${doc}${cell(r.telefone,true)}${cell(r.email)}${st}</tr>`;
+  }).join("");
+  const ready=rows.filter(isReady).length;
+  document.getElementById("foot").innerHTML = `${rows.length.toLocaleString('pt-BR')} empresas · ${ready.toLocaleString('pt-BR')} prontas para verificar · telefone e e-mail são dados complementares (não exigidos na verificação) · base verificada DayOne`;
+}
+
+/* ---------- EXPORT ---------- */
+function exportCSV(mode){
+  const rows=currentRows();
+  let headers,map,fname;
+  if(mode==="verify"){
+    headers=["Nome Legal","Endereco","EIN","Documento","Status"];
+    map=r=>[r.nome||"",r.endereco||"",r.ein||"",r.documento||"",isReady(r)?"Pronta":"Parcial"];
+    fname="dayone_verificacao.csv";
+  }else{
+    headers=["Nome Legal","Endereco","EIN","Documento","Telefone","Email","Status"];
+    map=r=>[r.nome||"",r.endereco||"",r.ein||"",r.documento||"",r.telefone||"",r.email||"",isReady(r)?"Pronta":"Parcial"];
+    fname="dayone_base.csv";
+  }
+  const esc=v=>`"${String(v).replace(/"/g,'""')}"`;
+  const csv=[headers.join(",")].concat(rows.map(r=>map(r).map(esc).join(","))).join("\r\n");
+  const b=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=fname;a.click();URL.revokeObjectURL(a.href);
+}
+
+/* ---------- utils ---------- */
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function escA(s){return String(s).replace(/"/g,'&quot;');}
+
+if(sessionStorage.getItem("dov_auth")==="1") showApp();
+</script>
+</body>
+</html>
