@@ -122,9 +122,47 @@
   .status.partial{background:var(--amber-bg);color:var(--amber)} .status.partial .dot{background:var(--amber)}
   .tablefoot{padding:14px 16px;font-family:"IBM Plex Mono";font-size:12px;color:var(--muted-2);border-top:1px solid var(--line)}
 
+  /* ===== ABAS ===== */
+  .tabs{display:flex;gap:4px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+  .tab{padding:12px 18px;border:none;background:transparent;color:var(--muted);font-size:14px;font-weight:600;border-bottom:2px solid transparent;margin-bottom:-1px;display:flex;align-items:center;gap:8px}
+  .tab:hover{color:var(--text)}
+  .tab.on{color:var(--blue-soft);border-bottom-color:var(--blue)}
+  .tab .badge{font-family:"IBM Plex Mono";font-size:9px;letter-spacing:.08em;text-transform:uppercase;background:var(--amber-bg);color:var(--amber);padding:2px 7px;border-radius:20px;font-weight:500}
+  .view-pane{display:none} .view-pane.on{display:block}
+
+  /* ===== NOVA PESQUISA ===== */
+  .search-hero{max-width:760px}
+  .search-hero .preview-note{display:flex;align-items:center;gap:10px;background:var(--amber-bg);border:1px solid rgba(240,169,59,.25);border-radius:12px;padding:12px 16px;margin-bottom:24px;font-size:13px;color:var(--amber)}
+  .search-hero h2{font-family:"Space Grotesk";font-weight:700;font-size:24px;margin-bottom:8px}
+  .search-hero .sub{color:var(--muted);font-size:14.5px;line-height:1.6;margin-bottom:28px;max-width:560px}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px}
+  .form-field{display:flex;flex-direction:column;gap:8px}
+  .form-field.full{grid-column:1 / -1}
+  .form-field label{font-size:12.5px;font-weight:600;color:var(--text)}
+  .form-field .hint{font-size:11.5px;color:var(--muted-2);font-weight:400}
+  .form-field input,.form-field select{padding:13px 14px;border:1px solid var(--line-2);border-radius:11px;background:#0E1626;color:var(--text);font-size:14px}
+  .form-field input:focus,.form-field select:focus{outline:none;border-color:var(--blue)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{padding:9px 15px;border-radius:10px;border:1px solid var(--line-2);background:#0E1626;color:var(--muted);font-size:13px;font-weight:500;cursor:pointer}
+  .chip.on{border-color:var(--blue);background:rgba(59,91,255,.12);color:var(--blue-soft)}
+  .toggle-row{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#0E1626;border:1px solid var(--line-2);border-radius:12px;margin-bottom:22px}
+  .toggle-row .sw{width:42px;height:24px;border-radius:20px;background:var(--blue);position:relative;flex-shrink:0;cursor:pointer}
+  .toggle-row .sw::after{content:"";position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:3px;right:3px;transition:all .2s}
+  .toggle-row .sw.off{background:rgba(255,255,255,.15)} .toggle-row .sw.off::after{right:21px}
+  .toggle-row .tt b{font-size:13.5px} .toggle-row .tt div{font-size:12px;color:var(--muted)}
+  .btn-search{padding:15px 28px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--blue-2),var(--blue));color:#fff;font-family:"Space Grotesk";font-weight:600;font-size:15px;box-shadow:0 8px 24px rgba(59,91,255,.35);display:inline-flex;align-items:center;gap:10px}
+  .btn-search:hover{filter:brightness(1.08)}
+  .search-result{margin-top:26px;padding:28px;border:1px dashed var(--line-2);border-radius:16px;background:rgba(59,91,255,.04);text-align:center;display:none}
+  .search-result.on{display:block}
+  .search-result .spin{width:34px;height:34px;border:3px solid rgba(59,91,255,.25);border-top-color:var(--blue);border-radius:50%;margin:0 auto 16px;animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .search-result h3{font-family:"Space Grotesk";font-size:18px;margin-bottom:6px}
+  .search-result p{color:var(--muted);font-size:13.5px;line-height:1.6}
+
   @media (max-width:920px){
     #login{grid-template-columns:1fr} .ll{display:none}
     .metrics{grid-template-columns:repeat(2,1fr)}
+    .form-grid{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -166,6 +204,12 @@
     <div class="right"><span>Cliente: <b id="clientName">—</b></span><button class="logout" onclick="logout()">Sair</button></div>
   </div>
   <div class="wrap">
+    <div class="tabs">
+      <button class="tab on" id="tabBase" onclick="setTab('base')">Base de dados</button>
+      <button class="tab" id="tabSearch" onclick="setTab('search')">Nova pesquisa <span class="badge">Prévia</span></button>
+    </div>
+
+    <div class="view-pane on" id="paneBase">
     <div class="head">
       <div><div class="eyebrow">Base de dados</div><h1 id="title">Contabilidade — Flórida</h1></div>
       <div class="nicho">
@@ -202,17 +246,70 @@
       </div>
       <div class="tablefoot" id="foot">—</div>
     </div>
-  </div>
-</div>
+    </div><!-- /paneBase -->
+
+    <div class="view-pane" id="paneSearch">
+      <div class="search-hero">
+        <div class="preview-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#F0A93B" stroke-width="2"/><path d="M12 8v5M12 16h.01" stroke="#F0A93B" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>Prévia da interface — o motor de coleta automática está em desenvolvimento. Os campos abaixo demonstram a experiência final.</span>
+        </div>
+        <h2>Solicitar nova base</h2>
+        <p class="sub">Defina o nicho, o estado e o volume. A DayOne Verify coleta no registro oficial, cruza os dados e entrega a base pronta para verificação — só com empresas que têm o documento.</p>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label>Nicho <span class="hint">— tipo de empresa</span></label>
+            <input id="sNicho" type="text" placeholder="Ex: dentistas, clínicas, advocacia…" value="Contabilidade"/>
+          </div>
+          <div class="form-field">
+            <label>Estado</label>
+            <select id="sEstado">
+              <option>Flórida</option>
+              <option>Califórnia</option>
+              <option>Texas</option>
+              <option>Nova York</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Quantidade de empresas</label>
+            <input id="sQtd" type="number" value="100" min="10" step="10"/>
+          </div>
+          <div class="form-field">
+            <label>Cidades <span class="hint">— opcional</span></label>
+            <input id="sCidades" type="text" placeholder="Miami, Orlando, Tampa…"/>
+          </div>
+          <div class="form-field full">
+            <label>Tipo societário</label>
+            <div class="chips">
+              <div class="chip on" onclick="this.classList.toggle('on')">LLC</div>
+              <div class="chip" onclick="this.classList.toggle('on')">Inc</div>
+              <div class="chip" onclick="this.classList.toggle('on')">Corp</div>
+              <div class="chip" onclick="this.classList.toggle('on')">PA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="toggle-row">
+          <div class="sw" onclick="this.classList.toggle('off')"></div>
+          <div class="tt"><b>Apenas empresas com documento de registro</b><div>Exclui empresas sem documento público — só entrega as verificáveis</div></div>
+        </div>
+
+        <button class="btn-search" onclick="fakeSearch()">Iniciar coleta →</button>
+
+        <div class="search-result" id="searchResult">
+          <div class="spin"></div>
+          <h3>Coleta solicitada</h3>
+          <p id="searchResultText">Processando sua base…</p>
+        </div>
+      </div>
+    </div><!-- /paneSearch -->
+  </div><!-- /wrap -->
+</div><!-- /app -->
 
 <script>
 /* ============== CONFIG ============== */
-const AUTH_USER="cliente", AUTH_PASS="dayone2026", CLIENT_NAME="DayOne";
-
-// Supabase — cole as chaves aqui quando o banco estiver pronto.
-// Deixar vazias mantém o comportamento atual (lê data.json).
-const SUPABASE_URL      = "";   // ex: "https://xyzxyz.supabase.co"
-const SUPABASE_ANON_KEY = "";   // chave anon (só SELECT, segura no front)
+const AUTH_USER="cliente", AUTH_PASS="dayone2026", CLIENT_NAME="Cliente Demo";
 /* ==================================== */
 let DATA=[], VIEW="all";
 const SAMPLE=[
@@ -233,24 +330,28 @@ function logout(){sessionStorage.removeItem("dov");document.getElementById("app"
 function showApp(){document.getElementById("login").style.display="none";document.getElementById("app").style.display="block";document.getElementById("clientName").textContent=CLIENT_NAME;loadData();}
 function setView(v){VIEW=v;document.getElementById("tAll").className=v==="all"?"on":"";document.getElementById("tReady").className=v==="ready"?"on":"";render();}
 
-async function loadData(){
-  // 1) Try Supabase if configured
-  if(SUPABASE_URL && SUPABASE_ANON_KEY){
-    try{
-      const r=await fetch(
-        `${SUPABASE_URL}/rest/v1/empresas?select=nome,endereco,ein,documento,telefone,email&estado=eq.FL&order=nome.asc`,
-        {headers:{"apikey":SUPABASE_ANON_KEY,"Authorization":`Bearer ${SUPABASE_ANON_KEY}`}}
-      );
-      if(!r.ok)throw new Error(`Supabase ${r.status}`);
-      const rows=await r.json();
-      if(Array.isArray(rows)&&rows.length){DATA=rows;render();return;}
-    }catch(e){console.warn("Supabase load failed, falling back to data.json:",e);}
-  }
-  // 2) Fallback: static data.json
-  try{const r=await fetch("./data.json",{cache:"no-store"});if(!r.ok)throw 0;const j=await r.json();DATA=Array.isArray(j)?j:(j.rows||[]);if(!DATA.length)throw 0;}
-  catch(_){DATA=SAMPLE;}
-  render();
+function setTab(t){
+  const base=t==="base";
+  document.getElementById("tabBase").className="tab"+(base?" on":"");
+  document.getElementById("tabSearch").className="tab"+(base?"":" on");
+  document.getElementById("paneBase").className="view-pane"+(base?" on":"");
+  document.getElementById("paneSearch").className="view-pane"+(base?"":" on");
 }
+function fakeSearch(){
+  const r=document.getElementById("searchResult");
+  const nicho=(document.getElementById("sNicho").value||"empresas").trim();
+  const qtd=document.getElementById("sQtd").value||"100";
+  const estado=document.getElementById("sEstado").value;
+  r.className="search-result on";
+  document.getElementById("searchResultText").textContent="Buscando no registro oficial e cruzando dados…";
+  setTimeout(()=>{
+    document.querySelector("#searchResult .spin").style.display="none";
+    document.getElementById("searchResultText").innerHTML=
+      `Sua solicitação de <b style="color:var(--text)">${qtd} ${esc(nicho)} (${esc(estado)})</b> foi registrada.<br>Na versão final, a base verificada apareceria aqui em instantes, pronta na aba "Base de dados".`;
+  },1800);
+}
+
+async function loadData(){try{const r=await fetch("./data.json",{cache:"no-store"});if(!r.ok)throw 0;const j=await r.json();DATA=Array.isArray(j)?j:(j.rows||[]);if(!DATA.length)throw 0;}catch(_){DATA=SAMPLE;}render();}
 
 const pct=(n,d)=>d?Math.round(n/d*100):0;
 function buildMetrics(rows){
