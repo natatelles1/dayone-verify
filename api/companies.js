@@ -44,7 +44,7 @@ module.exports = async (req, res) => {
 
     const [addresses, emails, docs] = await Promise.all([
       sbGet('company_addresses', {
-        select: 'company_id,address_line_1,address_line_2,city,state,zip_code',
+        select: 'company_id,street_line1,suite,city,state,zip_code',
         company_id: inIds,
         address_type: 'eq.PRINCIPAL',
       }),
@@ -74,8 +74,8 @@ module.exports = async (req, res) => {
     const result = companies.map((c) => {
       const addr = addrMap[c.id] || {};
       const addrParts = [
-        addr.address_line_1,
-        addr.address_line_2,
+        addr.street_line1,
+        addr.suite,
         addr.city && addr.state ? `${addr.city}, ${addr.state}` : addr.city || addr.state,
         addr.zip_code,
       ].filter(Boolean);
