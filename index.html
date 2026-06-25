@@ -711,8 +711,6 @@ function partialCard(c){
   const reasons=(c.partial_reasons||[]).map(r=>REASON_LABELS[r]||r).filter(Boolean);
   const missingBlock=reasons.length
     ?`<div class="co-missing-block"><div class="co-missing-title">Pendências</div>${reasons.map(r=>`<div class="co-missing-item">· ${esc(r)}</div>`).join("")}</div>`:"";
-  const pdfBtn=c.si_key
-    ?`<a class="co-pdf" href="/api/pdf?key=${encodeURIComponent(c.si_key)}" target="_blank" rel="noopener">Ver Statement ↗</a>`:"";
   return `<div class="co-card co-partial">
     <div class="co-badge co-badge-partial"><span class="co-dot"></span>Em Processamento</div>
     <div class="co-name">${esc(c.commercial_name||c.legal_name||"—")}</div>
@@ -726,7 +724,6 @@ function partialCard(c){
       ${fRow("Tipo societário",type)}
     </div>
     ${missingBlock}
-    ${pdfBtn}
   </div>`;
 }
 
