@@ -638,17 +638,25 @@ function handleToastUndo(){if(CA_TOAST_UNDO_ID)unmarkUsed(CA_TOAST_UNDO_ID);}
 
 async function copyEntity(num,btn){
   if(!num)return;
+  let ok=false;
   try{
     await navigator.clipboard.writeText(num);
+    ok=true;
   }catch(_){
-    const ta=document.createElement('textarea');
-    ta.value=num;ta.style.cssText='position:fixed;opacity:0';
-    document.body.appendChild(ta);ta.select();
-    document.execCommand('copy');document.body.removeChild(ta);
+    try{
+      const ta=document.createElement('textarea');
+      ta.value=num;
+      ta.setAttribute('readonly','');
+      ta.style.cssText='position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;border:none;outline:none';
+      document.body.appendChild(ta);
+      ta.focus();ta.select();
+      ok=document.execCommand('copy');
+      document.body.removeChild(ta);
+    }catch(__){ok=false;}
   }
   const orig=btn.textContent;
-  btn.textContent="✓ Copiado!";
-  setTimeout(()=>{btn.textContent=orig;},1500);
+  btn.textContent=ok?"Copiado ✓":"Copiar Nº Entidade";
+  if(ok)setTimeout(()=>{btn.textContent=orig;},1500);
 }
 
 /* ===== CA RENDER ===== */
@@ -683,8 +691,8 @@ function readyCard(c){
     ?`<a class="co-pdf" href="/api/pdf?key=${encodeURIComponent(c.si_key)}" target="_blank" rel="noopener">Ver Statement ↗</a>`
     :`<div class="co-bizfile-block">
         <div class="co-bizfile-btns">
-          <button class="co-btn-copy" onclick="copyEntity(${JSON.stringify(c.entity_number||"")},this)">Copiar Nº Entidade</button>
-          <a class="co-btn-bizfile" href="https://bizfileonline.sos.ca.gov" target="_blank" rel="noopener">Abrir bizfile ↗</a>
+          <button class="co-btn-copy" data-entity="${esc(c.entity_number||'')}" onclick="copyEntity(this.dataset.entity,this)">Copiar Nº Entidade</button>
+          <a class="co-btn-bizfile" href="https://bizfileonline.sos.ca.gov/search/business" target="_blank" rel="noopener noreferrer">Abrir bizfile ↗</a>
         </div>
         <div class="co-bizfile-hint">Busque o nº <span class="mono">${esc(c.entity_number||"—")}</span> no bizfile e baixe o <b>Statement of Information</b> mais recente.</div>
       </div>`;
@@ -716,8 +724,8 @@ function partialCard(c){
   const actionBlock=hasPdf?""
     :`<div class="co-bizfile-block">
         <div class="co-bizfile-btns">
-          <button class="co-btn-copy" onclick="copyEntity(${JSON.stringify(c.entity_number||"")},this)">Copiar Nº Entidade</button>
-          <a class="co-btn-bizfile" href="https://bizfileonline.sos.ca.gov" target="_blank" rel="noopener">Abrir bizfile ↗</a>
+          <button class="co-btn-copy" data-entity="${esc(c.entity_number||'')}" onclick="copyEntity(this.dataset.entity,this)">Copiar Nº Entidade</button>
+          <a class="co-btn-bizfile" href="https://bizfileonline.sos.ca.gov/search/business" target="_blank" rel="noopener noreferrer">Abrir bizfile ↗</a>
         </div>
         <div class="co-bizfile-hint">Busque o nº <span class="mono">${esc(c.entity_number||"—")}</span> no bizfile e baixe o <b>Statement of Information</b> mais recente.</div>
       </div>`;
