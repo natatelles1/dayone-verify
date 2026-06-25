@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
 
   try {
     const companies = await sbGet('companies', {
-      select: 'id,commercial_name,legal_name,entity_number,phone_e164,website_url,dossier_status,partial_reasons',
+      select: 'id,commercial_name,legal_name,entity_number,phone_e164,website_url,dossier_status,partial_reasons,usage_status',
       source_state: 'eq.CA',
       dossier_status: 'in.(READY,PARTIAL)',
       order: 'dossier_status.asc,commercial_name.asc',
@@ -42,7 +42,12 @@ module.exports = async (req, res) => {
     const ids = companies.map((c) => c.id);
     const inIds = `in.(${ids.join(',')})`;
 
-    const [addresses, emails, docs] = await Promise.all([
+    // Identify READY companies that are IN_USE — need their USAGE_MARKED timestamp
+    const inUseIds = companies
+      .filter((c) => c.dossier_status === 'READY' && c.usage_status === 'IN_USE')
+      .map((c) => c.id);
+
+    const parallelQueries = [
       sbGet('company_addresses', {
         select: 'company_id,street_line1,suite,city,state,zip_code',
         company_id: inIds,
@@ -60,7 +65,21 @@ module.exports = async (req, res) => {
         document_type: 'eq.SI',
         validation_status: 'eq.VALID',
       }),
-    ]);
+    ];
+
+    // Only query company_events if there are IN_USE companies
+    if (inUseIds.length > 0) {
+      parallelQueries.push(
+        sbGet('company_events', {
+          select: 'company_id,created_at',
+          company_id: `in.(${inUseIds.join(',')})`,
+          event_type: 'eq.USAGE_MARKED',
+          order: 'created_at.desc',
+        })
+      );
+    }
+
+    const [addresses, emails, docs, usageEvents = []] = await Promise.all(parallelQueries);
 
     const addrMap = {};
     for (const a of addresses) if (!addrMap[a.company_id]) addrMap[a.company_id] = a;
@@ -70,6 +89,12 @@ module.exports = async (req, res) => {
 
     const docMap = {};
     for (const d of docs) if (!docMap[d.company_id]) docMap[d.company_id] = d.storage_key;
+
+    // Take the most recent USAGE_MARKED per company
+    const markedAtMap = {};
+    for (const ev of usageEvents) {
+      if (!markedAtMap[ev.company_id]) markedAtMap[ev.company_id] = ev.created_at;
+    }
 
     const result = companies.map((c) => {
       const addr = addrMap[c.id] || {};
@@ -92,10 +117,12 @@ module.exports = async (req, res) => {
         dossier_status: c.dossier_status,
         partial_reasons: c.partial_reasons || [],
         si_key: docMap[c.id] || null,
+        usage_status: c.usage_status || 'AVAILABLE',
+        marked_at: markedAtMap[c.id] || null,
       };
     });
 
-    res.setHeader('Cache-Control', 's-maxage=120, stale-while-revalidate=30');
+    res.setHeader('Cache-Control', 'no-store');
     res.status(200).json({ companies: result });
   } catch (err) {
     console.error('companies error:', err.message);
