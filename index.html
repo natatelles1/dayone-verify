@@ -167,6 +167,16 @@
     padding:6px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer}
   .ca-toast-undo:hover{background:rgba(59,91,255,.15)}
 
+  /* ===== COPY ICONS ===== */
+  .with-copy{display:inline-flex;align-items:flex-start;gap:5px;max-width:100%}
+  .with-copy>span,.with-copy>a{min-width:0;word-break:break-word;overflow-wrap:anywhere}
+  .copy-btn{background:none;border:none;padding:2px 3px;color:var(--muted-2);cursor:pointer;border-radius:4px;opacity:0;transition:opacity .12s,color .12s;flex-shrink:0;line-height:0;margin-top:1px}
+  tr:hover .copy-btn{opacity:.55}
+  .copy-btn:hover{opacity:1!important;color:var(--text);background:rgba(255,255,255,.08)}
+  .copy-btn.copied{color:var(--green);opacity:1!important}
+  /* ===== PARTIAL MISSING HINT ===== */
+  .co-missing-hint{font-family:"IBM Plex Mono";font-size:10px;color:var(--amber);opacity:.85;margin-top:5px;line-height:1.4}
+
   @media(max-width:920px){
     #login{grid-template-columns:1fr} .ll{display:none}
     .metrics{grid-template-columns:repeat(2,1fr)}
@@ -457,13 +467,16 @@ function caRow(c){
     docCell='<span class="empty">— aguardando</span>';
   }
 
-  // Status cell
+  // Status cell (PARTIAL shows missing fields)
   var statusCell;
   if(isUsed){
     var dt=c.marked_at?formatMarkedAt(c.marked_at):"";
     statusCell='<div><span class="status used"><span class="dot"></span>Usada</span>'+(dt?'<div class="co-used-date">'+dt+'</div>':'')+'</div>';
   }else if(isPartial){
-    statusCell='<span class="status partial"><span class="dot"></span>Parcial</span>';
+    var missing=missingFields(c);
+    statusCell='<div><span class="status partial"><span class="dot"></span>Parcial</span>'+
+      (missing.length?'<div class="co-missing-hint">falta: '+missing.join(", ")+'</div>':'')+
+    '</div>';
   }else{
     statusCell='<span class="status ok"><span class="dot"></span>Disponível</span>';
   }
@@ -478,21 +491,27 @@ function caRow(c){
     acoesCell='<button class="co-btn-mark" data-mark-id="'+c.id+'" onclick="markUsed(\''+c.id+'\')">Marcar como usada</button>';
   }
 
+  // Company name
+  var compName=c.commercial_name||c.legal_name||"";
+
   // Website cell
   var webCell;
   if(c.website){
-    webCell='<a class="doc" href="'+escA(c.website)+'" target="_blank" rel="noopener" style="font-size:11px">'+esc(c.website.replace(/^https?:\/\//,""))+'</a>';
+    webCell='<span class="with-copy">'+
+      '<a class="doc" href="'+escA(c.website)+'" target="_blank" rel="noopener" style="font-size:11px">'+esc(c.website.replace(/^https?:\/\//,""))+'</a>'+
+      cpBtn(c.website)+
+    '</span>';
   }else{
     webCell='<span class="empty">—</span>';
   }
 
   return'<tr>'+
-    '<td class="name">'+esc(c.commercial_name||c.legal_name||"—")+'</td>'+
-    '<td class="addr">'+(c.address?esc(c.address):'<span class="empty">—</span>')+'</td>'+
-    '<td class="m">'+(c.entity_number?esc(c.entity_number):'<span class="empty">—</span>')+'</td>'+
+    '<td class="name">'+(compName?'<span class="with-copy">'+esc(compName)+cpBtn(compName)+'</span>':'—')+'</td>'+
+    '<td class="addr">'+(c.address?'<span class="with-copy">'+esc(c.address)+cpBtn(c.address)+'</span>':'<span class="empty">—</span>')+'</td>'+
+    '<td class="m">'+(c.entity_number?'<span class="with-copy">'+esc(c.entity_number)+cpBtn(c.entity_number)+'</span>':'<span class="empty">—</span>')+'</td>'+
     '<td class="doc-cell">'+docCell+'</td>'+
-    '<td>'+(c.phone?'<span class="mono" style="font-size:12px">'+esc(c.phone)+'</span>':'<span class="empty">—</span>')+'</td>'+
-    '<td>'+(c.email?'<span style="font-size:12.5px">'+esc(c.email)+'</span>':'<span class="empty">—</span>')+'</td>'+
+    '<td>'+(c.phone?'<span class="with-copy"><span class="mono" style="font-size:12px">'+esc(c.phone)+'</span>'+cpBtn(c.phone)+'</span>':'<span class="empty">—</span>')+'</td>'+
+    '<td>'+(c.email?'<span class="with-copy"><span style="font-size:12.5px">'+esc(c.email)+'</span>'+cpBtn(c.email)+'</span>':'<span class="empty">—</span>')+'</td>'+
     '<td class="web-cell">'+webCell+'</td>'+
     '<td>'+statusCell+'</td>'+
     '<td>'+acoesCell+'</td>'+
@@ -579,6 +598,52 @@ async function copyEntity(num,btn){
   var orig=btn.textContent;
   btn.textContent=ok?"Copiado ✓":"Copiar Nº Entidade";
   if(ok)setTimeout(function(){btn.textContent=orig;},1500);
+}
+
+/* ===== COPY VALUE HELPERS ===== */
+var COPY_ICON='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+var CHECK_ICON='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+
+function cpBtn(val){
+  if(!val)return"";
+  return'<button class="copy-btn" data-val="'+esc(val)+'" onclick="copyVal(this)" title="Copiar">'+COPY_ICON+'</button>';
+}
+
+async function copyVal(btn){
+  var val=btn.dataset.val;
+  if(!val)return;
+  var ok=false;
+  try{
+    await navigator.clipboard.writeText(val);
+    ok=true;
+  }catch(_){
+    try{
+      var ta=document.createElement("textarea");
+      ta.value=val;
+      ta.setAttribute("readonly","");
+      ta.style.cssText="position:fixed;top:0;left:0;width:1px;height:1px;opacity:0";
+      document.body.appendChild(ta);ta.focus();ta.select();
+      ok=document.execCommand("copy");
+      document.body.removeChild(ta);
+    }catch(__){ok=false;}
+  }
+  if(ok){
+    btn.innerHTML=CHECK_ICON;
+    btn.classList.add("copied");
+    setTimeout(function(){btn.innerHTML=COPY_ICON;btn.classList.remove("copied");},1500);
+  }
+}
+
+function missingFields(c){
+  var checks=[
+    [c.legal_name,"nome legal"],
+    [c.address,"endereço"],
+    [c.entity_number,"nº entidade"],
+    [c.email,"e-mail"],
+    [c.phone,"telefone"],
+    [c.website,"website"],
+  ];
+  return checks.filter(function(x){return!x[0];}).map(function(x){return x[1];});
 }
 
 /* ===== INIT ===== */
