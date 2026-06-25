@@ -122,8 +122,19 @@ module.exports = async (req, res) => {
       };
     });
 
+    // TEMP-TESTE-VISUAL: força si_key=null para exercitar render GESTOR PEGA
+    // Magic (READY-sem-PDF) + Tax Shop (PARTIAL-sem-PDF) — REVERTER após validação visual
+    const TEMP_NO_PDF = new Set([
+      '99f05272-f72a-4aac-88f7-fd7759b6098a', // Magic Income Tax Services LLC — READY
+      '0c25c589-9374-4adb-a751-7fa67f2be72a', // Tax Shop LLC — PARTIAL
+    ]);
+    const resultWithOverride = result.map((c) =>
+      TEMP_NO_PDF.has(c.id) ? { ...c, si_key: null } : c
+    );
+    // END TEMP-TESTE-VISUAL
+
     res.setHeader('Cache-Control', 'no-store');
-    res.status(200).json({ companies: result });
+    res.status(200).json({ companies: resultWithOverride });
   } catch (err) {
     console.error('companies error:', err.message);
     res.status(500).json({ error: err.message });
