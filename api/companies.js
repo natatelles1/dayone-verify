@@ -1,105 +1,87 @@
 // Vercel serverless function — CA companies (READY + PARTIAL)
-// Uses Supabase REST API (PostgREST) with service_role key — never exposed to client.
+// Direct Postgres connection via pg — credentials never reach the client.
 
-const SB_URL = process.env.SUPABASE_URL;
-const SB_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const { Client } = require('pg');
 
-async function sbGet(table, params) {
-  const url = new URL(`${SB_URL}/rest/v1/${table}`);
-  Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
-  const r = await fetch(url.toString(), {
-    headers: {
-      apikey: SB_KEY,
-      Authorization: `Bearer ${SB_KEY}`,
-      Accept: 'application/json',
-    },
-  });
-  if (!r.ok) throw new Error(`Supabase ${table}: ${r.status} ${await r.text()}`);
-  return r.json();
-}
+const SQL = `
+  SELECT
+    c.id,
+    c.commercial_name,
+    c.legal_name,
+    c.entity_number,
+    c.phone_e164           AS phone,
+    c.website_url          AS website,
+    c.dossier_status,
+    c.partial_reasons,
+    ca.address_line_1,
+    ca.address_line_2,
+    ca.city,
+    ca.state               AS addr_state,
+    ca.zip_code,
+    cfe.field_value        AS email,
+    cd.storage_key         AS si_key
+  FROM companies c
+  LEFT JOIN company_addresses ca
+         ON ca.company_id = c.id AND ca.address_type = 'PRINCIPAL'
+  LEFT JOIN company_field_evidence cfe
+         ON cfe.company_id = c.id
+        AND cfe.field_name = 'email'
+        AND cfe.evidence_direction = 'SUPPORTS'
+  LEFT JOIN company_documents cd
+         ON cd.company_id = c.id
+        AND cd.document_type = 'SI'
+        AND cd.validation_status = 'VALID'
+  WHERE c.source_state = 'CA'
+    AND c.dossier_status IN ('READY', 'PARTIAL')
+  ORDER BY
+    (c.dossier_status = 'PARTIAL'),
+    c.commercial_name
+`;
 
 module.exports = async (req, res) => {
-  if (!SB_URL || !SB_KEY) {
-    return res.status(500).json({ error: 'Missing Supabase env vars' });
+  if (!process.env.DATABASE_URL) {
+    return res.status(500).json({ error: 'Missing DATABASE_URL env var' });
   }
 
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false },
+    connectionTimeoutMillis: 8000,
+  });
+
   try {
-    // 1. Companies — CA, READY or PARTIAL only
-    const companies = await sbGet('companies', {
-      select: 'id,commercial_name,legal_name,entity_number,phone_e164,website_url,dossier_status,partial_reasons',
-      source_state: 'eq.CA',
-      dossier_status: 'in.(READY,PARTIAL)',
-      order: 'dossier_status.asc,commercial_name.asc',
-    });
+    await client.connect();
+    const { rows } = await client.query(SQL);
 
-    if (!companies.length) {
-      return res.status(200).json({ companies: [] });
-    }
-
-    const ids = companies.map((c) => c.id);
-    const inIds = `in.(${ids.join(',')})`;
-
-    // 2. Parallel: addresses + email evidence + SI documents
-    const [addresses, emails, docs] = await Promise.all([
-      sbGet('company_addresses', {
-        select: 'company_id,address_line_1,address_line_2,city,state,zip_code',
-        company_id: inIds,
-        address_type: 'eq.PRINCIPAL',
-      }),
-      sbGet('company_field_evidence', {
-        select: 'company_id,field_value',
-        company_id: inIds,
-        field_name: 'eq.email',
-        evidence_direction: 'eq.SUPPORTS',
-      }),
-      sbGet('company_documents', {
-        select: 'company_id,storage_key',
-        company_id: inIds,
-        document_type: 'eq.SI',
-        validation_status: 'eq.VALID',
-      }),
-    ]);
-
-    // Index by company_id (take first match per company)
-    const addrMap = {};
-    for (const a of addresses) if (!addrMap[a.company_id]) addrMap[a.company_id] = a;
-
-    const emailMap = {};
-    for (const e of emails) if (!emailMap[e.company_id]) emailMap[e.company_id] = e.field_value;
-
-    const docMap = {};
-    for (const d of docs) if (!docMap[d.company_id]) docMap[d.company_id] = d.storage_key;
-
-    // Merge
-    const result = companies.map((c) => {
-      const addr = addrMap[c.id] || {};
+    const companies = rows.map((r) => {
       const addrParts = [
-        addr.address_line_1,
-        addr.address_line_2,
-        addr.city && addr.state ? `${addr.city}, ${addr.state}` : addr.city || addr.state,
-        addr.zip_code,
+        r.address_line_1,
+        r.address_line_2,
+        r.city && r.addr_state ? `${r.city}, ${r.addr_state}` : (r.city || r.addr_state),
+        r.zip_code,
       ].filter(Boolean);
 
       return {
-        id: c.id,
-        commercial_name: c.commercial_name,
-        legal_name: c.legal_name,
-        entity_number: c.entity_number,
+        id: r.id,
+        commercial_name: r.commercial_name,
+        legal_name: r.legal_name,
+        entity_number: r.entity_number,
         address: addrParts.join(', ') || null,
-        email: emailMap[c.id] || null,
-        phone: c.phone_e164 || null,
-        website: c.website_url || null,
-        dossier_status: c.dossier_status,
-        partial_reasons: c.partial_reasons || [],
-        si_key: docMap[c.id] || null,
+        email: r.email || null,
+        phone: r.phone || null,
+        website: r.website || null,
+        dossier_status: r.dossier_status,
+        partial_reasons: r.partial_reasons || [],
+        si_key: r.si_key || null,
       };
     });
 
     res.setHeader('Cache-Control', 's-maxage=120, stale-while-revalidate=30');
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.status(200).json({ companies: result });
+    res.status(200).json({ companies });
   } catch (err) {
-    console.error('companies error:', err);
+    console.error('companies error:', err.message);
     res.status(500).json({ error: err.message });
+  } finally {
+    await client.end().catch(() => {});
   }
 };
