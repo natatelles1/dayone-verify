@@ -576,11 +576,12 @@ function formatMarkedAt(iso){
 }
 
 /* ===== USAGE ACTIONS ===== */
-async function markUsed(id,name){
+async function markUsed(id){
   const btn=document.querySelector(`[data-mark-id="${id}"]`);
   if(btn){btn.disabled=true;}
   const c=CA_DATA.find(x=>x.id===id);
   if(!c)return;
+  const name=c.commercial_name||c.legal_name||"";
   c.usage_status="IN_USE";
   c.marked_at=new Date().toISOString();
   renderCa();
@@ -666,7 +667,7 @@ function readyCard(c){
     :`<div class="co-badge co-badge-ok"><span class="co-dot"></span>Verificada</div>`;
   const btn=isUsed
     ?`<button class="co-btn-revert" onclick="unmarkUsed('${c.id}')">Reverter</button>`
-    :`<button class="co-btn-mark" data-mark-id="${c.id}" onclick="markUsed('${c.id}',${JSON.stringify(c.commercial_name||c.legal_name||"")})">Marcar como usada</button>`;
+    :`<button class="co-btn-mark" data-mark-id="${c.id}" onclick="markUsed('${c.id}')">Marcar como usada</button>`;
   const usedDate=isUsed&&c.marked_at
     ?`<div class="co-used-date">Marcada em: ${formatMarkedAt(c.marked_at)}</div>`:"";
 
@@ -707,10 +708,19 @@ function readyCard(c){
 }
 
 function partialCard(c){
+  const hasPdf=!!c.si_key;
   const type=bizType(c.legal_name,c.commercial_name);
   const reasons=(c.partial_reasons||[]).map(r=>REASON_LABELS[r]||r).filter(Boolean);
   const missingBlock=reasons.length
     ?`<div class="co-missing-block"><div class="co-missing-title">Pendências</div>${reasons.map(r=>`<div class="co-missing-item">· ${esc(r)}</div>`).join("")}</div>`:"";
+  const actionBlock=hasPdf?""
+    :`<div class="co-bizfile-block">
+        <div class="co-bizfile-btns">
+          <button class="co-btn-copy" onclick="copyEntity(${JSON.stringify(c.entity_number||"")},this)">Copiar Nº Entidade</button>
+          <a class="co-btn-bizfile" href="https://bizfileonline.sos.ca.gov" target="_blank" rel="noopener">Abrir bizfile ↗</a>
+        </div>
+        <div class="co-bizfile-hint">Busque o nº <span class="mono">${esc(c.entity_number||"—")}</span> no bizfile e baixe o <b>Statement of Information</b> mais recente.</div>
+      </div>`;
   return `<div class="co-card co-partial">
     <div class="co-badge co-badge-partial"><span class="co-dot"></span>Em Processamento</div>
     <div class="co-name">${esc(c.commercial_name||c.legal_name||"—")}</div>
@@ -724,6 +734,7 @@ function partialCard(c){
       ${fRow("Tipo societário",type)}
     </div>
     ${missingBlock}
+    ${actionBlock}
   </div>`;
 }
 
