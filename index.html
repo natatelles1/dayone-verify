@@ -548,6 +548,8 @@ async function loadCaData(){
     if(!r.ok)throw new Error("HTTP "+r.status);
     const j=await r.json();
     CA_DATA=j.companies||[];
+    // TEMP VISUAL TEST — simula GESTOR PEGA na Magic (remove em memória, sem tocar no banco)
+    CA_DATA=CA_DATA.map(c=>c.id==='99f05272-f72a-4aac-88f7-fd7759b6098a'?{...c,si_key:null}:c);
     renderCa();
   }catch(e){
     document.getElementById("caLoading").style.display="none";
