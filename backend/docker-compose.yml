@@ -7,6 +7,7 @@ services:
     ports:
       - "8000:8000"
     mem_limit: 512m
+    memswap_limit: 512m
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8000/health || exit 1"]
@@ -22,6 +23,7 @@ services:
     env_file: .env
     command: ["python", "-m", "app.worker"]
     mem_limit: 256m
+    memswap_limit: 256m
     restart: unless-stopped
     depends_on:
       api:

@@ -39,6 +39,7 @@ class DossierStatus(str, enum.Enum):
     DOSSIER_BUILDING = "DOSSIER_BUILDING"
     READY = "READY"
     PARTIAL = "PARTIAL"
+    READY_NO_PDF = "READY_NO_PDF"
 
 
 class UsageStatus(str, enum.Enum):
@@ -104,7 +105,7 @@ class Company(Base):
     phone_e164 = Column(Text)
     place_id = Column(Text)
     dossier_status = Column(
-        sa.Enum("DISCOVERED", "MATCHED", "DOSSIER_BUILDING", "READY", "PARTIAL", name="dossier_status"),
+        sa.Enum("DISCOVERED", "MATCHED", "DOSSIER_BUILDING", "READY", "PARTIAL", "READY_NO_PDF", name="dossier_status"),
         nullable=False,
         server_default="DISCOVERED",
     )

@@ -70,18 +70,16 @@
   .logout{background:transparent;border:1px solid var(--line-2);color:var(--text);padding:7px 14px;border-radius:9px;font-size:12.5px}
   .logout:hover{border-color:var(--blue);color:var(--blue-soft)}
 
-  .wrap{max-width:1240px;margin:0 auto;padding:30px 26px 70px}
+  .wrap{max-width:1400px;margin:0 auto;padding:30px 26px 70px}
   .head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px;margin-bottom:24px}
   .head .eyebrow{color:var(--muted-2);margin-bottom:8px}
   .head h1{font-family:"Space Grotesk";font-weight:700;font-size:30px;letter-spacing:-.01em}
-  .nicho select{padding:11px 14px;border:1px solid var(--line-2);border-radius:11px;background:#0E1626;color:var(--text);font-size:14px;min-width:230px}
-  .nicho select:focus{outline:none;border-color:var(--blue)}
 
+  /* ===== METRICS ===== */
   .metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:26px}
   .metric{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
   .metric .k{font-size:12.5px;color:var(--muted);margin-bottom:12px}
   .metric .v{font-family:"Space Grotesk";font-weight:700;font-size:34px;line-height:1;letter-spacing:-.02em}
-  .metric .v small{font-size:17px;margin-left:1px}
   .metric .sub{font-family:"IBM Plex Mono";font-size:10.5px;color:var(--muted-2);margin-top:5px}
   .bar{height:6px;background:rgba(255,255,255,.07);border-radius:4px;margin-top:13px;overflow:hidden}
   .bar > i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--blue-2),var(--blue))}
@@ -91,6 +89,7 @@
   .metric.hero .bar{background:rgba(255,255,255,.25)} .metric.hero .bar>i{background:#fff}
   .metric.hero .glow{position:absolute;right:-40px;top:-40px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.13)}
 
+  /* ===== TOOLBAR ===== */
   .toolbar{display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
   .search{flex:1;min-width:220px;position:relative}
   .search input{width:100%;padding:12px 14px 12px 40px;border:1px solid var(--line-2);border-radius:11px;background:#0E1626;color:var(--text);font-size:14px}
@@ -100,106 +99,92 @@
   .toggle{display:flex;background:#0E1626;border:1px solid var(--line-2);border-radius:11px;padding:3px}
   .toggle button{padding:8px 16px;border:none;background:transparent;color:var(--muted);font-size:13px;font-weight:500;border-radius:8px}
   .toggle button.on{background:linear-gradient(135deg,var(--blue-2),var(--blue));color:#fff}
-  .btn{padding:11px 16px;border-radius:11px;font-weight:600;font-size:13.5px;border:1px solid var(--line-2);background:#0E1626;color:var(--text)}
-  .btn:hover{border-color:var(--blue)}
-  .btn.primary{border:none;background:linear-gradient(135deg,var(--blue-2),var(--blue));color:#fff;box-shadow:0 6px 18px rgba(59,91,255,.3)}
-  .btn.primary:hover{filter:brightness(1.08)}
+  .ca-usage-count{font-family:"IBM Plex Mono";font-size:12px;color:var(--muted-2);white-space:nowrap}
+  .ca-usage-count .avail{color:var(--green);font-weight:600}
+  .ca-usage-count .used-c{color:var(--amber);font-weight:600}
 
+  /* ===== TABLE ===== */
   .tablecard{background:var(--card-2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-  .scroll{overflow:auto;max-height:60vh}
+  .scroll{overflow:auto;max-height:65vh}
   table{width:100%;border-collapse:collapse;font-size:13px}
   th{position:sticky;top:0;background:#0C1322;text-align:left;padding:13px 16px;font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);font-weight:500;border-bottom:1px solid var(--line);white-space:nowrap;z-index:2}
-  td{padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top;color:var(--text)}
+  td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top;color:var(--text)}
+  tr:last-child td{border-bottom:none}
   tr:hover td{background:rgba(59,91,255,.05)}
-  td.name{font-weight:600}
+  td.name{font-weight:600;max-width:180px;word-break:break-word}
   td.m{font-family:"IBM Plex Mono";white-space:nowrap;color:#c7cfe6}
-  .empty{color:var(--amber);font-family:"IBM Plex Mono";font-size:12px}
+  td.addr{max-width:180px;font-size:12.5px;color:#c7cfe6;word-break:break-word}
+  td.doc-cell{min-width:190px}
+  td.web-cell{max-width:160px;word-break:break-all}
+  .empty{color:var(--muted-2);font-family:"IBM Plex Mono";font-size:11.5px}
   .doc{color:var(--blue-soft);font-weight:600;text-decoration:none;font-family:"IBM Plex Mono";font-size:12px}
   .doc:hover{text-decoration:underline}
-  .status{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:11.5px;font-weight:600}
-  .status .dot{width:6px;height:6px;border-radius:50%}
+  .status{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;font-size:11.5px;font-weight:600;white-space:nowrap}
+  .status .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
   .status.ok{background:var(--green-bg);color:var(--green)} .status.ok .dot{background:var(--green)}
   .status.partial{background:var(--amber-bg);color:var(--amber)} .status.partial .dot{background:var(--amber)}
+  .status.used{background:var(--amber-bg);color:var(--amber)} .status.used .dot{background:var(--amber)}
+  .status.nopdf{background:rgba(59,91,255,.14);color:var(--blue-soft)} .status.nopdf .dot{background:var(--blue-soft)}
+  .co-used-date{font-family:"IBM Plex Mono";font-size:10.5px;color:var(--muted-2);margin-top:4px}
   .tablefoot{padding:14px 16px;font-family:"IBM Plex Mono";font-size:12px;color:var(--muted-2);border-top:1px solid var(--line)}
 
-  /* ===== ABAS ===== */
-  .tabs{display:flex;gap:4px;margin-bottom:24px;border-bottom:1px solid var(--line)}
-  .tab{padding:12px 18px;border:none;background:transparent;color:var(--muted);font-size:14px;font-weight:600;border-bottom:2px solid transparent;margin-bottom:-1px;display:flex;align-items:center;gap:8px}
-  .tab:hover{color:var(--text)}
-  .tab.on{color:var(--blue-soft);border-bottom-color:var(--blue)}
-  .tab .badge{font-family:"IBM Plex Mono";font-size:9px;letter-spacing:.08em;text-transform:uppercase;background:var(--amber-bg);color:var(--amber);padding:2px 7px;border-radius:20px;font-weight:500}
-  .view-pane{display:none} .view-pane.on{display:block}
+  /* ===== USAGE ACTION BUTTONS ===== */
+  .co-btn-mark{border:1px solid rgba(63,209,126,.35);background:rgba(63,209,126,.08);color:var(--green);
+    padding:6px 12px;border-radius:9px;font-size:12px;font-weight:600;cursor:pointer;transition:background .15s;white-space:nowrap}
+  .co-btn-mark:hover{background:rgba(63,209,126,.18)}
+  .co-btn-mark:disabled{opacity:.45;cursor:not-allowed}
+  .co-btn-revert{border:1px solid rgba(240,169,59,.35);background:rgba(240,169,59,.08);color:var(--amber);
+    padding:6px 12px;border-radius:9px;font-size:12px;font-weight:600;cursor:pointer;transition:background .15s;white-space:nowrap}
+  .co-btn-revert:hover{background:rgba(240,169,59,.18)}
+  .co-btn-revert:disabled{opacity:.45;cursor:not-allowed}
 
-  /* ===== NOVA PESQUISA ===== */
-  .search-hero{max-width:760px}
-  .search-hero .preview-note{display:flex;align-items:center;gap:10px;background:var(--amber-bg);border:1px solid rgba(240,169,59,.25);border-radius:12px;padding:12px 16px;margin-bottom:24px;font-size:13px;color:var(--amber)}
-  .search-hero h2{font-family:"Space Grotesk";font-weight:700;font-size:24px;margin-bottom:8px}
-  .search-hero .sub{color:var(--muted);font-size:14.5px;line-height:1.6;margin-bottom:28px;max-width:560px}
-  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px}
-  .form-field{display:flex;flex-direction:column;gap:8px}
-  .form-field.full{grid-column:1 / -1}
-  .form-field label{font-size:12.5px;font-weight:600;color:var(--text)}
-  .form-field .hint{font-size:11.5px;color:var(--muted-2);font-weight:400}
-  .form-field input,.form-field select{padding:13px 14px;border:1px solid var(--line-2);border-radius:11px;background:#0E1626;color:var(--text);font-size:14px}
-  .form-field input:focus,.form-field select:focus{outline:none;border-color:var(--blue)}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{padding:9px 15px;border-radius:10px;border:1px solid var(--line-2);background:#0E1626;color:var(--muted);font-size:13px;font-weight:500;cursor:pointer}
-  .chip.on{border-color:var(--blue);background:rgba(59,91,255,.12);color:var(--blue-soft)}
-  .toggle-row{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#0E1626;border:1px solid var(--line-2);border-radius:12px;margin-bottom:22px}
-  .toggle-row .sw{width:42px;height:24px;border-radius:20px;background:var(--blue);position:relative;flex-shrink:0;cursor:pointer}
-  .toggle-row .sw::after{content:"";position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:3px;right:3px;transition:all .2s}
-  .toggle-row .sw.off{background:rgba(255,255,255,.15)} .toggle-row .sw.off::after{right:21px}
-  .toggle-row .tt b{font-size:13.5px} .toggle-row .tt div{font-size:12px;color:var(--muted)}
-  .btn-search{padding:15px 28px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--blue-2),var(--blue));color:#fff;font-family:"Space Grotesk";font-weight:600;font-size:15px;box-shadow:0 8px 24px rgba(59,91,255,.35);display:inline-flex;align-items:center;gap:10px}
-  .btn-search:hover{filter:brightness(1.08)}
-  .search-result{margin-top:26px;padding:28px;border:1px dashed var(--line-2);border-radius:16px;background:rgba(59,91,255,.04);text-align:center;display:none}
-  .search-result.on{display:block}
-  .search-result .spin{width:34px;height:34px;border:3px solid rgba(59,91,255,.25);border-top-color:var(--blue);border-radius:50%;margin:0 auto 16px;animation:spin 1s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .search-result h3{font-family:"Space Grotesk";font-size:18px;margin-bottom:6px}
-  .search-result p{color:var(--muted);font-size:13.5px;line-height:1.6}
-
-  /* ===== CA DASHBOARD ===== */
-  .ca-subtabs{display:flex;gap:4px;margin-bottom:28px;border-bottom:1px solid var(--line)}
-  .ca-tab{padding:10px 20px;border:none;background:transparent;color:var(--muted);font-size:14px;font-weight:600;border-bottom:2px solid transparent;margin-bottom:-1px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-  .ca-tab:hover{color:var(--text)}
-  .ca-tab.on{color:var(--blue-soft);border-bottom-color:var(--blue)}
-  .ca-count{font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.06em;background:var(--green-bg);color:var(--green);padding:2px 8px;border-radius:20px;font-weight:500}
-  .ca-count.p{background:var(--amber-bg);color:var(--amber)}
-  .ca-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(370px,1fr));gap:20px}
-  .co-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:18px;transition:border-color .18s}
-  .co-card.co-ready{border-color:rgba(63,209,126,.2)}
-  .co-card.co-partial{border-color:rgba(240,169,59,.14)}
-  .co-card:hover{border-color:rgba(107,130,255,.35)}
-  .co-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;width:fit-content}
-  .co-badge-ok{background:var(--green-bg);color:var(--green)}
-  .co-badge-partial{background:var(--amber-bg);color:var(--amber)}
-  .co-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
-  .co-name{font-family:"Space Grotesk";font-weight:700;font-size:17px;letter-spacing:-.01em;line-height:1.3;color:var(--text)}
-  .co-fields{display:flex;flex-direction:column;gap:11px}
-  .cof{display:grid;grid-template-columns:148px 1fr;gap:12px;align-items:start}
-  .cof-l{font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);padding-top:2px;line-height:1.4}
-  .cof-v{font-size:13.5px;color:var(--text);word-break:break-word;line-height:1.45}
-  .cof-v.mono{font-family:"IBM Plex Mono";font-size:13px;color:#c7cfe6}
-  .cof-v.missing{color:var(--amber);font-size:12.5px}
-  .co-pdf{display:inline-flex;align-items:center;gap:7px;padding:11px 20px;background:linear-gradient(135deg,var(--blue-2),var(--blue));color:#fff;border-radius:11px;font-family:"Space Grotesk";font-weight:600;font-size:13.5px;text-decoration:none;align-self:flex-start;box-shadow:0 4px 16px rgba(59,91,255,.32);transition:filter .18s}
-  .co-pdf:hover{filter:brightness(1.1)}
-  .co-missing-block{background:rgba(240,169,59,.06);border:1px solid rgba(240,169,59,.2);border-radius:11px;padding:13px 16px}
-  .co-missing-title{font-family:"IBM Plex Mono";font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;font-weight:500}
-  .co-missing-item{font-size:12.5px;color:var(--muted);line-height:1.9}
+  /* ===== LOADING / ERROR ===== */
   .ca-loading{display:flex;align-items:center;gap:14px;padding:50px 0;color:var(--muted);font-size:14px}
   .ca-spin{width:22px;height:22px;border:2px solid rgba(59,91,255,.25);border-top-color:var(--blue);border-radius:50%;animation:spin 1s linear infinite;flex-shrink:0}
   .ca-error{padding:20px 24px;color:#ff8a80;background:rgba(255,80,80,.06);border:1px solid rgba(255,80,80,.18);border-radius:12px;font-size:13.5px}
-  .ca-empty{padding:50px 0;text-align:center;color:var(--muted);font-size:14px}
+  @keyframes spin{to{transform:rotate(360deg)}}
 
-  @media (max-width:920px){
+  /* ===== HYBRID MODEL — GESTOR PEGA ===== */
+  .co-bizfile-block{display:flex;flex-direction:column;gap:7px}
+  .co-bizfile-btns{display:flex;gap:6px;flex-wrap:wrap}
+  .co-btn-copy{border:1px solid rgba(107,130,255,.4);background:rgba(107,130,255,.1);color:var(--blue-soft);
+    padding:5px 10px;border-radius:8px;font-family:"Space Grotesk";font-weight:600;font-size:12px;
+    cursor:pointer;transition:background .15s;display:inline-flex;align-items:center}
+  .co-btn-copy:hover{background:rgba(107,130,255,.22)}
+  .co-btn-bizfile{border:1px solid rgba(63,209,126,.35);background:rgba(63,209,126,.08);color:var(--green);
+    padding:5px 10px;border-radius:8px;font-family:"Space Grotesk";font-weight:600;font-size:12px;
+    text-decoration:none;display:inline-flex;align-items:center;transition:background .15s}
+  .co-btn-bizfile:hover{background:rgba(63,209,126,.18)}
+  .co-bizfile-hint{font-family:"IBM Plex Mono";font-size:10px;color:var(--muted-2);line-height:1.55}
+  .co-bizfile-hint .mono{color:var(--blue-soft);font-weight:500}
+
+  /* ===== TOAST ===== */
+  .ca-toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);display:flex;align-items:center;
+    gap:14px;background:#1B2540;border:1px solid rgba(107,130,255,.35);border-radius:12px;
+    padding:14px 18px;box-shadow:0 16px 40px rgba(0,0,0,.55);font-size:13.5px;color:var(--text);
+    z-index:200;white-space:nowrap;animation:fadeUp .2s ease}
+  @keyframes fadeUp{from{opacity:0;transform:translateX(-50%) translateY(8px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+  .ca-toast-undo{border:1px solid rgba(107,130,255,.4);background:transparent;color:var(--blue-soft);
+    padding:6px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer}
+  .ca-toast-undo:hover{background:rgba(59,91,255,.15)}
+
+  /* ===== COPY ICONS ===== */
+  .with-copy{display:inline-flex;align-items:flex-start;gap:5px;max-width:100%}
+  .with-copy>span,.with-copy>a{min-width:0;word-break:break-word;overflow-wrap:anywhere}
+  .copy-btn{background:none;border:none;padding:2px 3px;color:var(--muted-2);cursor:pointer;border-radius:4px;opacity:0;transition:opacity .12s,color .12s;flex-shrink:0;line-height:0;margin-top:1px}
+  tr:hover .copy-btn{opacity:.55}
+  .copy-btn:hover{opacity:1!important;color:var(--text);background:rgba(255,255,255,.08)}
+  .copy-btn.copied{color:var(--green);opacity:1!important}
+  /* ===== PARTIAL MISSING HINT ===== */
+  .co-missing-hint{font-family:"IBM Plex Mono";font-size:10px;color:var(--amber);opacity:.85;margin-top:5px;line-height:1.4}
+  .co-nopdf-hint{font-family:"IBM Plex Mono";font-size:10px;color:var(--blue-soft);opacity:.85;margin-top:4px;line-height:1.4}
+  .co-partial-bizfile-hint{font-family:"IBM Plex Mono";font-size:10px;color:var(--amber);opacity:.85;margin-top:4px;line-height:1.4}
+
+  @media(max-width:920px){
     #login{grid-template-columns:1fr} .ll{display:none}
     .metrics{grid-template-columns:repeat(2,1fr)}
-    .form-grid{grid-template-columns:1fr}
-    .ca-grid{grid-template-columns:1fr}
-    .cof{grid-template-columns:130px 1fr}
   }
-  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -238,342 +223,455 @@
     <div class="left"><img class="logo-img" src="./logo_d1.png" alt="DayOne"/><b>DayOne Verify</b></div>
     <div class="right"><span>Cliente: <b id="clientName">—</b></span><button class="logout" onclick="logout()">Sair</button></div>
   </div>
+
   <div class="wrap">
-    <div class="tabs">
-      <button class="tab on" id="tabBase" onclick="setTab('base')">Base de dados</button>
-      <button class="tab" id="tabSearch" onclick="setTab('search')">Nova pesquisa <span class="badge">Prévia</span></button>
+    <div class="head">
+      <div>
+        <div class="eyebrow">Base de dados</div>
+        <h1>Contabilidade — Califórnia</h1>
+      </div>
     </div>
 
-    <div class="view-pane on" id="paneBase">
-      <div class="head">
-        <div><div class="eyebrow">Base de dados</div><h1 id="title">Contabilidade — Flórida</h1></div>
-        <div class="nicho">
-          <select id="niche" onchange="render()">
-            <option value="fl">Contabilidade — Flórida</option>
-            <option value="ca">Contabilidade — Califórnia</option>
-          </select>
-        </div>
+    <!-- 5 metric cards -->
+    <div class="metrics" id="caMetrics"></div>
+
+    <!-- Toolbar: search + filter pills + counter -->
+    <div class="toolbar">
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <circle cx="11" cy="11" r="7" stroke="#8A94B0" stroke-width="2"/>
+          <path d="M21 21l-4-4" stroke="#8A94B0" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input id="q" type="text" placeholder="Buscar empresa, nº entidade, endereço…" oninput="onSearch()"/>
       </div>
-
-      <!-- FL: metrics + toolbar + table -->
-      <div id="fl-metrics">
-        <div class="metrics" id="metrics"></div>
+      <div class="toggle">
+        <button class="on" id="caFAvail" onclick="setCaFilter('available')">Disponíveis</button>
+        <button id="caFUsed" onclick="setCaFilter('used')">Usadas</button>
+        <button id="caFPartial" onclick="setCaFilter('partial')">Parciais</button>
+        <button id="caFAll" onclick="setCaFilter('all')">Todas</button>
       </div>
-      <div id="fl-view">
-        <div class="toolbar">
-          <div class="search">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#8A94B0" stroke-width="2"/><path d="M21 21l-4-4" stroke="#8A94B0" stroke-width="2" stroke-linecap="round"/></svg>
-            <input id="q" type="text" placeholder="Buscar empresa, EIN ou cidade…" oninput="render()"/>
-          </div>
-          <div class="toggle">
-            <button id="tAll" class="on" onclick="setView('all')">Todas</button>
-            <button id="tReady" onclick="setView('ready')">Só prontas</button>
-          </div>
-          <button class="btn" onclick="exportCSV('full')">Exportar planilha</button>
-          <button class="btn primary" onclick="exportCSV('verify')">Exportar dados de verificação</button>
-        </div>
-        <div class="tablecard">
-          <div class="scroll">
-            <table>
-              <thead><tr>
-                <th>Empresa</th><th>Endereço</th><th>EIN</th><th>Documento</th><th>Telefone</th><th>E-mail</th><th>Status</th>
-              </tr></thead>
-              <tbody id="rows"></tbody>
-            </table>
-          </div>
-          <div class="tablefoot" id="foot">—</div>
-        </div>
-      </div><!-- /fl-view -->
+      <div class="ca-usage-count" id="caUsageCount"></div>
+    </div>
 
-      <!-- CA: sub-tabs + cards (shown when CA is selected) -->
-      <div id="ca-section" style="display:none">
-        <div class="ca-subtabs">
-          <button class="ca-tab on" id="caTabReady" onclick="setCaTab('ready')">
-            Verificadas <span class="ca-count" id="caCountReady">—</span>
-          </button>
-          <button class="ca-tab" id="caTabPartial" onclick="setCaTab('partial')">
-            Em Processamento <span class="ca-count p" id="caCountPartial">—</span>
-          </button>
-        </div>
-        <div id="caLoading" class="ca-loading">
-          <div class="ca-spin"></div>
-          <span>Carregando dados do banco…</span>
-        </div>
-        <div id="caError" class="ca-error" style="display:none"></div>
-        <div id="caCards" class="ca-grid"></div>
-      </div><!-- /ca-section -->
+    <!-- Loading state -->
+    <div id="caLoading" class="ca-loading">
+      <div class="ca-spin"></div>
+      <span>Carregando dados do banco…</span>
+    </div>
 
-    </div><!-- /paneBase -->
+    <!-- Error state -->
+    <div id="caError" class="ca-error" style="display:none"></div>
 
-    <div class="view-pane" id="paneSearch">
-      <div class="search-hero">
-        <div class="preview-note">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#F0A93B" stroke-width="2"/><path d="M12 8v5M12 16h.01" stroke="#F0A93B" stroke-width="2" stroke-linecap="round"/></svg>
-          <span>Prévia da interface — o motor de coleta automática está em desenvolvimento. Os campos abaixo demonstram a experiência final.</span>
-        </div>
-        <h2>Solicitar nova base</h2>
-        <p class="sub">Defina o nicho, o estado e o volume. A DayOne Verify coleta no registro oficial, cruza os dados e entrega a base pronta para verificação — só com empresas que têm o documento.</p>
-
-        <div class="form-grid">
-          <div class="form-field">
-            <label>Nicho <span class="hint">— tipo de empresa</span></label>
-            <input id="sNicho" type="text" placeholder="Ex: dentistas, clínicas, advocacia…" value="Contabilidade"/>
-          </div>
-          <div class="form-field">
-            <label>Estado</label>
-            <select id="sEstado">
-              <option>Flórida</option>
-              <option>Califórnia</option>
-              <option>Texas</option>
-              <option>Nova York</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label>Quantidade de empresas</label>
-            <input id="sQtd" type="number" value="100" min="10" step="10"/>
-          </div>
-          <div class="form-field">
-            <label>Cidades <span class="hint">— opcional</span></label>
-            <input id="sCidades" type="text" placeholder="Miami, Orlando, Tampa…"/>
-          </div>
-          <div class="form-field full">
-            <label>Tipo societário</label>
-            <div class="chips">
-              <div class="chip on" onclick="this.classList.toggle('on')">LLC</div>
-              <div class="chip" onclick="this.classList.toggle('on')">Inc</div>
-              <div class="chip" onclick="this.classList.toggle('on')">Corp</div>
-              <div class="chip" onclick="this.classList.toggle('on')">PA</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="toggle-row">
-          <div class="sw" onclick="this.classList.toggle('off')"></div>
-          <div class="tt"><b>Apenas empresas com documento de registro</b><div>Exclui empresas sem documento público — só entrega as verificáveis</div></div>
-        </div>
-
-        <button class="btn-search" onclick="fakeSearch()">Iniciar coleta →</button>
-
-        <div class="search-result" id="searchResult">
-          <div class="spin"></div>
-          <h3>Coleta solicitada</h3>
-          <p id="searchResultText">Processando sua base…</p>
-        </div>
+    <!-- Table -->
+    <div class="tablecard" id="caTableCard" style="display:none">
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Empresa</th>
+              <th>Endereço</th>
+              <th>Nº Entidade</th>
+              <th>Documento</th>
+              <th>Telefone</th>
+              <th>E-mail</th>
+              <th>Website</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="caRows"></tbody>
+        </table>
       </div>
-    </div><!-- /paneSearch -->
-  </div><!-- /wrap -->
-</div><!-- /app -->
+      <div class="tablefoot" id="caFoot"></div>
+    </div>
+  </div>
+
+  <!-- Toast (Onda 2) -->
+  <div id="caToast" class="ca-toast" style="display:none">
+    <span id="caToastMsg"></span>
+    <button class="ca-toast-undo" onclick="handleToastUndo()">Desfazer</button>
+  </div>
+</div>
 
 <script>
 /* ===== AUTH ===== */
-const AUTH_USER="cliente", AUTH_PASS="dayone2026", CLIENT_NAME="Cliente Demo";
+const AUTH_USER="cliente",AUTH_PASS="dayone2026",CLIENT_NAME="Cliente Demo";
 
-/* ===== FL STATE ===== */
-let DATA=[], VIEW="all";
-const SAMPLE=[
-  {nome:"SUNSHINE LEDGER ADVISORS LLC",endereco:"1450 Brickell Ave, Miami, FL 33131",ein:"47-8821093",documento:"https://search.sunbiz.org",email:"contact@sunshineledger.com",telefone:"+1 305-555-0142"},
-  {nome:"ORLANDO TAX & BOOKKEEPING INC",endereco:"390 N Orange Ave, Orlando, FL 32801",ein:"82-4419076",documento:"https://search.sunbiz.org",email:"hello@orlandotaxbk.com",telefone:"+1 407-555-0188"},
-  {nome:"BAYSHORE ACCOUNTING CORP",endereco:"601 Bayshore Blvd, Tampa, FL 33606",ein:"36-7740215",documento:"https://search.sunbiz.org",email:"info@bayshoreacct.com",telefone:"+1 813-555-0119"},
-  {nome:"CORAL GABLES FISCAL GROUP LLC",endereco:"2222 Ponce de Leon Blvd, Coral Gables, FL 33134",ein:"",documento:"https://search.sunbiz.org",email:"team@cgfiscal.com",telefone:"+1 305-555-0167"},
-  {nome:"GULFSTREAM PAYROLL SERVICES LLC",endereco:"1701 SE 17th St, Fort Lauderdale, FL 33316",ein:"58-9012446",documento:"",email:"support@gulfstreampay.com",telefone:"+1 954-555-0173"},
-];
-const VERIFY=["nome","endereco","ein","documento"];
-const has=v=>v!==undefined&&v!==null&&String(v).trim()!=="";
-const isReady=r=>VERIFY.every(c=>has(r[c]));
-
-/* ===== CA STATE ===== */
-let CA_DATA=null, CA_TAB="ready";
-
-const REASON_LABELS={
-  "email público sem evidência":"Email de domínio próprio não confirmado",
-  "HTML bruto (texto) ausente":"Site temporariamente inacessível",
-  "contradição ativa detectada":"Site retornou erro na última verificação",
-  "principal_address ausente":"Endereço principal não confirmado",
-  "legal_name ausente ou sem evidência":"Nome legal pendente de validação",
-  "entity_number ausente":"Nº de entidade pendente",
-  "documento SI-COMPLETE ausente ou inválido":"Statement of Information pendente",
-  "match_score insuficiente (<60)":"Correspondência insuficiente nos registros",
-  "menos de 2 categorias de evidência":"Evidências insuficientes",
-};
-
-function bizType(legal,commercial){
-  const n=(legal||commercial||"").toUpperCase();
-  if(n.endsWith(" LLC"))return"LLC";
-  if(/\bINC\.?$/.test(n))return"Inc.";
-  if(/\bCORP\.?$/.test(n))return"Corp.";
-  if(/\bPA$/.test(n))return"P.A.";
-  return"—";
-}
-
-/* ===== AUTH FUNCTIONS ===== */
-function doLogin(e){e.preventDefault();
+function doLogin(e){
+  e.preventDefault();
   if(document.getElementById("u").value.trim()===AUTH_USER&&document.getElementById("p").value===AUTH_PASS){
     sessionStorage.setItem("dov","1");showApp();
-  }else document.getElementById("loginErr").textContent="Usuário ou senha incorretos.";
+  }else{
+    document.getElementById("loginErr").textContent="Usuário ou senha incorretos.";
+  }
   return false;
 }
-function logout(){sessionStorage.removeItem("dov");document.getElementById("app").style.display="none";document.getElementById("login").style.display="grid";document.getElementById("p").value="";}
-function showApp(){document.getElementById("login").style.display="none";document.getElementById("app").style.display="block";document.getElementById("clientName").textContent=CLIENT_NAME;loadData();}
-
-/* ===== NAV ===== */
-function setView(v){VIEW=v;document.getElementById("tAll").className=v==="all"?"on":"";document.getElementById("tReady").className=v==="ready"?"on":"";render();}
-function setTab(t){
-  const base=t==="base";
-  document.getElementById("tabBase").className="tab"+(base?" on":"");
-  document.getElementById("tabSearch").className="tab"+(base?"":" on");
-  document.getElementById("paneBase").className="view-pane"+(base?" on":"");
-  document.getElementById("paneSearch").className="view-pane"+(base?"":" on");
+function logout(){
+  sessionStorage.removeItem("dov");
+  document.getElementById("app").style.display="none";
+  document.getElementById("login").style.display="grid";
+  document.getElementById("p").value="";
 }
-function fakeSearch(){
-  const r=document.getElementById("searchResult");
-  const nicho=(document.getElementById("sNicho").value||"empresas").trim();
-  const qtd=document.getElementById("sQtd").value||"100";
-  const estado=document.getElementById("sEstado").value;
-  r.className="search-result on";
-  document.getElementById("searchResultText").textContent="Buscando no registro oficial e cruzando dados…";
-  setTimeout(()=>{
-    document.querySelector("#searchResult .spin").style.display="none";
-    document.getElementById("searchResultText").innerHTML=
-      `Sua solicitação de <b style="color:var(--text)">${qtd} ${esc(nicho)} (${esc(estado)})</b> foi registrada.<br>Na versão final, a base verificada apareceria aqui em instantes, pronta na aba "Base de dados".`;
-  },1800);
+function showApp(){
+  document.getElementById("login").style.display="none";
+  document.getElementById("app").style.display="block";
+  document.getElementById("clientName").textContent=CLIENT_NAME;
+  loadCaData();
 }
 
-/* ===== FL DATA ===== */
-async function loadData(){
-  try{const r=await fetch("./data.json",{cache:"no-store"});if(!r.ok)throw 0;const j=await r.json();DATA=Array.isArray(j)?j:(j.rows||[]);if(!DATA.length)throw 0;}
-  catch(_){DATA=SAMPLE;}
-  render();
+/* ===== CA STATE ===== */
+let CA_DATA=null,CA_FILTER="available",CA_SEARCH="";
+let CA_TOAST_TIMER=null,CA_TOAST_UNDO_ID=null;
+
+/* ===== HELPERS ===== */
+function esc(s){
+  return String(s).replace(/[&<>"']/g,function(m){
+    return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m];
+  });
+}
+function escA(s){return String(s).replace(/"/g,"&quot;");}
+
+function formatMarkedAt(iso){
+  if(!iso)return null;
+  var d=new Date(iso);
+  return d.toLocaleDateString("pt-BR",{day:"numeric",month:"short"})
+    +" às "+d.toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"});
 }
 
-const pct=(n,d)=>d?Math.round(n/d*100):0;
-function buildMetrics(rows){
-  const t=rows.length;
-  const end=rows.filter(r=>has(r.endereco)).length, ein=rows.filter(r=>has(r.ein)).length, doc=rows.filter(r=>has(r.documento)).length, rdy=rows.filter(isReady).length;
-  const cards=[
-    {k:"Empresas",v:t.toLocaleString("pt-BR"),total:true},
-    {k:"Endereço principal",n:end},{k:"EIN",n:ein},{k:"Documento de registro",n:doc},
-    {k:"Prontas para verificar",n:rdy,hero:true},
-  ];
-  document.getElementById("metrics").innerHTML=cards.map(c=>{
-    if(c.total)return `<div class="metric"><div class="k">${c.k}</div><div class="v">${c.v}</div><div class="sub">na base</div></div>`;
-    const p=pct(c.n,t);
-    return `<div class="metric${c.hero?" hero":""}">${c.hero?"<div class=\"glow\"></div>":""}<div class="k">${c.k}</div>
-      <div class="v">${p}<small>%</small></div><div class="sub">${c.n.toLocaleString("pt-BR")} de ${t.toLocaleString("pt-BR")}</div>
-      <div class="bar"><i style="width:${p}%"></i></div></div>`;
-  }).join("");
-}
-function currentRows(){
-  const q=document.getElementById("q").value.trim().toLowerCase();
-  let rows=DATA.slice();
-  if(VIEW==="ready")rows=rows.filter(isReady);
-  if(q)rows=rows.filter(r=>["nome","endereco","ein","email","telefone"].some(c=>String(r[c]||"").toLowerCase().includes(q)));
-  return rows;
-}
-
-/* ===== CA DATA ===== */
+/* ===== LOAD DATA ===== */
 async function loadCaData(){
   document.getElementById("caLoading").style.display="flex";
   document.getElementById("caError").style.display="none";
-  document.getElementById("caCards").innerHTML="";
+  document.getElementById("caTableCard").style.display="none";
   try{
-    const r=await fetch("/api/companies");
+    var r=await fetch("/api/companies");
     if(!r.ok)throw new Error("HTTP "+r.status);
-    const j=await r.json();
+    var j=await r.json();
     CA_DATA=j.companies||[];
-    renderCa();
+    buildCaMetrics();
+    renderCaTable();
   }catch(e){
     document.getElementById("caLoading").style.display="none";
-    const el=document.getElementById("caError");
+    var el=document.getElementById("caError");
     el.style.display="block";
     el.textContent="Erro ao carregar dados do banco. Tente recarregar a página.";
   }
 }
 
-function setCaTab(tab){
-  CA_TAB=tab;
-  document.getElementById("caTabReady").className="ca-tab"+(tab==="ready"?" on":"");
-  document.getElementById("caTabPartial").className="ca-tab"+(tab==="partial"?" on":"");
-  if(CA_DATA)renderCa();
+/* ===== METRIC CARDS ===== */
+function buildCaMetrics(){
+  if(!CA_DATA)return;
+  var total=CA_DATA.length;
+  var ready=CA_DATA.filter(function(c){return c.dossier_status==="READY";});
+  var nopdf=CA_DATA.filter(function(c){return c.dossier_status==="READY_NO_PDF";});
+  var availReady=ready.filter(function(c){return c.usage_status!=="IN_USE";}).length;
+  var availNoPdf=nopdf.filter(function(c){return c.usage_status!=="IN_USE";}).length;
+  var avail=availReady+availNoPdf;
+  var withPdf=ready.filter(function(c){return!!c.si_key;}).length;
+  var partial=CA_DATA.filter(function(c){return c.dossier_status==="PARTIAL";}).length;
+  var cards=[
+    {k:"Empresas",v:total,sub:"CA na base"},
+    {k:"Disponíveis",v:avail,sub:"prontas para uso",hero:true},
+    {k:"Com Statement",v:withPdf,sub:"PDF no sistema"},
+    {k:"Gestor baixa PDF",v:nopdf.length,sub:"sem SI · gestor busca"},
+    {k:"Em processamento",v:partial,sub:"PARTIAL"},
+  ];
+  document.getElementById("caMetrics").innerHTML=cards.map(function(c){
+    return'<div class="metric'+(c.hero?" hero":"")+'">'+
+      (c.hero?'<div class="glow"></div>':"")+
+      '<div class="k">'+c.k+'</div>'+
+      '<div class="v">'+c.v+'</div>'+
+      '<div class="sub">'+c.sub+'</div>'+
+    '</div>';
+  }).join("");
 }
 
-function renderCa(){
+/* ===== FILTER ===== */
+function setCaFilter(f){
+  CA_FILTER=f;
+  renderCaTable();
+}
+
+function onSearch(){
+  CA_SEARCH=document.getElementById("q").value;
+  renderCaTable();
+}
+
+function filteredCa(){
+  if(!CA_DATA)return[];
+  var rows=CA_DATA.slice();
+  var q=CA_SEARCH.trim().toLowerCase();
+  if(q){
+    rows=rows.filter(function(c){
+      return[c.commercial_name,c.legal_name,c.entity_number,c.address,c.email]
+        .some(function(v){return String(v||"").toLowerCase().indexOf(q)!==-1;});
+    });
+  }
+  if(CA_FILTER==="available"){
+    rows=rows.filter(function(c){return(c.dossier_status==="READY"||c.dossier_status==="READY_NO_PDF")&&c.usage_status!=="IN_USE";});
+  }else if(CA_FILTER==="used"){
+    rows=rows.filter(function(c){return c.usage_status==="IN_USE";});
+  }else if(CA_FILTER==="partial"){
+    rows=rows.filter(function(c){return c.dossier_status==="PARTIAL";});
+  }
+  return rows;
+}
+
+/* ===== TABLE RENDER ===== */
+function renderCaTable(){
   if(!CA_DATA)return;
   document.getElementById("caLoading").style.display="none";
-  const ready=CA_DATA.filter(c=>c.dossier_status==="READY");
-  const partial=CA_DATA.filter(c=>c.dossier_status==="PARTIAL");
-  document.getElementById("caCountReady").textContent=ready.length;
-  document.getElementById("caCountPartial").textContent=partial.length;
-  const list=CA_TAB==="ready"?ready:partial;
-  const grid=document.getElementById("caCards");
-  if(!list.length){
-    grid.innerHTML=`<div class="ca-empty">Nenhuma empresa nesta categoria.</div>`;return;
+  document.getElementById("caTableCard").style.display="block";
+
+  // Pill active state
+  var pills={available:"caFAvail",used:"caFUsed",partial:"caFPartial",all:"caFAll"};
+  Object.keys(pills).forEach(function(k){
+    document.getElementById(pills[k]).className=CA_FILTER===k?"on":"";
+  });
+
+  // Counter — pool = READY + READY_NO_PDF
+  var readyPool=CA_DATA.filter(function(c){return c.dossier_status==="READY"||c.dossier_status==="READY_NO_PDF";});
+  var availCount=readyPool.filter(function(c){return c.usage_status!=="IN_USE";}).length;
+  var usedCount=readyPool.filter(function(c){return c.usage_status==="IN_USE";}).length;
+  document.getElementById("caUsageCount").innerHTML=
+    '<span class="avail">'+availCount+' disponíve'+(availCount===1?"l":"is")+'</span> · '+
+    '<span class="used-c">'+usedCount+' usada'+(usedCount!==1?"s":"")+'</span>';
+
+  var rows=filteredCa();
+  var tbody=document.getElementById("caRows");
+  if(!rows.length){
+    tbody.innerHTML='<tr><td colspan="9" style="text-align:center;padding:50px 16px;color:var(--muted);font-size:14px">Nenhuma empresa nesta categoria.</td></tr>';
+    document.getElementById("caFoot").textContent="";
+    return;
   }
-  grid.innerHTML=list.map(c=>{
-    const ok=c.dossier_status==="READY";
-    const type=bizType(c.legal_name,c.commercial_name);
-    const reasons=(c.partial_reasons||[]).map(r=>REASON_LABELS[r]||r).filter(Boolean);
-    const fRow=(label,val,mono)=>`<div class="cof">
-      <div class="cof-l">${esc(label)}</div>
-      <div class="cof-v${mono?" mono":""}${val&&String(val).trim()?"":" missing"}">${val&&String(val).trim()?esc(val):"— aguardando"}</div>
-    </div>`;
-    const pdfBtn=ok&&c.si_key
-      ?`<a class="co-pdf" href="/api/pdf?key=${encodeURIComponent(c.si_key)}" target="_blank" rel="noopener">Ver Statement ↗</a>`
-      :"";
-    const missingBlock=(!ok&&reasons.length)
-      ?`<div class="co-missing-block"><div class="co-missing-title">Pendências</div>${reasons.map(r=>`<div class="co-missing-item">· ${esc(r)}</div>`).join("")}</div>`
-      :"";
-    return `<div class="co-card ${ok?"co-ready":"co-partial"}">
-      <div class="co-badge ${ok?"co-badge-ok":"co-badge-partial"}"><span class="co-dot"></span>${ok?"Verificada":"Em Processamento"}</div>
-      <div class="co-name">${esc(c.commercial_name||c.legal_name||"—")}</div>
-      <div class="co-fields">
-        ${fRow("Nome legal",c.legal_name)}
-        ${fRow("Nº Entidade CA",c.entity_number,true)}
-        ${fRow("Endereço principal",c.address)}
-        ${fRow("E-mail",c.email)}
-        ${fRow("Telefone",c.phone,true)}
-        ${fRow("Website",c.website)}
-        ${fRow("Tipo societário",type)}
-      </div>
-      ${missingBlock}
-      ${pdfBtn}
-    </div>`;
-  }).join("");
+  tbody.innerHTML=rows.map(caRow).join("");
+  var total=CA_DATA.length;
+  document.getElementById("caFoot").textContent=
+    rows.length+" de "+total+" empresa"+(total!==1?"s":"")+" · base verificada DayOne";
 }
 
-/* ===== MAIN RENDER ===== */
-function render(){
-  const isCA=document.getElementById("niche").value==="ca";
-  document.getElementById("title").textContent=isCA?"Contabilidade — Califórnia":"Contabilidade — Flórida";
-  document.getElementById("fl-metrics").style.display=isCA?"none":"";
-  document.getElementById("fl-view").style.display=isCA?"none":"";
-  document.getElementById("ca-section").style.display=isCA?"block":"none";
-  if(isCA){if(!CA_DATA)loadCaData();else renderCa();return;}
-  const rows=currentRows();
-  buildMetrics(rows);
-  const cell=(v,cls)=>has(v)?`<td class="${cls||""}">${esc(v)}</td>`:`<td><span class="empty">— faltando</span></td>`;
-  document.getElementById("rows").innerHTML=rows.map(r=>{
-    const doc=has(r.documento)?`<td><a class="doc" href="${escA(r.documento)}" target="_blank" rel="noopener">Ver doc ↗</a></td>`:`<td><span class="empty">—</span></td>`;
-    const st=isReady(r)?`<td><span class="status ok"><span class="dot"></span>pronta</span></td>`:`<td><span class="status partial"><span class="dot"></span>parcial</span></td>`;
-    return `<tr>${cell(r.nome,"name")}${cell(r.endereco)}${cell(r.ein,"m")}${doc}${cell(r.telefone,"m")}${cell(r.email,"m")}${st}</tr>`;
-  }).join("");
-  const rdy=rows.filter(isReady).length;
-  document.getElementById("foot").textContent=`${rows.length.toLocaleString("pt-BR")} empresas · ${rdy.toLocaleString("pt-BR")} prontas para verificar · telefone e e-mail são dados complementares · base verificada DayOne`;
+function caRow(c){
+  var isUsed=c.usage_status==="IN_USE";
+  var isPartial=c.dossier_status==="PARTIAL";
+  var isNoPdf=c.dossier_status==="READY_NO_PDF";
+  var hasPdf=!!c.si_key;
+
+  // Documento cell — regra por status exato:
+  //   READY + si_key        → "Ver Statement" (PDF no sistema)
+  //   READY_NO_PDF          → bizfile azul (verificada, gestor busca)
+  //   PARTIAL + entity_num  → bizfile âmbar (incompleta, sem verificação)
+  //   tudo mais             → "— aguardando"
+  var docCell;
+  if(c.dossier_status==="READY"&&hasPdf){
+    docCell='<a class="doc" href="/api/pdf?key='+encodeURIComponent(c.si_key)+'" target="_blank" rel="noopener">Ver Statement ↗</a>';
+  }else if(isNoPdf&&c.entity_number){
+    docCell=
+      '<div class="co-bizfile-block">'+
+        '<div class="co-bizfile-btns">'+
+          '<button class="co-btn-copy" data-entity="'+esc(c.entity_number)+'" onclick="copyEntity(this.dataset.entity,this)">Copiar Nº Entidade</button>'+
+          '<a class="co-btn-bizfile" href="https://bizfileonline.sos.ca.gov/search/business" target="_blank" rel="noopener noreferrer">Abrir bizfile ↗</a>'+
+        '</div>'+
+        '<div class="co-bizfile-hint co-nopdf-hint">Busque o nº <span class="mono">'+esc(c.entity_number)+'</span> · gestor baixa o <b>Statement</b> no bizfile</div>'+
+      '</div>';
+  }else if(isPartial&&c.entity_number){
+    docCell=
+      '<div class="co-bizfile-block">'+
+        '<div class="co-bizfile-btns">'+
+          '<button class="co-btn-copy" data-entity="'+esc(c.entity_number)+'" onclick="copyEntity(this.dataset.entity,this)">Copiar Nº Entidade</button>'+
+          '<a class="co-btn-bizfile" href="https://bizfileonline.sos.ca.gov/search/business" target="_blank" rel="noopener noreferrer">Abrir bizfile ↗</a>'+
+        '</div>'+
+        '<div class="co-partial-bizfile-hint">⚠ Empresa incompleta — dados pendentes</div>'+
+      '</div>';
+  }else{
+    docCell='<span class="empty">— aguardando</span>';
+  }
+
+  // Status cell
+  var statusCell;
+  if(isUsed){
+    var dt=c.marked_at?formatMarkedAt(c.marked_at):"";
+    statusCell='<div><span class="status used"><span class="dot"></span>Usada</span>'+(dt?'<div class="co-used-date">'+dt+'</div>':'')+'</div>';
+  }else if(isPartial){
+    // usa partial_reasons vindos do backend; fallback para inferência local
+    var reasons=c.partial_reasons&&c.partial_reasons.length?c.partial_reasons:missingFields(c);
+    statusCell='<div><span class="status partial"><span class="dot"></span>Parcial</span>'+
+      (reasons.length?'<div class="co-missing-hint">'+esc(reasons.join(" · "))+'</div>':'')+
+    '</div>';
+  }else if(isNoPdf){
+    statusCell='<div><span class="status nopdf"><span class="dot"></span>Sem PDF · gestor baixa</span>'+
+      '<div class="co-nopdf-hint">Verificada — gestor busca Statement no bizfile</div>'+
+    '</div>';
+  }else{
+    statusCell='<span class="status ok"><span class="dot"></span>Disponível</span>';
+  }
+
+  // Ações cell
+  var acoesCell;
+  if(isPartial){
+    acoesCell='<span style="color:var(--muted-2);font-size:13px">—</span>';
+  }else if(isUsed){
+    acoesCell='<button class="co-btn-revert" onclick="unmarkUsed(\''+c.id+'\')">Reverter</button>';
+  }else{
+    acoesCell='<button class="co-btn-mark" data-mark-id="'+c.id+'" onclick="markUsed(\''+c.id+'\')">Marcar como usada</button>';
+  }
+
+  // Company name
+  var compName=c.commercial_name||c.legal_name||"";
+
+  // Website cell
+  var webCell;
+  if(c.website){
+    webCell='<span class="with-copy">'+
+      '<a class="doc" href="'+escA(c.website)+'" target="_blank" rel="noopener" style="font-size:11px">'+esc(c.website.replace(/^https?:\/\//,""))+'</a>'+
+      cpBtn(c.website)+
+    '</span>';
+  }else{
+    webCell='<span class="empty">—</span>';
+  }
+
+  return'<tr>'+
+    '<td class="name">'+(compName?'<span class="with-copy">'+esc(compName)+cpBtn(compName)+'</span>':'—')+'</td>'+
+    '<td class="addr">'+(c.address?'<span class="with-copy">'+esc(c.address)+cpBtn(c.address)+'</span>':'<span class="empty">—</span>')+'</td>'+
+    '<td class="m">'+(c.entity_number?'<span class="with-copy">'+esc(c.entity_number)+cpBtn(c.entity_number)+'</span>':'<span class="empty">—</span>')+'</td>'+
+    '<td class="doc-cell">'+docCell+'</td>'+
+    '<td>'+(c.phone?'<span class="with-copy"><span class="mono" style="font-size:12px">'+esc(c.phone)+'</span>'+cpBtn(c.phone)+'</span>':'<span class="empty">—</span>')+'</td>'+
+    '<td>'+(c.email?'<span class="with-copy"><span style="font-size:12.5px">'+esc(c.email)+'</span>'+cpBtn(c.email)+'</span>':'<span class="empty">—</span>')+'</td>'+
+    '<td class="web-cell">'+webCell+'</td>'+
+    '<td>'+statusCell+'</td>'+
+    '<td>'+acoesCell+'</td>'+
+  '</tr>';
 }
 
-/* ===== EXPORT (FL only) ===== */
-function exportCSV(mode){
-  const rows=currentRows();let H,M,fn;
-  if(mode==="verify"){H=["Nome Legal","Endereco","EIN","Documento","Status"];M=r=>[r.nome||"",r.endereco||"",r.ein||"",r.documento||"",isReady(r)?"Pronta":"Parcial"];fn="dayone_verificacao.csv";}
-  else{H=["Nome Legal","Endereco","EIN","Documento","Telefone","Email","Status"];M=r=>[r.nome||"",r.endereco||"",r.ein||"",r.documento||"",r.telefone||"",r.email||"",isReady(r)?"Pronta":"Parcial"];fn="dayone_base.csv";}
-  const q=v=>`"${String(v).replace(/"/g,'""')}"`;
-  const csv=[H.join(",")].concat(rows.map(r=>M(r).map(q).join(","))).join("\r\n");
-  const b=new Blob(["﻿"+csv],{type:"text/csv;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=fn;a.click();URL.revokeObjectURL(a.href);
+/* ===== USAGE ACTIONS ===== */
+async function markUsed(id){
+  var btn=document.querySelector('[data-mark-id="'+id+'"]');
+  if(btn)btn.disabled=true;
+  var c=CA_DATA.find(function(x){return x.id===id;});
+  if(!c)return;
+  var name=c.commercial_name||c.legal_name||"";
+  c.usage_status="IN_USE";
+  c.marked_at=new Date().toISOString();
+  renderCaTable();
+  showToast(esc(name)+" marcada como usada",id);
+  try{
+    var r=await fetch("/api/mark-used",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:id})});
+    var data=await r.json();
+    if(!r.ok||data.error){
+      c.usage_status="AVAILABLE";c.marked_at=null;
+      renderCaTable();hideToast();
+      alert("Erro ao marcar empresa: "+(data.error||"tente novamente."));
+    }
+  }catch(err){
+    c.usage_status="AVAILABLE";c.marked_at=null;
+    renderCaTable();hideToast();
+  }
 }
 
-/* ===== UTILS ===== */
-function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
-function escA(s){return String(s).replace(/"/g,'&quot;');}
+async function unmarkUsed(id){
+  var c=CA_DATA.find(function(x){return x.id===id;});
+  if(!c)return;
+  var prevAt=c.marked_at;
+  c.usage_status="AVAILABLE";c.marked_at=null;
+  renderCaTable();hideToast();
+  try{
+    var r=await fetch("/api/unmark-used",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:id})});
+    var data=await r.json();
+    if(!r.ok||data.error){
+      c.usage_status="IN_USE";c.marked_at=prevAt;
+      renderCaTable();
+      alert("Erro ao reverter: "+(data.error||"tente novamente."));
+    }
+  }catch(err){
+    c.usage_status="IN_USE";c.marked_at=prevAt;
+    renderCaTable();
+  }
+}
 
+function showToast(msg,undoId){
+  if(CA_TOAST_TIMER)clearTimeout(CA_TOAST_TIMER);
+  CA_TOAST_UNDO_ID=undoId;
+  document.getElementById("caToastMsg").textContent=msg;
+  document.getElementById("caToast").style.display="flex";
+  CA_TOAST_TIMER=setTimeout(hideToast,8000);
+}
+function hideToast(){
+  if(CA_TOAST_TIMER){clearTimeout(CA_TOAST_TIMER);CA_TOAST_TIMER=null;}
+  document.getElementById("caToast").style.display="none";
+  CA_TOAST_UNDO_ID=null;
+}
+function handleToastUndo(){if(CA_TOAST_UNDO_ID)unmarkUsed(CA_TOAST_UNDO_ID);}
+
+async function copyEntity(num,btn){
+  if(!num)return;
+  var ok=false;
+  try{
+    await navigator.clipboard.writeText(num);
+    ok=true;
+  }catch(_){
+    try{
+      var ta=document.createElement("textarea");
+      ta.value=num;
+      ta.setAttribute("readonly","");
+      ta.style.cssText="position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;border:none;outline:none";
+      document.body.appendChild(ta);
+      ta.focus();ta.select();
+      ok=document.execCommand("copy");
+      document.body.removeChild(ta);
+    }catch(__){ok=false;}
+  }
+  var orig=btn.textContent;
+  btn.textContent=ok?"Copiado ✓":"Copiar Nº Entidade";
+  if(ok)setTimeout(function(){btn.textContent=orig;},1500);
+}
+
+/* ===== COPY VALUE HELPERS ===== */
+var COPY_ICON='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+var CHECK_ICON='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+
+function cpBtn(val){
+  if(!val)return"";
+  return'<button class="copy-btn" data-val="'+esc(val)+'" onclick="copyVal(this)" title="Copiar">'+COPY_ICON+'</button>';
+}
+
+async function copyVal(btn){
+  var val=btn.dataset.val;
+  if(!val)return;
+  var ok=false;
+  try{
+    await navigator.clipboard.writeText(val);
+    ok=true;
+  }catch(_){
+    try{
+      var ta=document.createElement("textarea");
+      ta.value=val;
+      ta.setAttribute("readonly","");
+      ta.style.cssText="position:fixed;top:0;left:0;width:1px;height:1px;opacity:0";
+      document.body.appendChild(ta);ta.focus();ta.select();
+      ok=document.execCommand("copy");
+      document.body.removeChild(ta);
+    }catch(__){ok=false;}
+  }
+  if(ok){
+    btn.innerHTML=CHECK_ICON;
+    btn.classList.add("copied");
+    setTimeout(function(){btn.innerHTML=COPY_ICON;btn.classList.remove("copied");},1500);
+  }
+}
+
+function missingFields(c){
+  // Fallback quando partial_reasons não vem do backend
+  var checks=[
+    [c.legal_name,"nome legal"],
+    [c.address,"endereço"],
+    [c.entity_number,"nº entidade"],
+    [c.email,"e-mail"],
+    [c.phone,"telefone"],
+    [c.website,"website"],
+  ];
+  return checks.filter(function(x){return!x[0];}).map(function(x){return x[1];});
+}
+
+/* ===== INIT ===== */
 if(sessionStorage.getItem("dov")==="1")showApp();
 </script>
 </body>

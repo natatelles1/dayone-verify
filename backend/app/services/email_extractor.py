@@ -54,25 +54,68 @@ _GENERIC_DOMAINS: frozenset[str] = frozenset(
     {
         "gmail.com",
         "yahoo.com",
+        "yahoo.com.br",
         "outlook.com",
         "hotmail.com",
+        "hotmail.com.br",
         "icloud.com",
         "aol.com",
         "live.com",
         "msn.com",
         "me.com",
         "mac.com",
+        "protonmail.com",
+        "proton.me",
+        "ymail.com",
+    }
+)
+
+# Domínios que são claramente placeholders de template/formulário.
+# Nunca são e-mails reais de empresa — descartar silenciosamente.
+_PLACEHOLDER_DOMAINS: frozenset[str] = frozenset(
+    {
+        "domain.com",       # user@domain.com, name@domain.com
+        "yourdomain.com",   # contact@yourdomain.com
+        "yourcompany.com",  # info@yourcompany.com
+        "yourname.com",     # yourname@yourname.com
+        "example.com",      # defesa redundante (já em _NOISE_FRAGMENTS)
+        "example.org",
+        "example.net",
+        "test.com",         # placeholders de testes
+        "email.com",        # your@email.com
+        "sample.com",
+        "acme.com",         # placeholder clássico
+    }
+)
+
+# Plataformas de site-builder cujos e-mails aparecem como SUBdomínios gerados
+# (ex: hello@minha-empresa-976359.hostingersite.com).
+# Verificação por sufixo: domain == suffix OU domain.endswith('.'+suffix).
+_BUILDER_SUBDOMAIN_SUFFIXES: frozenset[str] = frozenset(
+    {
+        "hostingersite.com",   # Hostinger: slug-gerado.hostingersite.com
+        "wixsite.com",         # Wix: usuario.wixsite.com/site
+        "weebly.com",          # Weebly: meusite.weebly.com
+        "godaddysites.com",    # GoDaddy Website Builder: slug.godaddysites.com
     }
 )
 
 
 def classify_email(email: str) -> str:
-    """Classifica um e-mail em: COMPANY_DOMAIN | REGISTERED_AGENT | GENERIC_FREEMAIL | UNKNOWN."""
+    """Classifica e-mail em: COMPANY_DOMAIN | REGISTERED_AGENT | GENERIC_FREEMAIL | PLACEHOLDER | UNKNOWN.
+
+    PLACEHOLDER: domínio claramente de template ou subdomínio de site-builder.
+    GENERIC_FREEMAIL: nunca promovido a COMPANY_DOMAIN.
+    """
     if not email or "@" not in email:
         return "UNKNOWN"
     domain = email.rsplit("@", 1)[1].lower()
     if domain in REGISTERED_AGENT_DOMAINS:
         return "REGISTERED_AGENT"
+    if domain in _PLACEHOLDER_DOMAINS:
+        return "PLACEHOLDER"
+    if any(domain == s or domain.endswith(f".{s}") for s in _BUILDER_SUBDOMAIN_SUFFIXES):
+        return "PLACEHOLDER"
     if domain in _GENERIC_DOMAINS:
         return "GENERIC_FREEMAIL"
     return "COMPANY_DOMAIN"
@@ -111,8 +154,8 @@ def extract_contacts(html: str, *, page_url: str = "") -> ExtractedContact:
             continue
         seen.add(email)
         cls = classify_email(email)
-        if cls == "REGISTERED_AGENT":
-            continue  # Regra 11CC: descarte silencioso
+        if cls in ("REGISTERED_AGENT", "PLACEHOLDER"):
+            continue  # Regra 11CC + placeholder: descarte silencioso
         elif cls == "COMPANY_DOMAIN":
             result.emails.append(email)
         elif cls == "GENERIC_FREEMAIL":
