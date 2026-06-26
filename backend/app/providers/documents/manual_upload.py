@@ -224,7 +224,7 @@ async def _insert_document(
                 :file_number, :filed_date, :storage_key, :filename,
                 'application/pdf', :size_bytes, :sha256, :page_count,
                 :entity_number_extracted, :legal_name_extracted,
-                :validation_status, :validation_errors::jsonb
+                :validation_status, CAST(:validation_errors AS jsonb)
             )
             ON CONFLICT DO NOTHING
         """),

@@ -1,6 +1,6 @@
-// Vercel serverless function — CA companies (READY + PARTIAL)
+// Vercel serverless function — CA companies (READY + PARTIAL + READY_NO_PDF)
 // Uses Supabase REST API (PostgREST) with anon key server-side.
-// RLS policies ensure only CA/READY+PARTIAL rows are visible to anon role.
+// RLS policies ensure only CA/READY+PARTIAL+READY_NO_PDF rows are visible to anon role.
 
 const SB_URL = process.env.SUPABASE_URL;
 const SB_KEY = process.env.SUPABASE_ANON_KEY;
@@ -31,7 +31,7 @@ module.exports = async (req, res) => {
     const companies = await sbGet('companies', {
       select: 'id,commercial_name,legal_name,entity_number,phone_e164,website_url,dossier_status,partial_reasons,usage_status',
       source_state: 'eq.CA',
-      dossier_status: 'in.(READY,PARTIAL)',
+      dossier_status: 'in.(READY,PARTIAL,READY_NO_PDF)',
       order: 'dossier_status.asc,commercial_name.asc',
     });
 
@@ -42,9 +42,9 @@ module.exports = async (req, res) => {
     const ids = companies.map((c) => c.id);
     const inIds = `in.(${ids.join(',')})`;
 
-    // Identify READY companies that are IN_USE — need their USAGE_MARKED timestamp
+    // Identify READY/READY_NO_PDF companies that are IN_USE — need their USAGE_MARKED timestamp
     const inUseIds = companies
-      .filter((c) => c.dossier_status === 'READY' && c.usage_status === 'IN_USE')
+      .filter((c) => (c.dossier_status === 'READY' || c.dossier_status === 'READY_NO_PDF') && c.usage_status === 'IN_USE')
       .map((c) => c.id);
 
     const parallelQueries = [
@@ -54,9 +54,9 @@ module.exports = async (req, res) => {
         address_type: 'eq.PRINCIPAL',
       }),
       sbGet('company_field_evidence', {
-        select: 'company_id,field_value',
+        select: 'company_id,field_name,field_value',
         company_id: inIds,
-        field_name: 'eq.email',
+        'field_name': 'in.(email,website_email)',
         evidence_direction: 'eq.SUPPORTS',
       }),
       sbGet('company_documents', {

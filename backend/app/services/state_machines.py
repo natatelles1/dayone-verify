@@ -12,9 +12,10 @@ from app.domain.models import Company
 DOSSIER_TRANSITIONS: dict[str, frozenset[str]] = {
     "DISCOVERED": frozenset({"MATCHED"}),
     "MATCHED": frozenset({"DOSSIER_BUILDING"}),
-    "DOSSIER_BUILDING": frozenset({"READY", "PARTIAL"}),
+    "DOSSIER_BUILDING": frozenset({"READY", "PARTIAL", "READY_NO_PDF"}),
     "PARTIAL": frozenset({"DOSSIER_BUILDING"}),
     "READY": frozenset({"PARTIAL"}),
+    "READY_NO_PDF": frozenset({"PARTIAL"}),
 }
 
 USAGE_TRANSITIONS: dict[str, frozenset[str]] = {
@@ -54,11 +55,13 @@ async def _insert_event(
     actor_id: str | None,
     reason: str | None,
 ) -> None:
+    # CAST(:ov AS jsonb) em vez de :ov::jsonb — o asyncpg dialect falha ao tokenizar
+    # `:ov::jsonb` (interpreta `::` como parte do nome do parâmetro)
     await session.execute(
         text(
             "INSERT INTO company_events "
             "(company_id, event_type, old_value, new_value, actor_type, actor_id, reason) "
-            "VALUES (:cid, :et, :ov::jsonb, :nv::jsonb, :at, :ai, :r)"
+            "VALUES (:cid, :et, CAST(:ov AS jsonb), CAST(:nv AS jsonb), :at, :ai, :r)"
         ),
         {
             "cid": company_id,
@@ -92,9 +95,9 @@ async def transition_dossier(
             f"Transição dossier_status inválida: {current}→{target} (company {company_id})"
         )
 
-    if current == "READY" and target == "PARTIAL" and not reason:
+    if current in ("READY", "READY_NO_PDF") and target == "PARTIAL" and not reason:
         raise InvalidTransitionError(
-            "READY→PARTIAL requer reason não-vazio (revalidação auditável)"
+            f"{current}→PARTIAL requer reason não-vazio (revalidação auditável)"
         )
 
     await session.execute(
