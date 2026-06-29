@@ -493,7 +493,10 @@ function caRow(c){
     statusCell='<div><span class="status used"><span class="dot"></span>Usada</span>'+(dt?'<div class="co-used-date">'+dt+'</div>':'')+'</div>';
   }else if(isPartial){
     // usa partial_reasons vindos do backend; fallback para inferência local
-    var reasons=c.partial_reasons&&c.partial_reasons.length?c.partial_reasons:missingFields(c);
+    // Filtra motivos técnicos internos (snapshot, HTML bruto) — não relevantes pro gestor
+    var rawReasons=c.partial_reasons&&c.partial_reasons.length?c.partial_reasons:missingFields(c);
+    var INTERNAL_RE=/HTML bruto|snapshot|texto.?extra/i;
+    var reasons=rawReasons.filter(function(r){return!INTERNAL_RE.test(r);});
     statusCell='<div><span class="status partial"><span class="dot"></span>Parcial</span>'+
       (reasons.length?'<div class="co-missing-hint">'+esc(reasons.join(" · "))+'</div>':'')+
     '</div>';
