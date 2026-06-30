@@ -104,6 +104,9 @@ class Company(Base):
     email = Column(Text)
     phone_e164 = Column(Text)
     place_id = Column(Text)
+    owner_first_name = Column(Text)
+    owner_last_name = Column(Text)
+    owner_source = Column(Text)
     dossier_status = Column(
         sa.Enum("DISCOVERED", "MATCHED", "DOSSIER_BUILDING", "READY", "PARTIAL", "READY_NO_PDF", name="dossier_status"),
         nullable=False,

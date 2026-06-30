@@ -1,14 +1,16 @@
-"""Testes — evaluate_ca_dossier_readiness_nopdf (READY_NO_PDF, Bloco 5).
+"""Testes — evaluate_ca_dossier_readiness_nopdf (READY_NO_PDF, Bloco 5 + régua PREMIUM).
 
 Pure calculation: nenhuma escrita no banco — todos os testes usam mocks.
 Execute calls esperadas (happy path):
   0: legal_name evidence    → .first() não-None
   1: principal_address      → .first() não-None
   2: email field_values     → .all() retorna [(email,)]  (validado com classify_email)
-  3: phone evidence         → .first() não-None
-  4: website snapshot       → .first() não-None
-  5: evidence categories    → .scalar_one() >= 2
-  6: contradictions         → .first() None  (OK)
+  3: website snapshot       → .first() não-None
+  4: evidence categories    → .scalar_one() >= 2
+  5: contradictions         → .first() None  (OK)
+
+Nome do dono (owner_first_name/owner_last_name) é atributo da company —
+não gera execute call (régua PREMIUM, sem query de telefone).
 """
 import uuid
 from unittest.mock import AsyncMock, MagicMock
@@ -38,6 +40,8 @@ def _make_company(**kwargs):
         "domain": "acme.com",
         "match_score": 85,
         "dossier_status": "DOSSIER_BUILDING",
+        "owner_first_name": "Jane",
+        "owner_last_name": "Doe",
     }
     defaults.update(kwargs)
     return MagicMock(**defaults)
@@ -65,17 +69,16 @@ def _email_rows(*emails):
 
 
 def _all_pass_effects():
-    """7 execute side-effects para o happy path nopdf (sem SI, sem escrita)."""
+    """6 execute side-effects para o happy path nopdf (sem SI, sem escrita)."""
     cat_result = _row_exists()
     cat_result.scalar_one = MagicMock(return_value=3)
     return [
         _row_exists(),                           # 0: legal_name evidence
         _row_exists(),                           # 1: principal_address
         _email_rows("billing@bestcpa.com"),      # 2: email → COMPANY_DOMAIN ✅
-        _row_exists(),                           # 3: phone evidence
-        _row_exists(),                           # 4: website snapshot
-        cat_result,                              # 5: evidence categories (>=2)
-        _row_missing(),                          # 6: contradictions (nenhuma = OK)
+        _row_exists(),                           # 3: website snapshot
+        cat_result,                              # 4: evidence categories (>=2)
+        _row_missing(),                          # 5: contradictions (nenhuma = OK)
     ]
 
 
@@ -109,25 +112,43 @@ class TestNoPdfReadiness:
         assert result.partial_reasons == []
 
     @pytest.mark.asyncio
-    async def test_freemail_only_returns_partial_with_email_reason(self):
-        """Apenas email freemail (gmail) → PARTIAL; reason menciona email."""
+    async def test_freemail_only_is_accepted_premium_rule(self):
+        """Email freemail (gmail) sozinho é aceito (GENERIC_FREEMAIL conta) → READY_NO_PDF."""
         company = _make_company()
         effects = [
             _row_exists(),                           # legal_name evidence
             _row_exists(),                           # principal_address
-            _email_rows("owner@gmail.com"),          # email → GENERIC_FREEMAIL ❌
-            _row_exists(),                           # phone
+            _email_rows("owner@gmail.com"),          # email → GENERIC_FREEMAIL ✅
             _row_exists(),                           # snapshot
             _row_exists(),                           # categories (scalar_one=3)
             _row_missing(),                          # contradictions OK
         ]
-        effects[5].scalar_one = MagicMock(return_value=3)
+        effects[4].scalar_one = MagicMock(return_value=3)
+        session = _make_session(company, effects)
+
+        result = await evaluate_ca_dossier_readiness_nopdf(company.id, session)
+
+        assert result.decision == "READY_NO_PDF"
+
+    @pytest.mark.asyncio
+    async def test_no_email_returns_partial_with_email_reason(self):
+        """Régua PREMIUM: sem nenhum email (real) → PARTIAL; reason 'email ausente'."""
+        company = _make_company()
+        effects = [
+            _row_exists(),                           # legal_name evidence
+            _row_exists(),                           # principal_address
+            _email_rows(),                            # nenhum email
+            _row_exists(),                           # snapshot
+            _row_exists(),                           # categories (scalar_one=3)
+            _row_missing(),                          # contradictions OK
+        ]
+        effects[4].scalar_one = MagicMock(return_value=3)
         session = _make_session(company, effects)
 
         result = await evaluate_ca_dossier_readiness_nopdf(company.id, session)
 
         assert result.decision == "PARTIAL"
-        assert any("email" in r for r in result.partial_reasons)
+        assert "email ausente" in result.partial_reasons
 
     @pytest.mark.asyncio
     async def test_builder_email_hostingersite_returns_partial(self):
@@ -139,16 +160,26 @@ class TestNoPdfReadiness:
             _email_rows("hello@nexusworksllc-com-976359.hostingersite.com"),  # PLACEHOLDER ❌
             _row_exists(),
             _row_exists(),
-            _row_exists(),
             _row_missing(),
         ]
-        effects[5].scalar_one = MagicMock(return_value=3)
+        effects[4].scalar_one = MagicMock(return_value=3)
         session = _make_session(company, effects)
 
         result = await evaluate_ca_dossier_readiness_nopdf(company.id, session)
 
         assert result.decision == "PARTIAL"
         assert any("email" in r for r in result.partial_reasons)
+
+    @pytest.mark.asyncio
+    async def test_missing_owner_name_returns_partial(self):
+        """Régua PREMIUM: sem owner_first_name/owner_last_name → PARTIAL com reason específico."""
+        company = _make_company(owner_first_name=None, owner_last_name=None)
+        session = _make_session(company, _all_pass_effects())
+
+        result = await evaluate_ca_dossier_readiness_nopdf(company.id, session)
+
+        assert result.decision == "PARTIAL"
+        assert "nome do dono não disponível no registro" in result.partial_reasons
 
     @pytest.mark.asyncio
     async def test_missing_entity_number_returns_partial(self):
@@ -158,12 +189,11 @@ class TestNoPdfReadiness:
             _row_exists(),                           # legal_name evidence
             _row_exists(),                           # principal_address
             _email_rows("contact@acme.com"),         # email OK
-            _row_exists(),                           # phone
             _row_exists(),                           # snapshot
             _row_exists(),                           # categories
             _row_missing(),                          # contradictions OK
         ]
-        effects[5].scalar_one = MagicMock(return_value=3)
+        effects[4].scalar_one = MagicMock(return_value=3)
         session = _make_session(company, effects)
 
         result = await evaluate_ca_dossier_readiness_nopdf(company.id, session)

@@ -85,6 +85,23 @@ _PLACEHOLDER_DOMAINS: frozenset[str] = frozenset(
         "email.com",        # your@email.com
         "sample.com",
         "acme.com",         # placeholder clássico
+        "address.com",      # email@address.com — template genérico de formulário
+        "godaddy.com",      # filler@godaddy.com — auto-fill padrão do GoDaddy Website Builder
+                            # (e-mails reais via GoDaddy usam domínio próprio, nunca @godaddy.com)
+    }
+)
+
+# Partes locais que indicam placeholder independente do domínio.
+# Ex.: filler@*, noreply@* — nunca são contatos comerciais reais.
+_PLACEHOLDER_LOCAL_PARTS: frozenset[str] = frozenset(
+    {
+        "filler",
+        "noreply",
+        "no-reply",
+        "donotreply",
+        "do-not-reply",
+        "null",
+        "none",
     }
 )
 
@@ -104,17 +121,21 @@ _BUILDER_SUBDOMAIN_SUFFIXES: frozenset[str] = frozenset(
 def classify_email(email: str) -> str:
     """Classifica e-mail em: COMPANY_DOMAIN | REGISTERED_AGENT | GENERIC_FREEMAIL | PLACEHOLDER | UNKNOWN.
 
-    PLACEHOLDER: domínio claramente de template ou subdomínio de site-builder.
+    PLACEHOLDER: domínio de template, subdomínio de site-builder, ou parte-local de auto-fill.
     GENERIC_FREEMAIL: nunca promovido a COMPANY_DOMAIN.
     """
     if not email or "@" not in email:
         return "UNKNOWN"
-    domain = email.rsplit("@", 1)[1].lower()
+    local, domain = email.rsplit("@", 1)
+    domain = domain.lower()
+    local_lc = local.lower()
     if domain in REGISTERED_AGENT_DOMAINS:
         return "REGISTERED_AGENT"
     if domain in _PLACEHOLDER_DOMAINS:
         return "PLACEHOLDER"
     if any(domain == s or domain.endswith(f".{s}") for s in _BUILDER_SUBDOMAIN_SUFFIXES):
+        return "PLACEHOLDER"
+    if local_lc in _PLACEHOLDER_LOCAL_PARTS:
         return "PLACEHOLDER"
     if domain in _GENERIC_DOMAINS:
         return "GENERIC_FREEMAIL"

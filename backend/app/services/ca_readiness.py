@@ -217,14 +217,19 @@ async def evaluate_ca_dossier_readiness_nopdf(
     PURE CALCULATION: não escreve no banco, não move dossier_status.
     A transição para READY_NO_PDF ou PARTIAL é responsabilidade do chamador.
 
-    Descasamento de chave (email/phone):
-      O crawler grava field_name='website_email' e 'website_phone'.
-      A função original usa 'email' e 'phone_e164' (ingestão manual/SOS).
-      Esta função aceita AMBAS as chaves em cada critério usando .in_([...]).
-      Para email, vai além: valida o field_value com classify_email() para
-      garantir que só COMPANY_DOMAIN real conta — freemail, placeholder e
-      subdomínios de builder (hostingersite/wixsite/weebly/godaddysites) são
-      rejeitados mesmo que a evidência tenha direction=SUPPORTS.
+    Descasamento de chave (email):
+      O crawler grava field_name='website_email'.
+      A função original usa 'email' (ingestão manual/SOS).
+      Esta função aceita AMBAS as chaves usando .in_([...]).
+      Valida o field_value com classify_email() para garantir que só
+      COMPANY_DOMAIN ou GENERIC_FREEMAIL contam — placeholder e subdomínios
+      de builder (hostingersite/wixsite/weebly/godaddysites) são rejeitados
+      mesmo que a evidência tenha direction=SUPPORTS.
+
+    Régua PREMIUM (2026-06-30): email volta a ser obrigatório por si só
+    (telefone não substitui mais email) e nome+sobrenome do dono
+    (owner_first_name + owner_last_name, de CA_SOS_PRINCIPALS) também é
+    obrigatório. Critério de telefone foi removido desta função.
     """
     company = await session.get(Company, company_id)
     if company is None:
@@ -269,10 +274,8 @@ async def evaluate_ca_dossier_readiness_nopdf(
     if row.first() is None:
         partial_reasons.append("principal_address ausente")
 
-    # 3. email de domínio próprio (COMPANY_DOMAIN real)
-    #    Chaves aceitas: 'email' (oficial) | 'website_email' (crawler).
-    #    Valida field_value com classify_email() — rejeita freemail, placeholder
-    #    e builder subdomains mesmo que a evidência seja SUPPORTS (registros legados).
+    # 3. email obrigatório (régua PREMIUM — telefone não substitui mais email).
+    #   Aceita COMPANY_DOMAIN ou GENERIC_FREEMAIL; rejeita placeholder/builder-domain.
     email_rows = await session.execute(
         sa.select(CompanyFieldEvidence.field_value).where(
             CompanyFieldEvidence.company_id == company_id,
@@ -280,23 +283,17 @@ async def evaluate_ca_dossier_readiness_nopdf(
             CompanyFieldEvidence.evidence_direction == "SUPPORTS",
         )
     )
-    has_company_domain_email = any(
-        classify_email(row[0]) == "COMPANY_DOMAIN"
+    has_any_real_email = any(
+        classify_email(row[0]) in ("COMPANY_DOMAIN", "GENERIC_FREEMAIL")
         for row in email_rows.all()
     )
-    if not has_company_domain_email:
-        partial_reasons.append("email de domínio próprio ausente ou inválido")
+    if not has_any_real_email:
+        partial_reasons.append("email ausente")
 
-    # 4. telefone público — chaves: 'phone_e164' (oficial) | 'website_phone' (crawler)
-    row = await session.execute(
-        sa.select(CompanyFieldEvidence.id).where(
-            CompanyFieldEvidence.company_id == company_id,
-            CompanyFieldEvidence.field_name.in_(["phone_e164", "website_phone"]),
-            CompanyFieldEvidence.evidence_direction == "SUPPORTS",
-        ).limit(1)
-    )
-    if row.first() is None:
-        partial_reasons.append("telefone público sem evidência")
+    # 4. nome do dono obrigatório (régua PREMIUM) — owner_first_name + owner_last_name,
+    #    gravados a partir de CA_SOS_PRINCIPALS (cargo Manager/Member).
+    if not (company.owner_first_name and company.owner_last_name):
+        partial_reasons.append("nome do dono não disponível no registro")
 
     # 5. entity_number preenchido
     if not company.entity_number or not company.entity_number.strip():
