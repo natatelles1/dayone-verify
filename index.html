@@ -76,7 +76,7 @@
   .head h1{font-family:"Space Grotesk";font-weight:700;font-size:30px;letter-spacing:-.01em}
 
   /* ===== METRICS ===== */
-  .metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:26px}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:26px}
   .metric{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
   .metric .k{font-size:12.5px;color:var(--muted);margin-bottom:12px}
   .metric .v{font-family:"Space Grotesk";font-weight:700;font-size:34px;line-height:1;letter-spacing:-.02em}
@@ -269,6 +269,7 @@
           <thead>
             <tr>
               <th>Empresa</th>
+              <th>Dono</th>
               <th>Endereço</th>
               <th>Nº Entidade</th>
               <th>Documento</th>
@@ -367,12 +368,10 @@ function buildCaMetrics(){
   var availReady=ready.filter(function(c){return c.usage_status!=="IN_USE";}).length;
   var availNoPdf=nopdf.filter(function(c){return c.usage_status!=="IN_USE";}).length;
   var avail=availReady+availNoPdf;
-  var withPdf=ready.filter(function(c){return!!c.si_key;}).length;
   var partial=CA_DATA.filter(function(c){return c.dossier_status==="PARTIAL";}).length;
   var cards=[
     {k:"Empresas",v:total,sub:"CA na base"},
     {k:"Disponíveis",v:avail,sub:"prontas para uso",hero:true},
-    {k:"Com Statement",v:withPdf,sub:"PDF no sistema"},
     {k:"Gestor baixa PDF",v:nopdf.length,sub:"sem SI · gestor busca"},
     {k:"Em processamento",v:partial,sub:"PARTIAL"},
   ];
@@ -440,7 +439,7 @@ function renderCaTable(){
   var rows=filteredCa();
   var tbody=document.getElementById("caRows");
   if(!rows.length){
-    tbody.innerHTML='<tr><td colspan="9" style="text-align:center;padding:50px 16px;color:var(--muted);font-size:14px">Nenhuma empresa nesta categoria.</td></tr>';
+    tbody.innerHTML='<tr><td colspan="10" style="text-align:center;padding:50px 16px;color:var(--muted);font-size:14px">Nenhuma empresa nesta categoria.</td></tr>';
     document.getElementById("caFoot").textContent="";
     return;
   }
@@ -532,6 +531,7 @@ function caRow(c){
 
   return'<tr>'+
     '<td class="name">'+(compName?'<span class="with-copy">'+esc(compName)+cpBtn(compName)+'</span>':'—')+'</td>'+
+    '<td>'+(c.owner_name?'<span class="with-copy">'+esc(c.owner_name)+cpBtn(c.owner_name)+'</span>':'<span class="empty">—</span>')+'</td>'+
     '<td class="addr">'+(c.address?'<span class="with-copy">'+esc(c.address)+cpBtn(c.address)+'</span>':'<span class="empty">—</span>')+'</td>'+
     '<td class="m">'+(c.entity_number?'<span class="with-copy">'+esc(c.entity_number)+cpBtn(c.entity_number)+'</span>':'<span class="empty">—</span>')+'</td>'+
     '<td class="doc-cell">'+docCell+'</td>'+

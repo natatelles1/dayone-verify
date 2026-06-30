@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
 
   try {
     const companies = await sbGet('companies', {
-      select: 'id,commercial_name,legal_name,entity_number,phone_e164,website_url,dossier_status,partial_reasons,usage_status',
+      select: 'id,commercial_name,legal_name,entity_number,phone_e164,website_url,dossier_status,partial_reasons,usage_status,owner_first_name,owner_last_name',
       source_state: 'eq.CA',
       dossier_status: 'in.(READY,PARTIAL,READY_NO_PDF)',
       order: 'dossier_status.asc,commercial_name.asc',
@@ -116,6 +116,7 @@ module.exports = async (req, res) => {
         website: c.website_url || null,
         dossier_status: c.dossier_status,
         partial_reasons: c.partial_reasons || [],
+        owner_name: [c.owner_first_name, c.owner_last_name].filter(Boolean).join(' ') || null,
         si_key: docMap[c.id] || null,
         usage_status: c.usage_status || 'AVAILABLE',
         marked_at: markedAtMap[c.id] || null,
