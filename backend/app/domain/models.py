@@ -129,6 +129,7 @@ class Company(Base):
     readiness_policy = Column(Text, nullable=False)
     readiness_locked = Column(Boolean, nullable=False, server_default=text("false"))
     legacy_read_only = Column(Boolean, nullable=False, server_default=text("false"))
+    released_to_client = Column(Boolean, nullable=False, server_default=text("false"))
     found_at = Column(sa.TIMESTAMP(timezone=True), nullable=False, server_default=func.now())
     matched_at = Column(sa.TIMESTAMP(timezone=True))
     dossier_completed_at = Column(sa.TIMESTAMP(timezone=True))
