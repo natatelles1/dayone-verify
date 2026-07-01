@@ -1,7 +1,9 @@
 // GET /api/external/companies — external integration API (Gabriel, 1 client, static key).
 // Server-to-server only (no CORS). Requires EXTERNAL_API_KEY as a Bearer token or x-api-key header.
-// Returns ONLY CA companies with dossier_status IN (READY, READY_NO_PDF) — no PARTIAL/DISCOVERED,
-// no internal fields (snapshot keys, evidence rows, match_score, jargon).
+// Returns ONLY CA companies with dossier_status IN (READY, READY_NO_PDF) AND
+// released_to_client=TRUE — ready alone isn't enough, it also has to be explicitly released
+// (see app/scripts/release_companies.py). No PARTIAL/DISCOVERED, no internal fields
+// (snapshot keys, evidence rows, match_score, jargon).
 //
 // Uses the Supabase anon key server-side (same key/pattern as /api/companies.js), gated by the
 // dashboard_anon_ca_* RLS policies. Authorization for THIS endpoint is the EXTERNAL_API_KEY check
@@ -84,6 +86,7 @@ module.exports = async (req, res) => {
         'id,legal_name,entity_number,phone_e164,website_url,dossier_status,owner_first_name,owner_last_name',
       source_state: 'eq.CA',
       dossier_status: 'in.(READY,READY_NO_PDF)',
+      released_to_client: 'eq.true',
       order: 'legal_name.asc',
     });
 

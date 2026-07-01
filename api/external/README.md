@@ -1,7 +1,15 @@
 # API externa — integração Gabriel
 
-Endpoint server-to-server para puxar as empresas **prontas** (California) para o
+Endpoint server-to-server para puxar as empresas **prontas e liberadas** (California) para o
 Supabase do Gabriel. Chave secreta fixa, um único cliente.
+
+## Trava de liberação
+
+Estar pronta (`READY`/`READY_NO_PDF`) não é suficiente pra aparecer aqui — a
+empresa também precisa estar com `released_to_client=TRUE` no banco. Esse
+campo é `FALSE` por padrão; a liberação é manual, via
+`app/scripts/release_companies.py` (nunca automática). Enquanto nada for
+liberado, o endpoint retorna `{"count": 0, "companies": []}`.
 
 ## Endpoint
 
